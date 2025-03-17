@@ -1,7 +1,6 @@
-
 import { useRef } from 'react';
 import { useInView } from '@/utils/animations';
-import { Laptop, Smartphone, Tablet, Globe } from 'lucide-react';
+import { Smartphone, Globe } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 
 const CloudAccessibility = () => {
@@ -35,21 +34,7 @@ const CloudAccessibility = () => {
               {/* Gradient overlay */}
               <div className="absolute inset-0 bg-gradient-to-tr from-blue-900/10 to-transparent rounded-xl"></div>
               
-              {/* Device indicators */}
-              <div className="absolute top-4 left-4 glass py-2 px-3 rounded-lg shadow-lg">
-                <div className="flex items-center gap-2">
-                  <Laptop className="h-4 w-4 text-esyntagi-600" />
-                  <p className="text-xs font-medium">Desktop</p>
-                </div>
-              </div>
-              
-              <div className="absolute top-4 right-4 glass py-2 px-3 rounded-lg shadow-lg">
-                <div className="flex items-center gap-2">
-                  <Tablet className="h-4 w-4 text-esyntagi-600" />
-                  <p className="text-xs font-medium">Tablet</p>
-                </div>
-              </div>
-              
+              {/* Mobile indicator - keeping only this one and removing Desktop and Tablet */}
               <div className="absolute bottom-4 left-1/2 -translate-x-1/2 glass py-2 px-3 rounded-lg shadow-lg">
                 <div className="flex items-center gap-2">
                   <Smartphone className="h-4 w-4 text-esyntagi-600" />
@@ -58,7 +43,7 @@ const CloudAccessibility = () => {
               </div>
               
               {/* Login URL highlight */}
-              <div className="glass absolute bottom-6 left-1/2 -translate-x-1/2 py-2 px-6 rounded-full shadow-lg">
+              <div className="glass absolute bottom-16 left-1/2 -translate-x-1/2 py-2 px-6 rounded-full shadow-lg">
                 <div className="flex items-center gap-2">
                   <Globe className="h-4 w-4 text-esyntagi-600" />
                   <p className="text-sm font-medium text-esyntagi-700">app.esyntagi.gr</p>
