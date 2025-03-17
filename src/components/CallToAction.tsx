@@ -39,7 +39,7 @@ const CallToAction = () => {
                     Δωρεάν Δοκιμή 30 Ημερών
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Button>
-                  <Button variant="outline" className="border-white border-2 text-white hover:text-white hover:bg-white/10 rounded-full px-8 py-6 text-lg">
+                  <Button variant="outline" className="border-white border-2 text-blue-400 hover:text-blue-500 hover:bg-white/10 rounded-full px-8 py-6 text-lg">
                     Προγραμματίστε Παρουσίαση
                   </Button>
                 </div>
