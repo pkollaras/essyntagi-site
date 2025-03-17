@@ -1,21 +1,15 @@
-
 import { useRef } from 'react';
 import { useInView } from '@/utils/animations';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
-
 const CallToAction = () => {
   const ctaRef = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ctaRef, { threshold: 0.1 });
-  
-  return (
-    <section ref={ctaRef} className="py-20">
+  const isInView = useInView(ctaRef, {
+    threshold: 0.1
+  });
+  return <section ref={ctaRef} className="py-20">
       <div className="container mx-auto px-6">
-        <div 
-          className={`bg-blue-600 rounded-3xl p-8 md:p-12 lg:p-16 relative overflow-hidden ${
-            isInView ? 'animate-scale-in' : 'opacity-0'
-          }`}
-        >
+        <div className={`bg-blue-600 rounded-3xl p-8 md:p-12 lg:p-16 relative overflow-hidden ${isInView ? 'animate-scale-in' : 'opacity-0'}`}>
           {/* Decorative elements */}
           <div className="absolute top-0 left-0 w-full h-full opacity-20 bg-pattern-dots">
             <div className="absolute top-10 right-10 h-40 w-40 rounded-full bg-white/40 blur-md"></div>
@@ -37,9 +31,7 @@ const CallToAction = () => {
                 Δωρεάν Δοκιμή 30 Ημερών
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
-              <Button variant="outline" className="border-white border-2 text-blue-600 hover:text-white hover:bg-white/10 rounded-full px-8 py-6 text-lg">
-                Προγραμματίστε Επίδειξη
-              </Button>
+              <Button variant="outline" className="border-white border-2 text-blue-600 hover:text-white hover:bg-white/10 rounded-full px-8 py-6 text-lg">Προγραμματίστε Παρουσίαση</Button>
             </div>
             
             <p className="text-white/80 mt-6 text-sm">
@@ -48,8 +40,6 @@ const CallToAction = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default CallToAction;
