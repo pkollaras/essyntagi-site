@@ -1,12 +1,15 @@
+
 import { useRef } from 'react';
 import { useInView } from '@/utils/animations';
 import { Laptop, Smartphone, Tablet, Globe } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
+
 const CloudAccessibility = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(sectionRef, {
     threshold: 0.1
   });
+
   return <section id="cloud" ref={sectionRef} className="py-20 bg-gradient-to-b from-white to-gray-50">
       <div className="container mx-auto px-6">
         <div className={`text-center max-w-3xl mx-auto mb-16 ${isInView ? 'animate-fade-in' : 'opacity-0'}`}>
@@ -20,13 +23,39 @@ const CloudAccessibility = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-          {/* Left column - Image */}
+          {/* Left column - Image with multiple devices */}
           <div className={`relative ${isInView ? 'animate-fade-in delay-200' : 'opacity-0'}`}>
             <div className="relative z-10 rounded-xl overflow-hidden shadow-xl">
-              <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Cloud access to Esyntagi from multiple devices" className="w-full h-auto rounded-xl object-cover" />
+              <img 
+                src="https://images.unsplash.com/photo-1519389950473-47ba0277781c" 
+                alt="Πρόσβαση στο Esyntagi από πολλαπλές συσκευές - Desktop, Mobile, Tablet" 
+                className="w-full h-auto rounded-xl object-cover" 
+              />
               
               {/* Floating devices overlay */}
               <div className="absolute inset-0 bg-gradient-to-tr from-blue-900/20 to-transparent rounded-xl"></div>
+              
+              {/* Device indicators */}
+              <div className="absolute top-4 left-4 glass py-2 px-3 rounded-lg shadow-lg">
+                <div className="flex items-center gap-2">
+                  <Laptop className="h-4 w-4 text-esyntagi-600" />
+                  <p className="text-xs font-medium">Desktop</p>
+                </div>
+              </div>
+              
+              <div className="absolute top-4 right-4 glass py-2 px-3 rounded-lg shadow-lg">
+                <div className="flex items-center gap-2">
+                  <Tablet className="h-4 w-4 text-esyntagi-600" />
+                  <p className="text-xs font-medium">Tablet</p>
+                </div>
+              </div>
+              
+              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 glass py-2 px-3 rounded-lg shadow-lg">
+                <div className="flex items-center gap-2">
+                  <Smartphone className="h-4 w-4 text-esyntagi-600" />
+                  <p className="text-xs font-medium">Mobile</p>
+                </div>
+              </div>
               
               {/* Login URL highlight */}
               <div className="glass absolute bottom-6 left-1/2 -translate-x-1/2 py-2 px-6 rounded-full shadow-lg">
@@ -111,7 +140,7 @@ const CloudAccessibility = () => {
                 </div>
                 <div>
                   <h4 className="font-medium text-gray-900 mb-1">Δεν απαιτείται εγκατάσταση</h4>
-                  <p className="text-gray-700">Το Esyntagi λειτουργεί πλήρως στο cloud. Δεν χρειάζεται να εγκαταστήσετε λογισμικό ή να ανησυχείτε για ενημερώσεις. </p>
+                  <p className="text-gray-700">Το Esyntagi λειτουργεί πλήρως στο cloud. Δεν χρειάζεται να εγκαταστήσετε λογισμικό ή να ανησυχείτε για ενημερώσεις. </p>
                 </div>
               </div>
             </div>
