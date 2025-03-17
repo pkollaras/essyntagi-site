@@ -20,9 +20,9 @@ const Footer = () => {
     </svg>;
   return <footer className="bg-gray-50 pt-16 pb-8">
       <div className="container mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 pb-12">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 pb-12">
           {/* Company info */}
-          <div>
+          <div className="md:col-span-4">
             <div className="flex items-center mb-4">
               <img alt="Eprescription Logo" className="h-20 w-auto bg-transparent" src="/lovable-uploads/efb75c91-e718-4d58-85c8-7e0d4d1f9e69.png" />
             </div>
@@ -40,11 +40,11 @@ const Footer = () => {
             </div>
           </div>
           
-          {/* Empty div added to the left of the menu */}
-          <div></div>
+          {/* Empty div with 2 columns */}
+          <div className="md:col-span-2"></div>
           
           {/* Footer menu */}
-          <div className="pl-8">
+          <div className="md:col-span-3 pl-8">
             <h3 className="text-lg font-semibold text-gray-800 mb-4">Πλοήγηση</h3>
             <nav>
               <ul className="flex flex-col space-y-3">
@@ -63,7 +63,7 @@ const Footer = () => {
           </div>
           
           {/* Legal Menu */}
-          <div className="pl-8">
+          <div className="md:col-span-3 pl-8">
             <h3 className="text-lg font-semibold text-gray-800 mb-4">Νομικά</h3>
             <nav>
               <ul className="flex flex-col space-y-3">
