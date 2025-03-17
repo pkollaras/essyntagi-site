@@ -8,12 +8,12 @@ const Benefits = () => {
   const isInView = useInView(sectionRef, { threshold: 0.1 });
   
   const benefits = [
-    'Μείωση του διοικητικού φόρτου εργασίας έως και 40%',
-    'Ελαχιστοποίηση σφαλμάτων συνταγογράφησης με έξυπνη επαλήθευση',
-    'Αύξηση των εσόδων μέσω βελτιωμένης ακρίβειας τιμολόγησης',
-    'Ενίσχυση της ικανοποίησης των ασθενών με ταχύτερη εξυπηρέτηση',
-    'Πρόσβαση στα δεδομένα της πρακτικής σας με ασφάλεια από οπουδήποτε',
-    'Συμμόρφωση με GDPR και ασφαλής αποθήκευση δεδομένων'
+    'Εξοικονόμηση χρόνου έως 60% στην εκτέλεση ηλεκτρονικών συνταγών',
+    'Μείωση λαθών στην τιμολόγηση και βελτίωση του ταμειακού ισοζυγίου',
+    'Βελτιστοποίηση διαχείρισης αποθέματος και μείωση νεκρού στοκ',
+    'Αυτοματοποίηση αναφορών προς ΕΟΠΥΥ και ασφαλιστικά ταμεία',
+    'Πρόσβαση στα δεδομένα του φαρμακείου από οπουδήποτε με ασφάλεια',
+    'Πλήρης συμμόρφωση με τη φαρμακευτική νομοθεσία και τον GDPR'
   ];
   
   return (
@@ -29,8 +29,8 @@ const Benefits = () => {
             <div className="relative">
               <div className="glass-card rounded-2xl p-1 shadow-xl">
                 <img 
-                  src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b" 
-                  alt="Τεχνολογία υγειονομικής περίθαλψης" 
+                  src="https://images.unsplash.com/photo-1583911860248-4661fe2a2525" 
+                  alt="Σύγχρονο φαρμακείο" 
                   className="w-full h-auto rounded-xl object-cover"
                 />
               </div>
@@ -42,10 +42,10 @@ const Benefits = () => {
               >
                 <h4 className="text-lg font-semibold text-gray-800">Εξοικονόμηση Χρόνου</h4>
                 <div className="flex items-end gap-1 mt-1">
-                  <span className="text-3xl font-bold text-essyntagi-600">37%</span>
+                  <span className="text-3xl font-bold text-essyntagi-600">60%</span>
                   <span className="text-green-500 text-sm mb-1">↑</span>
                 </div>
-                <p className="text-sm text-gray-600 mt-1">Μέσος χρόνος που εξοικονομείται σε διοικητικές εργασίες</p>
+                <p className="text-sm text-gray-600 mt-1">Ταχύτερη εκτέλεση συνταγών σε σύγκριση με χειροκίνητες μεθόδους</p>
               </div>
               
               {/* Efficiency card */}
@@ -53,12 +53,12 @@ const Benefits = () => {
                 className="glass absolute -bottom-6 -left-6 p-5 rounded-xl shadow-lg max-w-[220px] animate-float"
                 style={{ animationDelay: '1s' }}
               >
-                <h4 className="text-lg font-semibold text-gray-800">Φροντίδα Ασθενών</h4>
+                <h4 className="text-lg font-semibold text-gray-800">Ακρίβεια Τιμολόγησης</h4>
                 <div className="flex items-end gap-1 mt-1">
-                  <span className="text-3xl font-bold text-essyntagi-600">24%</span>
+                  <span className="text-3xl font-bold text-essyntagi-600">99.8%</span>
                   <span className="text-green-500 text-sm mb-1">↑</span>
                 </div>
-                <p className="text-sm text-gray-600 mt-1">Περισσότερος χρόνος για άμεση φροντίδα ασθενών</p>
+                <p className="text-sm text-gray-600 mt-1">Εξάλειψη λαθών στην τιμολόγηση φαρμάκων</p>
               </div>
             </div>
           </div>
@@ -69,11 +69,11 @@ const Benefits = () => {
               Γιατί να Επιλέξετε το Essyntagi
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
-              Μετασχηματισμός της διαχείρισης υγειονομικής πρακτικής
+              Μετασχηματίστε το φαρμακείο σας με τεχνολογία αιχμής
             </h2>
             <p className="text-xl text-gray-600">
-              Η πλατφόρμα μας είναι σχεδιασμένη για να βελτιστοποιεί τη ροή εργασίας σας, να μειώνει το διοικητικό φόρτο, 
-              και να σας επιτρέπει να επικεντρωθείτε σε αυτό που έχει μεγαλύτερη σημασία – τους ασθενείς σας.
+              Η πλατφόρμα μας είναι σχεδιασμένη ειδικά για τις ανάγκες των σύγχρονων φαρμακείων, βελτιστοποιώντας 
+              την εκτέλεση συνταγών, τη διαχείριση αποθέματος και την τιμολόγηση.
             </p>
             
             {/* Benefits list */}

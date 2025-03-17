@@ -25,15 +25,15 @@ const CallToAction = () => {
           
           <div className="relative z-10 text-center max-w-3xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
-              Έτοιμοι να μεταμορφώσετε την ιατρική σας πρακτική;
+              Έτοιμοι να μεταμορφώσετε το φαρμακείο σας;
             </h2>
             <p className="text-xl text-white/90 mb-8">
-              Συνδεθείτε με χιλιάδες επαγγελματίες υγείας που ήδη χρησιμοποιούν το Essyntagi για να βελτιώσουν τις λειτουργίες τους και τη φροντίδα των ασθενών.
+              Συνδεθείτε με εκατοντάδες φαρμακοποιούς που ήδη χρησιμοποιούν το Essyntagi για να αυτοματοποιήσουν την εκτέλεση συνταγών και να βελτιώσουν την τιμολόγηση των υπηρεσιών τους.
             </p>
             
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <Button className="bg-white text-essyntagi-600 hover:bg-gray-100 rounded-full px-8 py-6 text-lg font-medium shadow-lg hover:shadow-xl transition-all duration-300">
-                Δωρεάν Εγγραφή
+                Δωρεάν Δοκιμή 30 Ημερών
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
               <Button variant="outline" className="border-white border-2 text-white hover:bg-white/10 rounded-full px-8 py-6 text-lg">
@@ -42,7 +42,7 @@ const CallToAction = () => {
             </div>
             
             <p className="text-white/80 mt-6 text-sm">
-              Δεν απαιτείται πιστωτική κάρτα. 14 ημέρες δωρεάν δοκιμή. Ακύρωση οποιαδήποτε στιγμή.
+              Δεν απαιτείται πιστωτική κάρτα. Πλήρης υποστήριξη. Αναβαθμίστε ή ακυρώστε οποιαδήποτε στιγμή.
             </p>
           </div>
         </div>
