@@ -23,31 +23,31 @@ const Hero = () => {
           {/* Left column - Text */}
           <div className={`space-y-6 ${isInView ? 'animate-fade-in' : 'opacity-0'}`}>
             <div className="inline-block glass px-3 py-1 rounded-full text-sm font-medium text-essyntagi-700 mb-2">
-              Cloud-based Healthcare ERP
+              Συστήματα Υγειονομικής Περίθαλψης στο Cloud
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-gray-900">
-              Transform your healthcare practice with <span className="text-essyntagi-600">Essyntagi</span>
+              Μεταμορφώστε την υγειονομική πρακτική σας με το <span className="text-essyntagi-600">Essyntagi</span>
             </h1>
             <p className="text-xl text-gray-600 max-w-lg">
-              Streamline prescriptions, manage patients, and simplify invoicing with our intuitive cloud-based ERP system designed specifically for healthcare professionals.
+              Απλοποιήστε τις συνταγές, διαχειριστείτε τους ασθενείς και απλοποιήστε την τιμολόγηση με το διαισθητικό σύστημα διαχείρισης στο cloud, σχεδιασμένο ειδικά για επαγγελματίες υγείας.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <Button className="bg-essyntagi-600 hover:bg-essyntagi-700 text-white rounded-full px-8 py-6 text-lg shadow-lg hover:shadow-xl transition-all duration-300">
-                Get Started
+                Ξεκινήστε Τώρα
               </Button>
               <Button variant="outline" className="border-essyntagi-200 text-essyntagi-700 hover:bg-essyntagi-50 rounded-full px-8 py-6 text-lg">
-                Request Demo
+                Ζητήστε Επίδειξη
               </Button>
             </div>
             
             {/* Trust indicators */}
             <div className="pt-8">
-              <p className="text-sm text-gray-500 mb-3">TRUSTED BY HEALTHCARE PROFESSIONALS</p>
+              <p className="text-sm text-gray-500 mb-3">ΕΜΠΙΣΤΕΥΟΝΤΑΙ ΕΠΑΓΓΕΛΜΑΤΙΕΣ ΥΓΕΙΑΣ</p>
               <div className="flex flex-wrap gap-8 items-center">
-                <div className="text-gray-400 font-medium">Memorial Health</div>
-                <div className="text-gray-400 font-medium">CarePoint</div>
-                <div className="text-gray-400 font-medium">MedLife</div>
-                <div className="text-gray-400 font-medium">CityClinic</div>
+                <div className="text-gray-400 font-medium">Νοσοκομείο Μνήμης</div>
+                <div className="text-gray-400 font-medium">ΚέντροΦροντίδας</div>
+                <div className="text-gray-400 font-medium">ΙατρικήΖωή</div>
+                <div className="text-gray-400 font-medium">ΚλινικήΠόλης</div>
               </div>
             </div>
           </div>
@@ -58,7 +58,7 @@ const Hero = () => {
               <div className="glass-card rounded-2xl p-1 shadow-xl">
                 <img 
                   src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158" 
-                  alt="Healthcare professional using Essyntagi" 
+                  alt="Επαγγελματίας υγείας που χρησιμοποιεί το Essyntagi" 
                   className="w-full h-auto rounded-xl object-cover"
                 />
               </div>
@@ -67,14 +67,14 @@ const Hero = () => {
               <div className="glass absolute -top-6 -left-6 p-4 rounded-lg shadow-lg animate-float">
                 <div className="flex items-center gap-3">
                   <div className="bg-green-500 h-3 w-3 rounded-full"></div>
-                  <p className="text-sm font-medium">25 Prescriptions Processed</p>
+                  <p className="text-sm font-medium">25 Συνταγές Υπό Επεξεργασία</p>
                 </div>
               </div>
               
               <div className="glass absolute -bottom-6 -right-6 p-4 rounded-lg shadow-lg animate-float" style={{ animationDelay: '1s' }}>
                 <div className="flex items-center gap-3">
                   <div className="bg-essyntagi-500 h-3 w-3 rounded-full"></div>
-                  <p className="text-sm font-medium">98% Billing Accuracy</p>
+                  <p className="text-sm font-medium">98% Ακρίβεια Τιμολόγησης</p>
                 </div>
               </div>
             </div>

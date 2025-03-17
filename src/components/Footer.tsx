@@ -15,7 +15,7 @@ const Footer = () => {
               <div className="h-2 w-2 rounded-full bg-essyntagi-500"></div>
             </div>
             <p className="text-gray-600 mb-4 max-w-md">
-              Essyntagi is an innovative cloud-based ERP solution designed specifically for healthcare professionals to manage prescriptions, patients, and billing efficiently.
+              Το Essyntagi είναι μια καινοτόμος λύση ERP βασισμένη στο cloud, σχεδιασμένη ειδικά για επαγγελματίες υγείας για την αποτελεσματική διαχείριση συνταγών, ασθενών και τιμολόγησης.
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-gray-400 hover:text-essyntagi-600 transition" aria-label="Facebook">
@@ -35,35 +35,35 @@ const Footer = () => {
           
           {/* Links */}
           <div>
-            <h3 className="text-sm font-semibold text-gray-900 uppercase tracking-wider mb-4">Product</h3>
+            <h3 className="text-sm font-semibold text-gray-900 uppercase tracking-wider mb-4">Προϊόν</h3>
             <ul className="space-y-3">
-              <li><a href="#" className="text-gray-600 hover:text-essyntagi-600 transition">Features</a></li>
-              <li><a href="#" className="text-gray-600 hover:text-essyntagi-600 transition">Pricing</a></li>
-              <li><a href="#" className="text-gray-600 hover:text-essyntagi-600 transition">Case Studies</a></li>
-              <li><a href="#" className="text-gray-600 hover:text-essyntagi-600 transition">Reviews</a></li>
-              <li><a href="#" className="text-gray-600 hover:text-essyntagi-600 transition">Updates</a></li>
+              <li><a href="#" className="text-gray-600 hover:text-essyntagi-600 transition">Χαρακτηριστικά</a></li>
+              <li><a href="#" className="text-gray-600 hover:text-essyntagi-600 transition">Τιμολόγηση</a></li>
+              <li><a href="#" className="text-gray-600 hover:text-essyntagi-600 transition">Μελέτες Περιπτώσεων</a></li>
+              <li><a href="#" className="text-gray-600 hover:text-essyntagi-600 transition">Κριτικές</a></li>
+              <li><a href="#" className="text-gray-600 hover:text-essyntagi-600 transition">Ενημερώσεις</a></li>
             </ul>
           </div>
           
           <div>
-            <h3 className="text-sm font-semibold text-gray-900 uppercase tracking-wider mb-4">Company</h3>
+            <h3 className="text-sm font-semibold text-gray-900 uppercase tracking-wider mb-4">Εταιρεία</h3>
             <ul className="space-y-3">
-              <li><a href="#" className="text-gray-600 hover:text-essyntagi-600 transition">About</a></li>
-              <li><a href="#" className="text-gray-600 hover:text-essyntagi-600 transition">Careers</a></li>
-              <li><a href="#" className="text-gray-600 hover:text-essyntagi-600 transition">Blog</a></li>
-              <li><a href="#" className="text-gray-600 hover:text-essyntagi-600 transition">Privacy</a></li>
-              <li><a href="#" className="text-gray-600 hover:text-essyntagi-600 transition">Terms</a></li>
+              <li><a href="#" className="text-gray-600 hover:text-essyntagi-600 transition">Σχετικά με εμάς</a></li>
+              <li><a href="#" className="text-gray-600 hover:text-essyntagi-600 transition">Καριέρα</a></li>
+              <li><a href="#" className="text-gray-600 hover:text-essyntagi-600 transition">Ιστολόγιο</a></li>
+              <li><a href="#" className="text-gray-600 hover:text-essyntagi-600 transition">Απόρρητο</a></li>
+              <li><a href="#" className="text-gray-600 hover:text-essyntagi-600 transition">Όροι Χρήσης</a></li>
             </ul>
           </div>
           
           <div>
-            <h3 className="text-sm font-semibold text-gray-900 uppercase tracking-wider mb-4">Support</h3>
+            <h3 className="text-sm font-semibold text-gray-900 uppercase tracking-wider mb-4">Υποστήριξη</h3>
             <ul className="space-y-3">
-              <li><a href="#" className="text-gray-600 hover:text-essyntagi-600 transition">Help Center</a></li>
-              <li><a href="#" className="text-gray-600 hover:text-essyntagi-600 transition">Contact Us</a></li>
-              <li><a href="#" className="text-gray-600 hover:text-essyntagi-600 transition">Community</a></li>
-              <li><a href="#" className="text-gray-600 hover:text-essyntagi-600 transition">Status</a></li>
-              <li><a href="#" className="text-gray-600 hover:text-essyntagi-600 transition">Training</a></li>
+              <li><a href="#" className="text-gray-600 hover:text-essyntagi-600 transition">Κέντρο Βοήθειας</a></li>
+              <li><a href="#" className="text-gray-600 hover:text-essyntagi-600 transition">Επικοινωνία</a></li>
+              <li><a href="#" className="text-gray-600 hover:text-essyntagi-600 transition">Κοινότητα</a></li>
+              <li><a href="#" className="text-gray-600 hover:text-essyntagi-600 transition">Κατάσταση</a></li>
+              <li><a href="#" className="text-gray-600 hover:text-essyntagi-600 transition">Εκπαίδευση</a></li>
             </ul>
           </div>
         </div>
@@ -71,11 +71,11 @@ const Footer = () => {
         <div className="border-t border-gray-200 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-500 text-sm">
-              &copy; {currentYear} Essyntagi. All rights reserved.
+              &copy; {currentYear} Essyntagi. Με επιφύλαξη παντός δικαιώματος.
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
-              <a href="#" className="text-sm text-gray-500 hover:text-essyntagi-600 transition">Privacy Policy</a>
-              <a href="#" className="text-sm text-gray-500 hover:text-essyntagi-600 transition">Terms of Service</a>
+              <a href="#" className="text-sm text-gray-500 hover:text-essyntagi-600 transition">Πολιτική Απορρήτου</a>
+              <a href="#" className="text-sm text-gray-500 hover:text-essyntagi-600 transition">Όροι Υπηρεσίας</a>
               <a href="#" className="text-sm text-gray-500 hover:text-essyntagi-600 transition">Cookies</a>
             </div>
           </div>

@@ -6,25 +6,25 @@ import { ChevronLeft, ChevronRight, Star } from 'lucide-react';
 const testimonials = [
   {
     id: 1,
-    content: "Essyntagi has completely transformed my pharmacy workflow. The prescription management system has reduced errors and saved us countless hours of administrative work.",
-    author: "Dr. Sarah Johnson",
-    position: "Pharmacist, Memorial Healthcare",
+    content: "Το Essyntagi έχει μεταμορφώσει εντελώς τη ροή εργασίας του φαρμακείου μου. Το σύστημα διαχείρισης συνταγών έχει μειώσει τα λάθη και μας έχει εξοικονομήσει αμέτρητες ώρες διοικητικής εργασίας.",
+    author: "Δρ. Σοφία Παπαδοπούλου",
+    position: "Φαρμακοποιός, Νοσοκομείο Μνήμης",
     avatar: "https://randomuser.me/api/portraits/women/32.jpg",
     rating: 5
   },
   {
     id: 2,
-    content: "The invoicing system is intuitive and has improved our billing accuracy significantly. We've reduced outstanding payments by 45% since implementing Essyntagi.",
-    author: "Dr. Michael Chen",
-    position: "Primary Care Physician, City Clinic",
+    content: "Το σύστημα τιμολόγησης είναι διαισθητικό και έχει βελτιώσει σημαντικά την ακρίβεια χρέωσής μας. Έχουμε μειώσει τις εκκρεμείς πληρωμές κατά 45% από την εφαρμογή του Essyntagi.",
+    author: "Δρ. Μιχάλης Αντωνίου",
+    position: "Παθολόγος, Κλινική Πόλης",
     avatar: "https://randomuser.me/api/portraits/men/45.jpg",
     rating: 5
   },
   {
     id: 3,
-    content: "Being able to access patient records securely from anywhere has been a game-changer, especially when I'm on call. The interface is clean and easy to navigate.",
-    author: "Dr. Emily Parker",
-    position: "Pediatrician, Child First Medical",
+    content: "Η δυνατότητα πρόσβασης στα αρχεία ασθενών με ασφάλεια από οπουδήποτε αποτέλεσε επαναστατική αλλαγή, ειδικά όταν είμαι σε εφημερία. Η διεπαφή είναι καθαρή και εύκολη στην πλοήγηση.",
+    author: "Δρ. Ελένη Δημητρίου",
+    position: "Παιδίατρος, Πρώτα τα Παιδιά",
     avatar: "https://randomuser.me/api/portraits/women/65.jpg",
     rating: 4
   }
@@ -57,13 +57,13 @@ const Testimonials = () => {
         {/* Section header */}
         <div className={`text-center max-w-3xl mx-auto mb-16 ${isInView ? 'animate-fade-in' : 'opacity-0'}`}>
           <div className="inline-block glass px-3 py-1 rounded-full text-sm font-medium text-essyntagi-700 mb-3">
-            Success Stories
+            Ιστορίες Επιτυχίας
           </div>
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
-            Trusted by healthcare professionals
+            Εμπιστοσύνη από επαγγελματίες υγείας
           </h2>
           <p className="text-xl text-gray-600">
-            Here's what our users have to say about their experience with Essyntagi.
+            Δείτε τι λένε οι χρήστες μας για την εμπειρία τους με το Essyntagi.
           </p>
         </div>
         
@@ -106,14 +106,14 @@ const Testimonials = () => {
             <button 
               onClick={goToPrevious} 
               className="p-2 rounded-full bg-white border border-gray-200 text-gray-700 hover:bg-essyntagi-50 transition-colors shadow-sm"
-              aria-label="Previous testimonial"
+              aria-label="Προηγούμενη μαρτυρία"
             >
               <ChevronLeft className="h-5 w-5" />
             </button>
             <button 
               onClick={goToNext} 
               className="p-2 rounded-full bg-white border border-gray-200 text-gray-700 hover:bg-essyntagi-50 transition-colors shadow-sm"
-              aria-label="Next testimonial"
+              aria-label="Επόμενη μαρτυρία"
             >
               <ChevronRight className="h-5 w-5" />
             </button>
@@ -128,7 +128,7 @@ const Testimonials = () => {
                 className={`h-2 rounded-full transition-all ${
                   activeIndex === index ? 'w-6 bg-essyntagi-500' : 'w-2 bg-gray-300'
                 }`}
-                aria-label={`Go to testimonial ${index + 1}`}
+                aria-label={`Μετάβαση στη μαρτυρία ${index + 1}`}
               />
             ))}
           </div>

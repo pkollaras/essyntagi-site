@@ -46,24 +46,24 @@ const Navbar = () => {
               href="#features" 
               className="text-gray-700 hover:text-essyntagi-600 hover-underline font-medium transition"
             >
-              Features
+              Χαρακτηριστικά
             </a>
             <a 
               href="#benefits" 
               className="text-gray-700 hover:text-essyntagi-600 hover-underline font-medium transition"
             >
-              Benefits
+              Οφέλη
             </a>
             <a 
               href="#testimonials" 
               className="text-gray-700 hover:text-essyntagi-600 hover-underline font-medium transition"
             >
-              Testimonials
+              Μαρτυρίες
             </a>
             <Button 
               className="bg-essyntagi-600 hover:bg-essyntagi-700 text-white rounded-full px-6"
             >
-              Get Started
+              Ξεκινήστε
             </Button>
           </div>
 
@@ -114,27 +114,27 @@ const Navbar = () => {
               className="block py-2 text-gray-700 font-medium hover:text-essyntagi-600"
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              Features
+              Χαρακτηριστικά
             </a>
             <a
               href="#benefits"
               className="block py-2 text-gray-700 font-medium hover:text-essyntagi-600"
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              Benefits
+              Οφέλη
             </a>
             <a
               href="#testimonials"
               className="block py-2 text-gray-700 font-medium hover:text-essyntagi-600"
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              Testimonials
+              Μαρτυρίες
             </a>
             <Button 
               className="w-full mt-3 bg-essyntagi-600 hover:bg-essyntagi-700 text-white rounded-full"
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              Get Started
+              Ξεκινήστε
             </Button>
           </div>
         </div>

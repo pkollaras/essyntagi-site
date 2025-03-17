@@ -8,12 +8,12 @@ const Benefits = () => {
   const isInView = useInView(sectionRef, { threshold: 0.1 });
   
   const benefits = [
-    'Reduce administrative workload by up to 40%',
-    'Minimize prescription errors with intelligent verification',
-    'Increase revenue through improved billing accuracy',
-    'Enhance patient satisfaction with faster service',
-    'Access your practice data securely from anywhere',
-    'HIPAA compliant and secure data storage'
+    'Μείωση του διοικητικού φόρτου εργασίας έως και 40%',
+    'Ελαχιστοποίηση σφαλμάτων συνταγογράφησης με έξυπνη επαλήθευση',
+    'Αύξηση των εσόδων μέσω βελτιωμένης ακρίβειας τιμολόγησης',
+    'Ενίσχυση της ικανοποίησης των ασθενών με ταχύτερη εξυπηρέτηση',
+    'Πρόσβαση στα δεδομένα της πρακτικής σας με ασφάλεια από οπουδήποτε',
+    'Συμμόρφωση με GDPR και ασφαλής αποθήκευση δεδομένων'
   ];
   
   return (
@@ -30,7 +30,7 @@ const Benefits = () => {
               <div className="glass-card rounded-2xl p-1 shadow-xl">
                 <img 
                   src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b" 
-                  alt="Healthcare technology" 
+                  alt="Τεχνολογία υγειονομικής περίθαλψης" 
                   className="w-full h-auto rounded-xl object-cover"
                 />
               </div>
@@ -40,12 +40,12 @@ const Benefits = () => {
                 className="glass absolute top-12 -right-5 p-5 rounded-xl shadow-lg max-w-[220px] animate-float"
                 style={{ animationDelay: '0.5s' }}
               >
-                <h4 className="text-lg font-semibold text-gray-800">Time Saved</h4>
+                <h4 className="text-lg font-semibold text-gray-800">Εξοικονόμηση Χρόνου</h4>
                 <div className="flex items-end gap-1 mt-1">
                   <span className="text-3xl font-bold text-essyntagi-600">37%</span>
                   <span className="text-green-500 text-sm mb-1">↑</span>
                 </div>
-                <p className="text-sm text-gray-600 mt-1">Average time saved on administrative tasks</p>
+                <p className="text-sm text-gray-600 mt-1">Μέσος χρόνος που εξοικονομείται σε διοικητικές εργασίες</p>
               </div>
               
               {/* Efficiency card */}
@@ -53,12 +53,12 @@ const Benefits = () => {
                 className="glass absolute -bottom-6 -left-6 p-5 rounded-xl shadow-lg max-w-[220px] animate-float"
                 style={{ animationDelay: '1s' }}
               >
-                <h4 className="text-lg font-semibold text-gray-800">Patient Care</h4>
+                <h4 className="text-lg font-semibold text-gray-800">Φροντίδα Ασθενών</h4>
                 <div className="flex items-end gap-1 mt-1">
                   <span className="text-3xl font-bold text-essyntagi-600">24%</span>
                   <span className="text-green-500 text-sm mb-1">↑</span>
                 </div>
-                <p className="text-sm text-gray-600 mt-1">More time for direct patient care</p>
+                <p className="text-sm text-gray-600 mt-1">Περισσότερος χρόνος για άμεση φροντίδα ασθενών</p>
               </div>
             </div>
           </div>
@@ -66,14 +66,14 @@ const Benefits = () => {
           {/* Right column - Text */}
           <div className={`space-y-6 order-1 lg:order-2 ${isInView ? 'animate-fade-in' : 'opacity-0'}`}>
             <div className="inline-block glass px-3 py-1 rounded-full text-sm font-medium text-essyntagi-700 mb-2">
-              Why Choose Essyntagi
+              Γιατί να Επιλέξετε το Essyntagi
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
-              Transforming healthcare practice management
+              Μετασχηματισμός της διαχείρισης υγειονομικής πρακτικής
             </h2>
             <p className="text-xl text-gray-600">
-              Our platform is designed to optimize your workflow, reduce administrative burden, 
-              and allow you to focus on what matters most – your patients.
+              Η πλατφόρμα μας είναι σχεδιασμένη για να βελτιστοποιεί τη ροή εργασίας σας, να μειώνει το διοικητικό φόρτο, 
+              και να σας επιτρέπει να επικεντρωθείτε σε αυτό που έχει μεγαλύτερη σημασία – τους ασθενείς σας.
             </p>
             
             {/* Benefits list */}

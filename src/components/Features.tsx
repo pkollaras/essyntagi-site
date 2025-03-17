@@ -6,33 +6,33 @@ import { ClipboardList, CreditCard, Users, Calendar, FileText, ChartBar } from '
 const features = [
   {
     icon: <ClipboardList className="h-6 w-6 text-essyntagi-600" />,
-    title: 'Prescription Management',
-    description: 'Create and manage digital prescriptions with ease, including dosage tracking and refill alerts.'
+    title: 'Διαχείριση Συνταγών',
+    description: 'Δημιουργήστε και διαχειριστείτε ψηφιακές συνταγές με ευκολία, συμπεριλαμβανομένης της παρακολούθησης δοσολογίας και ειδοποιήσεων επαναπλήρωσης.'
   },
   {
     icon: <CreditCard className="h-6 w-6 text-essyntagi-600" />,
-    title: 'Invoicing & Billing',
-    description: 'Generate professional invoices, track payments, and manage financial reports in one place.'
+    title: 'Τιμολόγηση & Χρέωση',
+    description: 'Δημιουργήστε επαγγελματικά τιμολόγια, παρακολουθήστε πληρωμές και διαχειριστείτε οικονομικές αναφορές σε ένα μέρος.'
   },
   {
     icon: <Users className="h-6 w-6 text-essyntagi-600" />,
-    title: 'Patient Records',
-    description: 'Maintain comprehensive patient records with medical history, prescriptions, and payment details.'
+    title: 'Αρχεία Ασθενών',
+    description: 'Διατηρήστε ολοκληρωμένα αρχεία ασθενών με ιατρικό ιστορικό, συνταγές και λεπτομέρειες πληρωμών.'
   },
   {
     icon: <Calendar className="h-6 w-6 text-essyntagi-600" />,
-    title: 'Appointment Scheduling',
-    description: 'Efficiently manage your calendar with smart scheduling to reduce wait times and no-shows.'
+    title: 'Προγραμματισμός Ραντεβού',
+    description: 'Διαχειριστείτε αποτελεσματικά το ημερολόγιό σας με έξυπνο προγραμματισμό για να μειώσετε τους χρόνους αναμονής και τις απουσίες.'
   },
   {
     icon: <FileText className="h-6 w-6 text-essyntagi-600" />,
-    title: 'Document Management',
-    description: 'Store and organize all healthcare documents securely with easy retrieval when needed.'
+    title: 'Διαχείριση Εγγράφων',
+    description: 'Αποθηκεύστε και οργανώστε με ασφάλεια όλα τα έγγραφα υγειονομικής περίθαλψης με εύκολη ανάκτηση όταν χρειάζεται.'
   },
   {
     icon: <ChartBar className="h-6 w-6 text-essyntagi-600" />,
-    title: 'Analytics Dashboard',
-    description: 'Gain insights into your practice with comprehensive analytics and customizable reports.'
+    title: 'Πίνακας Ανάλυσης',
+    description: 'Αποκτήστε πληροφορίες για την πρακτική σας με ολοκληρωμένη ανάλυση και προσαρμόσιμες αναφορές.'
   }
 ];
 
@@ -54,13 +54,13 @@ const Features = () => {
         {/* Section header */}
         <div className={`text-center max-w-3xl mx-auto mb-16 ${isInView ? 'animate-fade-in' : 'opacity-0'}`}>
           <div className="inline-block glass px-3 py-1 rounded-full text-sm font-medium text-essyntagi-700 mb-3">
-            Powerful Features
+            Ισχυρά Χαρακτηριστικά
           </div>
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
-            Everything you need to run your healthcare practice
+            Όλα όσα χρειάζεστε για να λειτουργήσετε το ιατρείο σας
           </h2>
           <p className="text-xl text-gray-600">
-            Essyntagi combines all the essential tools in one intuitive platform, saving you time and improving patient care.
+            Το Essyntagi συνδυάζει όλα τα απαραίτητα εργαλεία σε μία διαισθητική πλατφόρμα, εξοικονομώντας χρόνο και βελτιώνοντας τη φροντίδα των ασθενών.
           </p>
         </div>
         
