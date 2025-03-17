@@ -10,6 +10,7 @@ import Benefits from '@/components/Benefits';
 import Testimonials from '@/components/Testimonials';
 import CallToAction from '@/components/CallToAction';
 import Footer from '@/components/Footer';
+import Login from '@/components/Login';
 
 const Index = () => {
   // Scroll to top on component mount
@@ -24,7 +25,10 @@ const Index = () => {
         <Hero />
         <Features />
         <ProductCategories />
-        <CloudAccessibility />
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <CloudAccessibility />
+          <Login />
+        </div>
         <InvoicingSystem />
         <Benefits />
         <Testimonials />
