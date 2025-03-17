@@ -33,14 +33,7 @@ const Footer = () => {
             </div>
           </div>
           
-          {/* Right column for legal links */}
-          <div className="flex flex-col items-start md:items-end">
-            <div className="flex space-x-6 mt-4 md:mt-0">
-              <a href="#" className="text-sm text-gray-500 hover:text-essyntagi-600 transition">Πολιτική Απορρήτου</a>
-              <a href="#" className="text-sm text-gray-500 hover:text-essyntagi-600 transition">Όροι Υπηρεσίας</a>
-              <a href="#" className="text-sm text-gray-500 hover:text-essyntagi-600 transition">Cookies</a>
-            </div>
-          </div>
+          {/* Removed the right column with legal links */}
         </div>
         
         <div className="border-t border-gray-200 pt-8">
