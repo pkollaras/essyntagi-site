@@ -3,6 +3,7 @@ import { useRef, useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { useInView } from '@/utils/animations';
 import { Card, CardContent } from '@/components/ui/card';
+import { toast } from "sonner";
 
 const Hero = () => {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -31,13 +32,19 @@ const Hero = () => {
         }
         
         const data = await response.json();
-        setPrescriptionCount(data.data?.toString() || "32");
+        if (data.success && data.data) {
+          setPrescriptionCount(data.data.toString());
+          console.log('Updated prescription count:', data.data);
+        } else {
+          throw new Error('Invalid data format');
+        }
         setError(null);
       } catch (error) {
         console.error('Error fetching prescription count:', error);
         setPrescriptionCount("30"); // Fallback to static number if fetch fails
         setError("Αδυναμία σύνδεσης με το server");
         setIsLiveUpdating(false);
+        toast.error("Αδυναμία σύνδεσης με το server. Χρησιμοποιείται στατική τιμή.");
       } finally {
         setIsLoading(false);
       }
@@ -51,6 +58,7 @@ const Hero = () => {
     
     if (isInView && isLiveUpdating) {
       intervalId = window.setInterval(() => {
+        console.log('Fetching updated prescription count...');
         fetchPrescriptionCount();
       }, 10000); // 10 seconds interval
     }
@@ -61,6 +69,45 @@ const Hero = () => {
       }
     };
   }, [isInView, isLiveUpdating]);
+
+  // Function to manually refresh the count
+  const handleManualRefresh = () => {
+    setIsLiveUpdating(true);
+    const fetchPrescriptionCount = async () => {
+      try {
+        setIsLoading(true);
+        const response = await fetch('https://api-stg.esyntagi.gr/count', {
+          method: 'POST', 
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        });
+        
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        
+        const data = await response.json();
+        if (data.success && data.data) {
+          setPrescriptionCount(data.data.toString());
+          toast.success("Επιτυχής ανανέωση δεδομένων");
+        } else {
+          throw new Error('Invalid data format');
+        }
+        setError(null);
+      } catch (error) {
+        console.error('Error fetching prescription count:', error);
+        setPrescriptionCount("30"); 
+        setError("Αδυναμία σύνδεσης με το server");
+        setIsLiveUpdating(false);
+        toast.error("Αδυναμία σύνδεσης με το server. Χρησιμοποιείται στατική τιμή.");
+      } finally {
+        setIsLoading(false);
+      }
+    };
+    
+    fetchPrescriptionCount();
+  };
 
   return <section ref={heroRef} className="relative min-h-screen flex items-center pt-16 overflow-hidden">
       {/* Background elements */}
@@ -126,9 +173,21 @@ const Hero = () => {
                       <span className="inline-flex items-center">
                         <span className="mr-1">"{prescriptionCount}"</span>
                         {isLiveUpdating && (
-                          <span></span>
+                          <span className="ml-1 text-xs text-gray-500">(ανανεώνεται κάθε 10'')</span>
                         )}
                         <span> Συνταγές Εκτελέστηκαν Σήμερα</span>
+                        <button 
+                          onClick={handleManualRefresh}
+                          className="ml-2 p-1 text-gray-500 hover:text-blue-500"
+                          title="Ανανέωση τώρα"
+                        >
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                            <path d="M21 2v6h-6"></path>
+                            <path d="M3 12a9 9 0 0 1 15-6.7L21 8"></path>
+                            <path d="M3 22v-6h6"></path>
+                            <path d="M21 12a9 9 0 0 1-15 6.7L3 16"></path>
+                          </svg>
+                        </button>
                       </span>
                     )}
                   </p>
