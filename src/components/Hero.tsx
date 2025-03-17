@@ -1,12 +1,13 @@
-
 import { useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { useInView } from '@/utils/animations';
+
 const Hero = () => {
   const heroRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(heroRef, {
     threshold: 0.1
   });
+
   return <section ref={heroRef} className="relative min-h-screen flex items-center pt-16 overflow-hidden">
       {/* Background elements */}
       <div className="absolute inset-0 -z-10">
@@ -20,7 +21,7 @@ const Hero = () => {
           <div className={`space-y-6 ${isInView ? 'animate-fade-in' : 'opacity-0'}`}>
             <div className="inline-block glass px-3 py-1 rounded-full text-sm font-medium text-esyntagi-700 mb-2">Tο νέο Cloud ERP για φαρμακεία</div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-gray-900">
-              Μεταμορφώστε τo <span className="text-esyntagi-600">φαρμακείο</span> σας με το Esyntagi
+              Ήρθε η νέα εποχή στο <span className="text-esyntagi-600">Φαρμακείο</span>
             </h1>
             <p className="text-xl text-gray-600 max-w-lg">
               Εξελίξτε την εκτέλεση συνταγών, τη δημιουργία καλαθιού με πολλαπλά είδη και την τιμολόγηση μέσω του εξειδικευμένου συστήματος για φαρμακοποιούς.
@@ -90,4 +91,5 @@ const Hero = () => {
       </div>
     </section>;
 };
+
 export default Hero;
