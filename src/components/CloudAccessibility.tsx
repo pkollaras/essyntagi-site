@@ -1,4 +1,3 @@
-
 import { useRef } from 'react';
 import { useInView } from '@/utils/animations';
 import { Laptop, Smartphone, Tablet, Globe } from 'lucide-react';
@@ -35,14 +34,7 @@ const CloudAccessibility = () => {
               {/* Gradient overlay */}
               <div className="absolute inset-0 bg-gradient-to-tr from-blue-900/10 to-transparent rounded-xl"></div>
               
-              {/* Device indicators - Both desktop and tablet indicators were removed */}
-              
-              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 glass py-2 px-3 rounded-lg shadow-lg">
-                <div className="flex items-center gap-2">
-                  <Smartphone className="h-4 w-4 text-esyntagi-600" />
-                  <p className="text-xs font-medium">Mobile</p>
-                </div>
-              </div>
+              {/* Device indicators - All device indicators were removed */}
               
               {/* Login URL highlight */}
               <div className="glass absolute bottom-6 left-1/2 -translate-x-1/2 py-2 px-6 rounded-full shadow-lg">
