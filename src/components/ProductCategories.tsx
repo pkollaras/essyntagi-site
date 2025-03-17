@@ -1,27 +1,14 @@
-
 import { useRef } from 'react';
 import { useInView } from '@/utils/animations';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { FileText, Package, ShoppingBag, Calculator } from 'lucide-react';
-import { 
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table";
-
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 const ProductCategories = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
-  const isInView = useInView(sectionRef, { threshold: 0.1 });
-
-  return (
-    <section 
-      id="categories" 
-      ref={sectionRef} 
-      className="py-20 bg-gray-50"
-    >
+  const isInView = useInView(sectionRef, {
+    threshold: 0.1
+  });
+  return <section id="categories" ref={sectionRef} className="py-20 bg-gray-50">
       <div className="container mx-auto px-6">
         <div className={`text-center max-w-3xl mx-auto mb-16 ${isInView ? 'animate-fade-in' : 'opacity-0'}`}>
           <div className="inline-block glass px-3 py-1 rounded-full text-sm font-medium text-esyntagi-700 mb-3">
@@ -116,7 +103,7 @@ const ProductCategories = () => {
                         <TableRow>
                           <TableHead>Κατηγορία</TableHead>
                           <TableHead>Προϊόντα</TableHead>
-                          <TableHead>Μάρκες</TableHead>
+                          <TableHead>Εταιρίες</TableHead>
                         </TableRow>
                       </TableHeader>
                       <TableBody>
@@ -154,8 +141,6 @@ const ProductCategories = () => {
           </Tabs>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default ProductCategories;

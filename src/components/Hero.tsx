@@ -17,9 +17,7 @@ const Hero = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left column - Text */}
           <div className={`space-y-6 ${isInView ? 'animate-fade-in' : 'opacity-0'}`}>
-            <div className="inline-block glass px-3 py-1 rounded-full text-sm font-medium text-esyntagi-700 mb-2">
-              Ολοκληρωμένη Διαχείριση Φαρμακείου
-            </div>
+            <div className="inline-block glass px-3 py-1 rounded-full text-sm font-medium text-esyntagi-700 mb-2">Tο νέο Cloud ERP για φαρμακεία</div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-gray-900">
               Μεταμορφώστε τo <span className="text-esyntagi-600">φαρμακείο</span> σας με το Esyntagi
             </h1>
@@ -61,7 +59,7 @@ const Hero = () => {
               <div className="glass absolute -top-6 -left-6 p-4 rounded-lg shadow-lg animate-float">
                 <div className="flex items-center gap-3">
                   <div className="bg-green-500 h-3 w-3 rounded-full"></div>
-                  <p className="text-sm font-medium">32 Συνταγές Εκτελέστηκαν Σήμερα</p>
+                  <p className="text-sm font-medium">&quot;32&quot; Συνταγές Εκτελέστηκαν Σήμερα</p>
                 </div>
               </div>
               
