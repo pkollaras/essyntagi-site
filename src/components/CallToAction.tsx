@@ -12,7 +12,7 @@ const CallToAction = () => {
     <section ref={ctaRef} className="py-20">
       <div className="container mx-auto px-6">
         <div 
-          className={`bg-gradient-to-r from-esyntagi-600 to-esyntagi-500 rounded-3xl p-8 md:p-12 lg:p-16 relative overflow-hidden ${
+          className={`bg-blue-600 rounded-3xl p-8 md:p-12 lg:p-16 relative overflow-hidden ${
             isInView ? 'animate-scale-in' : 'opacity-0'
           }`}
         >
@@ -33,7 +33,7 @@ const CallToAction = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <Button className="bg-white text-esyntagi-600 hover:bg-gray-100 rounded-full px-8 py-6 text-lg font-medium shadow-lg hover:shadow-xl transition-all duration-300">
+              <Button className="bg-white text-blue-600 hover:bg-gray-100 rounded-full px-8 py-6 text-lg font-medium shadow-lg hover:shadow-xl transition-all duration-300">
                 Δωρεάν Δοκιμή 30 Ημερών
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
