@@ -70,7 +70,6 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Custom colors for Essyntagi
 				essyntagi: {
 					'50': '#f0f9ff',
 					'100': '#e0f2fe',
