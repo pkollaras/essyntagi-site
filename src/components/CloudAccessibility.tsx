@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 import { useInView } from '@/utils/animations';
-import { Smartphone, Globe } from 'lucide-react';
+import { Monitor, Smartphone, Globe } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 
 const CloudAccessibility = () => {
@@ -63,7 +63,7 @@ const CloudAccessibility = () => {
                 <CardContent className="p-6">
                   <div className="flex items-start gap-4">
                     <div className="bg-esyntagi-50 p-3 rounded-lg">
-                      <Laptop className="h-6 w-6 text-esyntagi-600" />
+                      <Monitor className="h-6 w-6 text-esyntagi-600" />
                     </div>
                     <div>
                       <h4 className="font-medium text-gray-900 mb-1">Υπολογιστές</h4>
@@ -77,7 +77,7 @@ const CloudAccessibility = () => {
                 <CardContent className="p-6">
                   <div className="flex items-start gap-4">
                     <div className="bg-esyntagi-50 p-3 rounded-lg">
-                      <Tablet className="h-6 w-6 text-esyntagi-600" />
+                      <Monitor className="h-6 w-6 text-esyntagi-600" />
                     </div>
                     <div>
                       <h4 className="font-medium text-gray-900 mb-1">Tablets</h4>
