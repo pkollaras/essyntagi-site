@@ -1,4 +1,3 @@
-
 import { useRef } from 'react';
 import { useInView } from '@/utils/animations';
 import { Button } from '@/components/ui/button';
@@ -36,8 +35,7 @@ const CallToAction = () => {
             </div>
             
             <p className="text-white/80 mt-6 text-sm">
-              Δεν απαιτείται πιστωτική κάρτα. Πλήρης υποστήριξη. Αναβαθμίστε ή ακυρώστε οποιαδήποτε στιγμή.
-            </p>
+          </p>
           </div>
         </div>
       </div>
