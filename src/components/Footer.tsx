@@ -1,4 +1,3 @@
-
 import { FacebookIcon, TwitterIcon, InstagramIcon, LinkedinIcon } from 'lucide-react';
 
 const Footer = () => {
@@ -14,7 +13,7 @@ const Footer = () => {
               <img 
                 src="/lovable-uploads/75ae7818-724d-4497-a3f7-9179f03de6a6.png" 
                 alt="Eprescription Logo" 
-                className="h-8 mr-2"
+                className="h-10 w-auto"
               />
             </div>
             <p className="text-gray-600 mb-4 max-w-md">
