@@ -121,7 +121,7 @@ const Navbar = () => {
             </a>
             
             <a 
-              href="https://calendly.com/event_types/user/me" 
+              href="https://calendly.com/d/cnzm-3d9-xbj/esyntagi" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="flex items-center justify-center py-2 text-esyntagi-600 hover:text-esyntagi-700 font-medium"

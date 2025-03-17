@@ -46,7 +46,7 @@ const CallToAction = () => {
                 <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
               </a>
               <a 
-                href="https://calendly.com/event_types/user/me" 
+                href="https://calendly.com/d/cnzm-3d9-xbj/esyntagi" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="bg-white text-blue-600 hover:bg-gray-100 rounded-full px-6 sm:px-8 py-4 sm:py-6 text-sm sm:text-lg font-medium shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center"

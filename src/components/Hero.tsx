@@ -43,7 +43,7 @@ const Hero = () => {
                 Ξεκινήστε Δωρεάν
               </a>
               <a 
-                href="https://calendly.com/event_types/user/me" 
+                href="https://calendly.com/d/cnzm-3d9-xbj/esyntagi" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="border-esyntagi-200 text-esyntagi-700 hover:bg-esyntagi-50 rounded-full px-6 sm:px-8 py-4 sm:py-6 text-sm sm:text-lg border flex items-center justify-center"
