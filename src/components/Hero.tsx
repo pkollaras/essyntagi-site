@@ -6,6 +6,7 @@ import { useInView } from '@/utils/animations';
 const Hero = () => {
   const heroRef = useRef<HTMLDivElement>(null);
   const [prescriptionCount, setPrescriptionCount] = useState<string>("...");
+  const [isLiveUpdating, setIsLiveUpdating] = useState<boolean>(true);
   
   const isInView = useInView(heroRef, {
     threshold: 0.1
@@ -30,11 +31,28 @@ const Hero = () => {
       } catch (error) {
         console.error('Error fetching prescription count:', error);
         setPrescriptionCount("32"); // Fallback to static number if fetch fails
+        setIsLiveUpdating(false);
       }
     };
 
+    // Initial fetch
     fetchPrescriptionCount();
-  }, []);
+    
+    // Set up periodic fetching every 10 seconds if in view
+    let intervalId: number | undefined;
+    
+    if (isInView && isLiveUpdating) {
+      intervalId = window.setInterval(() => {
+        fetchPrescriptionCount();
+      }, 10000); // 10 seconds interval
+    }
+    
+    return () => {
+      if (intervalId) {
+        clearInterval(intervalId);
+      }
+    };
+  }, [isInView, isLiveUpdating]);
 
   return <section ref={heroRef} className="relative min-h-screen flex items-center pt-16 overflow-hidden">
       {/* Background elements */}
@@ -91,7 +109,20 @@ const Hero = () => {
               <div className="glass absolute -top-6 -left-6 p-4 rounded-lg shadow-lg animate-float">
                 <div className="flex items-center gap-3">
                   <div className="bg-green-500 h-3 w-3 rounded-full"></div>
-                  <p className="text-sm font-medium">&quot;{prescriptionCount}&quot; Συνταγές Εκτελέστηκαν Σήμερα</p>
+                  <p className="text-sm font-medium">
+                    {isLiveUpdating ? (
+                      <span className="inline-flex items-center">
+                        <span className="mr-1">&quot;{prescriptionCount}&quot;</span>
+                        <span className="relative flex h-2 w-2">
+                          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                          <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                        </span>
+                      </span>
+                    ) : (
+                      <span>&quot;{prescriptionCount}&quot;</span>
+                    )}
+                    <span> Συνταγές Εκτελέστηκαν Σήμερα</span>
+                  </p>
                 </div>
               </div>
               
