@@ -39,7 +39,7 @@ const Footer = () => {
             <h3 className="text-lg font-semibold text-gray-900 mb-4">Είσοδος στο Σύστημα</h3>
             <p className="text-gray-600 mb-4 md:text-right">Συνδεθείτε στην πλατφόρμα για να αποκτήσετε πρόσβαση σε όλες τις υπηρεσίες του esyntagi.gr</p>
             <a href="https://app.esyntagi.gr" target="_blank" rel="noopener noreferrer">
-              <Button variant="default" size="lg" className="flex items-center gap-2">
+              <Button variant="default" size="lg" className="flex items-center gap-2 bg-gradient-to-r from-essyntagi-600 to-essyntagi-500 hover:from-essyntagi-700 hover:to-essyntagi-600 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
                 <span>Είσοδος</span>
                 <LogIn className="h-4 w-4" />
               </Button>
