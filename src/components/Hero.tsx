@@ -19,7 +19,7 @@ const Hero = () => {
     const fetchPrescriptionCount = async () => {
       try {
         setIsLoading(true);
-        const response = await fetch('http://api-stg.esyntagi.gr/count', {
+        const response = await fetch('https://api-stg.esyntagi.gr/count', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
