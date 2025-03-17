@@ -37,7 +37,7 @@ const CallToAction = () => {
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
               <Button className="bg-white text-blue-600 hover:bg-gray-100 rounded-full px-8 py-6 text-lg font-medium shadow-lg hover:shadow-xl transition-all duration-300">
-                Προγραμματίστε Παρουσίαση
+                Ζητήστε Παρουσίαση
               </Button>
             </div>
             
