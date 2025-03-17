@@ -6,7 +6,7 @@ const Footer = () => {
 
   // Menu items based on page sections
   const footerMenu = [
-    { label: 'Αρχική', link: '#' },
+    // Removed "Αρχική" item
     { label: 'Χαρακτηριστικά', link: '#features' },
     { label: 'Cloud ERP', link: '#cloud' },
     { label: 'Τιμολόγηση', link: '#invoicing' },
