@@ -41,7 +41,7 @@ const Footer = () => {
           </div>
           
           {/* Footer menu */}
-          <div className="pl-4">
+          <div className="pl-8">
             <h3 className="text-lg font-semibold text-gray-800 mb-4">Πλοήγηση</h3>
             <nav>
               <ul className="flex flex-col space-y-3">
@@ -60,7 +60,7 @@ const Footer = () => {
           </div>
           
           {/* Legal Menu */}
-          <div className="pl-4">
+          <div className="pl-8">
             <h3 className="text-lg font-semibold text-gray-800 mb-4">Νομικά</h3>
             <nav>
               <ul className="flex flex-col space-y-3">
