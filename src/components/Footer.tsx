@@ -1,8 +1,5 @@
 
-import { FacebookIcon, LinkedinIcon, LogIn } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import { HoverCard, HoverCardContent, HoverCardTrigger } from '@/components/ui/hover-card';
+import { FacebookIcon, LinkedinIcon } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -13,7 +10,7 @@ const Footer = () => {
     </svg>;
   return <footer className="bg-gray-50 pt-16 pb-8">
       <div className="container mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pb-12">
+        <div className="grid grid-cols-1 md:grid-cols-1 gap-8 pb-12">
           {/* Company info */}
           <div>
             <div className="flex items-center mb-4">
@@ -31,40 +28,6 @@ const Footer = () => {
                 <TikTokIcon />
               </a>
             </div>
-          </div>
-          
-          {/* Login Section - transformed into a card */}
-          <div className="flex justify-center md:justify-end">
-            <Card className="w-full max-w-sm shadow-lg border-essyntagi-200 overflow-hidden bg-white/90 backdrop-blur-sm transition-all duration-300 hover:shadow-xl animate-scale-in">
-              <CardHeader className="pb-3 bg-gradient-to-r from-essyntagi-600 to-essyntagi-500">
-                <CardTitle className="text-white flex justify-center items-center">
-                  <span>Είσοδος στο Σύστημα</span>
-                  <LogIn className="h-5 w-5 ml-2" />
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="pt-6 text-center">
-                <p className="text-gray-600 mb-4">Συνδεθείτε στην πλατφόρμα για να αποκτήσετε πρόσβαση σε όλες τις υπηρεσίες του esyntagi.gr</p>
-              </CardContent>
-              <CardFooter className="flex justify-center">
-                <HoverCard>
-                  <HoverCardTrigger asChild>
-                    <a href="https://app.esyntagi.gr" target="_blank" rel="noopener noreferrer">
-                      <Button 
-                        variant="default" 
-                        size="lg" 
-                        className="w-full bg-gradient-to-r from-essyntagi-600 to-essyntagi-500 hover:from-essyntagi-700 hover:to-essyntagi-600 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
-                      >
-                        <span>Είσοδος</span>
-                        <LogIn className="h-4 w-4 ml-2" />
-                      </Button>
-                    </a>
-                  </HoverCardTrigger>
-                  <HoverCardContent className="p-2 text-center">
-                    Μετάβαση στην πλατφόρμα
-                  </HoverCardContent>
-                </HoverCard>
-              </CardFooter>
-            </Card>
           </div>
         </div>
         
