@@ -32,7 +32,7 @@ const Navbar = () => {
             <img 
               alt="Eprescription Logo" 
               src="/lovable-uploads/6fa57b87-b7e1-4c5d-a5ea-1f51b6dfce62.png" 
-              className="h-10 w-auto" 
+              className="h-10 w-auto bg-transparent" 
             />
           </a>
 
