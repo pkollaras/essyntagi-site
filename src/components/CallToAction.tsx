@@ -1,9 +1,9 @@
-
 import { useRef } from 'react';
 import { useInView } from '@/utils/animations';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, LogIn } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
+import { Input } from '@/components/ui/input';
 
 const CallToAction = () => {
   const ctaRef = useRef<HTMLDivElement>(null);
@@ -58,28 +58,18 @@ const CallToAction = () => {
                 <CardDescription>Συνδεθείτε για να αποκτήσετε πρόσβαση</CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
-                <div className="space-y-2">
-                  <label htmlFor="username" className="text-sm font-medium text-left block">
-                    Όνομα Χρήστη
-                  </label>
-                  <input
-                    id="username"
-                    type="text"
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    placeholder="Εισάγετε το όνομα χρήστη"
-                  />
-                </div>
-                <div className="space-y-2">
-                  <label htmlFor="password" className="text-sm font-medium text-left block">
-                    Κωδικός Πρόσβασης
-                  </label>
-                  <input
-                    id="password"
-                    type="password"
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    placeholder="Εισάγετε τον κωδικό σας"
-                  />
-                </div>
+                <Input
+                  id="username"
+                  type="text"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  placeholder="Όνομα Χρήστη"
+                />
+                <Input
+                  id="password"
+                  type="password"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  placeholder="Κωδικός Πρόσβασης"
+                />
               </CardContent>
               <CardFooter>
                 <Button className="w-full bg-blue-600 hover:bg-blue-700">
