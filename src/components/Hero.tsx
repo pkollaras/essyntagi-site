@@ -126,7 +126,7 @@ const Hero = () => {
           <div className={`space-y-6 ${isInView ? 'animate-fade-in' : 'opacity-0'}`}>
             <div className="inline-block glass px-3 py-1 rounded-full text-sm font-medium text-esyntagi-700 mb-2">Tο νέο Cloud ERP για φαρμακεία</div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-gray-900">
-              Ήρθε η νέα εποχή στο <span className="text-esyntagi-600">Φαρμακείο</span>
+              Ήρθε η νέα εποχή στο <span className="text-esyntagi-600">Φαρμακείο!</span>
             </h1>
             <p className="text-xl text-gray-600 max-w-lg">
               Εξελίξτε την εκτέλεση συνταγών, τη δημιουργία καλαθιού με πολλαπλά είδη και την τιμολόγηση μέσω του εξειδικευμένου συστήματος για φαρμακοποιούς.
