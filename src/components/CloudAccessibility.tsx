@@ -1,4 +1,3 @@
-
 import { useRef } from 'react';
 import { useInView } from '@/utils/animations';
 import { Laptop, Smartphone, Tablet, Globe } from 'lucide-react';
@@ -112,8 +111,7 @@ const CloudAccessibility = () => {
                 </div>
                 <div>
                   <h4 className="font-medium text-gray-900 mb-1">Δεν απαιτείται εγκατάσταση</h4>
-                  <p className="text-gray-700">Το Esyntagi λειτουργεί πλήρως στο cloud. Δεν χρειάζεται να εγκαταστήσετε λογισμικό ή να ανησυχείτε για ενημερώσεις. 
-Όλα τα δεδομένα είναι διαθέσιμα 24/7.</p>
+                  <p className="text-gray-700">Το Esyntagi λειτουργεί πλήρως στο cloud. Δεν χρειάζεται να εγκαταστήσετε λογισμικό ή να ανησυχείτε για ενημερώσεις. </p>
                 </div>
               </div>
             </div>
