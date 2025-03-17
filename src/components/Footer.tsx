@@ -1,21 +1,13 @@
-
 import { FacebookIcon, TwitterIcon, InstagramIcon, LinkedinIcon } from 'lucide-react';
-
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-  
-  return (
-    <footer className="bg-gray-50 pt-16 pb-8">
+  return <footer className="bg-gray-50 pt-16 pb-8">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 pb-12">
           {/* Company info */}
           <div className="lg:col-span-2">
             <div className="flex items-center mb-4">
-              <img 
-                src="/lovable-uploads/75ae7818-724d-4497-a3f7-9179f03de6a6.png" 
-                alt="Eprescription Logo" 
-                className="h-10 w-auto bg-transparent"
-              />
+              <img src="/lovable-uploads/75ae7818-724d-4497-a3f7-9179f03de6a6.png" alt="Eprescription Logo" className="h-20 w-auto bg-transparent" />
             </div>
             <p className="text-gray-600 mb-4 max-w-md">
               Το Eprescription είναι μια καινοτόμος λύση ERP βασισμένη στο cloud, σχεδιασμένη ειδικά για επαγγελματίες υγείας για την αποτελεσματική διαχείριση συνταγών, ασθενών και τιμολόγησης.
@@ -84,8 +76,6 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
