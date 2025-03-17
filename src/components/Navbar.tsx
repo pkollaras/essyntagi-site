@@ -1,6 +1,9 @@
+
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
+import { LogIn } from 'lucide-react';
+
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -17,9 +20,11 @@ const Navbar = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+  
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
+  
   return <header className={cn('fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-4 px-6 md:px-10', isScrolled ? 'glass shadow-subtle py-3' : 'bg-transparent')}>
       <div className="container mx-auto">
         <nav className="flex items-center justify-between">
@@ -29,7 +34,7 @@ const Navbar = () => {
           </a>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-6">
             <a href="#features" className="text-gray-700 hover:text-essyntagi-600 hover-underline font-medium transition">
               Χαρακτηριστικά
             </a>
@@ -42,6 +47,15 @@ const Navbar = () => {
             <Button className="bg-essyntagi-600 hover:bg-essyntagi-700 text-white rounded-full px-6">
               Ξεκινήστε
             </Button>
+            <a 
+              href="https://app.esyntagi.gr" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="flex items-center text-essyntagi-600 hover:text-essyntagi-700 font-medium transition"
+            >
+              <span>Login</span>
+              <LogIn className="h-4 w-4 ml-1" />
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -67,9 +81,20 @@ const Navbar = () => {
             <Button className="w-full mt-3 bg-essyntagi-600 hover:bg-essyntagi-700 text-white rounded-full" onClick={() => setIsMobileMenuOpen(false)}>
               Ξεκινήστε
             </Button>
+            <a 
+              href="https://app.esyntagi.gr" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="flex items-center justify-center py-2 text-essyntagi-600 hover:text-essyntagi-700 font-medium"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              <span>Login</span>
+              <LogIn className="h-4 w-4 ml-1" />
+            </a>
           </div>
         </div>
       </div>
     </header>;
 };
+
 export default Navbar;
