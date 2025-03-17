@@ -20,7 +20,7 @@ const Footer = () => {
     </svg>;
   return <footer className="bg-gray-50 pt-16 pb-8">
       <div className="container mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pb-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pb-12">
           {/* Company info */}
           <div>
             <div className="flex items-center mb-4">
@@ -55,6 +55,31 @@ const Footer = () => {
                     </a>
                   </li>
                 ))}
+              </ul>
+            </nav>
+          </div>
+          
+          {/* Legal Menu */}
+          <div>
+            <h3 className="text-lg font-semibold text-gray-800 mb-4">Νομικά</h3>
+            <nav>
+              <ul className="flex flex-col space-y-3">
+                <li>
+                  <a 
+                    href="/terms" 
+                    className="text-gray-600 hover:text-blue-600 transition-colors duration-300"
+                  >
+                    Terms of Use
+                  </a>
+                </li>
+                <li>
+                  <a 
+                    href="/privacy" 
+                    className="text-gray-600 hover:text-blue-600 transition-colors duration-300"
+                  >
+                    Privacy Policy
+                  </a>
+                </li>
               </ul>
             </nav>
           </div>
