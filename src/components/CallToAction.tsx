@@ -1,4 +1,3 @@
-
 import { useRef } from 'react';
 import { useInView } from '@/utils/animations';
 import { Button } from '@/components/ui/button';
@@ -28,15 +27,10 @@ const CallToAction = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <a 
-                href="https://form.typeform.com/to/oZoW62gB"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block bg-white text-blue-600 hover:bg-gray-100 rounded-full px-8 py-6 text-lg font-medium shadow-lg hover:shadow-xl transition-all duration-300"
-              >
+              <Button className="bg-white text-blue-600 hover:bg-gray-100 rounded-full px-8 py-6 text-lg font-medium shadow-lg hover:shadow-xl transition-all duration-300">
                 Δωρεάν Δοκιμή 30 Ημερών
-                <ArrowRight className="ml-2 h-5 w-5 inline-block" />
-              </a>
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
               <Button variant="outline" className="border-white border-2 text-blue-600 hover:text-white hover:bg-white/10 rounded-full px-8 py-6 text-lg">Προγραμματίστε Παρουσίαση</Button>
             </div>
             
