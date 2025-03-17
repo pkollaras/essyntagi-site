@@ -35,7 +35,7 @@ const Hero = () => {
         setError(null);
       } catch (error) {
         console.error('Error fetching prescription count:', error);
-        setPrescriptionCount("32"); // Fallback to static number if fetch fails
+        setPrescriptionCount("30"); // Fallback to static number if fetch fails
         setError("Αδυναμία σύνδεσης με το server");
         setIsLiveUpdating(false);
       } finally {
