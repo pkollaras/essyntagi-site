@@ -1,38 +1,38 @@
 
 import { useRef } from 'react';
 import { useInView, useStaggeredAnimation } from '@/utils/animations';
-import { ClipboardList, CreditCard, Package, Calendar, FileText, ChartBar, ShoppingCart, User, Database, Truck } from 'lucide-react';
+import { ClipboardList, CreditCard, Users, Calendar, FileText, ChartBar } from 'lucide-react';
 
 const features = [
   {
-    icon: <ClipboardList className="h-6 w-6 text-esyntagi-600" />,
-    title: 'Εκτέλεση Συνταγών',
-    description: 'Ταχύτατη εκτέλεση ηλεκτρονικών συνταγών με πλήρη πρόσβαση στο σύστημα ΗΔΙΚΑ και αυτόματο έλεγχο αλληλεπιδράσεων.'
+    icon: <ClipboardList className="h-6 w-6 text-essyntagi-600" />,
+    title: 'Prescription Management',
+    description: 'Create and manage digital prescriptions with ease, including dosage tracking and refill alerts.'
   },
   {
-    icon: <ShoppingCart className="h-6 w-6 text-esyntagi-600" />,
-    title: 'Δημιουργία Καλαθιού',
-    description: 'Εύκολη δημιουργία καλαθιού με πολλαπλά είδη: Συνταγογραφούμενα Φάρμακα, Μη Συνταγογραφούμενα Φάρμακα και Παραφαρμακευτικά.'
+    icon: <CreditCard className="h-6 w-6 text-essyntagi-600" />,
+    title: 'Invoicing & Billing',
+    description: 'Generate professional invoices, track payments, and manage financial reports in one place.'
   },
   {
-    icon: <CreditCard className="h-6 w-6 text-esyntagi-600" />,
-    title: 'Εξελιγμένη Τιμολόγηση',
-    description: 'Πλήρες σύστημα τιμολόγησης Λιανικής, B2B και B2G προς ασφαλιστικά ταμεία με αυτόματους υπολογισμούς.'
+    icon: <Users className="h-6 w-6 text-essyntagi-600" />,
+    title: 'Patient Records',
+    description: 'Maintain comprehensive patient records with medical history, prescriptions, and payment details.'
   },
   {
-    icon: <Database className="h-6 w-6 text-esyntagi-600" />,
-    title: 'Βάση Προϊόντων',
-    description: 'Αρχικοποιημένη βάση με πάνω από 10.000 προϊόντα παραφαρμάκου και πλήρη πρόσβαση μέσω ΗΔΙΚΑ σε φάρμακα.'
+    icon: <Calendar className="h-6 w-6 text-essyntagi-600" />,
+    title: 'Appointment Scheduling',
+    description: 'Efficiently manage your calendar with smart scheduling to reduce wait times and no-shows.'
   },
   {
-    icon: <User className="h-6 w-6 text-esyntagi-600" />,
-    title: 'Ιστορικό Ασθενή',
-    description: 'Ολοκληρωμένη διαχείριση ιστορικού ασθενών, συνταγογραφήσεων και παρακολούθηση θεραπειών.'
+    icon: <FileText className="h-6 w-6 text-essyntagi-600" />,
+    title: 'Document Management',
+    description: 'Store and organize all healthcare documents securely with easy retrieval when needed.'
   },
   {
-    icon: <Truck className="h-6 w-6 text-esyntagi-600" />,
-    title: 'Τετράδειο Παραγγελίας',
-    description: 'Αυτόματη αποθήκευση όλων των πωλήσεων ανά ημέρα για εύκολη επαναπαραγγελία και βελτιστοποίηση αποθέματος.'
+    icon: <ChartBar className="h-6 w-6 text-essyntagi-600" />,
+    title: 'Analytics Dashboard',
+    description: 'Gain insights into your practice with comprehensive analytics and customizable reports.'
   }
 ];
 
@@ -53,14 +53,14 @@ const Features = () => {
       <div className="container mx-auto px-6">
         {/* Section header */}
         <div className={`text-center max-w-3xl mx-auto mb-16 ${isInView ? 'animate-fade-in' : 'opacity-0'}`}>
-          <div className="inline-block glass px-3 py-1 rounded-full text-sm font-medium text-esyntagi-700 mb-3">
-            Εξειδικευμένες Λειτουργίες
+          <div className="inline-block glass px-3 py-1 rounded-full text-sm font-medium text-essyntagi-700 mb-3">
+            Powerful Features
           </div>
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
-            Όλα όσα χρειάζεται ένα σύγχρονο φαρμακείο
+            Everything you need to run your healthcare practice
           </h2>
           <p className="text-xl text-gray-600">
-            Το Esyntagi συνδυάζει τα απαραίτητα εργαλεία για την αποτελεσματική εκτέλεση συνταγών, διαχείριση προϊόντων και τιμολόγηση με συνεργαζόμενα ασφαλιστικά ταμεία.
+            Essyntagi combines all the essential tools in one intuitive platform, saving you time and improving patient care.
           </p>
         </div>
         
@@ -73,7 +73,7 @@ const Features = () => {
                 visibleItems.includes(index) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}
             >
-              <div className="rounded-full bg-esyntagi-50 p-3 w-fit mb-4">
+              <div className="rounded-full bg-essyntagi-50 p-3 w-fit mb-4">
                 {feature.icon}
               </div>
               <h3 className="text-xl font-semibold mb-2 text-gray-900">{feature.title}</h3>
