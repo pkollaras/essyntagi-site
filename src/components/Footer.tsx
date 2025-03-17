@@ -9,9 +9,7 @@ const Footer = () => {
             <div className="flex items-center mb-4">
               <img alt="Eprescription Logo" className="h-20 w-auto bg-transparent" src="/lovable-uploads/efb75c91-e718-4d58-85c8-7e0d4d1f9e69.png" />
             </div>
-            <p className="text-gray-600 mb-4 max-w-md">
-              Το Eprescription είναι μια καινοτόμος λύση ERP βασισμένη στο cloud, σχεδιασμένη ειδικά για επαγγελματίες υγείας για την αποτελεσματική διαχείριση συνταγών, ασθενών και τιμολόγησης.
-            </p>
+            <p className="text-gray-600 mb-4 max-w-md">Το Eprescription είναι μια καινοτόμος λύση ERP βασισμένη στο cloud, σχεδιασμένη ειδικά για επαγγελματίες υγείας για την αποτελεσματική διαχείριση συνταγών και τιμολόγησης.</p>
             <div className="flex space-x-4">
               <a href="#" className="text-gray-400 hover:text-essyntagi-600 transition" aria-label="Facebook">
                 <FacebookIcon className="h-5 w-5" />
