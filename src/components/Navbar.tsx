@@ -61,12 +61,14 @@ const Navbar = () => {
               </button>
             ))}
             
-            <Button 
-              onClick={() => scrollToSection('cta')}
-              className="bg-blue-600 hover:bg-blue-700 text-white rounded-full px-6"
+            <a 
+              href="https://form.typeform.com/to/oZoW62gB" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="bg-blue-600 hover:bg-blue-700 text-white rounded-full px-6 py-2"
             >
               Ξεκινήστε
-            </Button>
+            </a>
             
             <a 
               href="https://app.esyntagi.gr" 
@@ -100,12 +102,14 @@ const Navbar = () => {
               </button>
             ))}
             
-            <Button 
-              onClick={() => scrollToSection('cta')}
-              className="w-full mt-3 bg-blue-600 hover:bg-blue-700 text-white rounded-full"
+            <a 
+              href="https://form.typeform.com/to/oZoW62gB" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="block w-full mt-3 bg-blue-600 hover:bg-blue-700 text-white rounded-full py-2 text-center"
             >
               Ξεκινήστε
-            </Button>
+            </a>
             
             <a 
               href="https://app.esyntagi.gr" 
