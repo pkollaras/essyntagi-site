@@ -175,7 +175,12 @@ const Hero = () => {
                       <span>"{prescriptionCount}" Συνταγές Εκτελέστηκαν Σήμερα</span>
                     ) : (
                       <span className="inline-flex items-center">
-                        <span className="mr-1">"{animatedCount}"</span>
+                        {/* Separate number and text to enable animating only the number */}
+                        <span className="mr-1">
+                          "<span key={resetCounter} className="inline-block">
+                            {animatedCount}
+                          </span>"
+                        </span>
                         <span> Συνταγές Εκτελέστηκαν Σήμερα</span>
                         <button 
                           onClick={handleManualRefresh}
