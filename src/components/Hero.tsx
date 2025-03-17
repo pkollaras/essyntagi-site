@@ -1,3 +1,4 @@
+
 import { useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { useInView } from '@/utils/animations';
@@ -25,10 +26,22 @@ const Hero = () => {
               Εξελίξτε την εκτέλεση συνταγών, τη δημιουργία καλαθιού με πολλαπλά είδη και την τιμολόγηση μέσω του εξειδικευμένου συστήματος για φαρμακοποιούς.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <Button className="bg-blue-500 hover:bg-blue-600 text-white rounded-full px-8 py-6 text-lg shadow-lg hover:shadow-xl transition-all duration-300">
+              <a 
+                href="https://form.typeform.com/to/oZoW62gB" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="bg-blue-500 hover:bg-blue-600 text-white rounded-full px-8 py-6 text-lg shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center"
+              >
                 Ξεκινήστε Δωρεάν
-              </Button>
-              <Button variant="outline" className="border-esyntagi-200 text-esyntagi-700 hover:bg-esyntagi-50 rounded-full px-8 py-6 text-lg">Ζητήστε  Παρουσίαση</Button>
+              </a>
+              <a 
+                href="https://form.typeform.com/to/oZoW62gB" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="border-esyntagi-200 text-esyntagi-700 hover:bg-esyntagi-50 rounded-full px-8 py-6 text-lg border flex items-center justify-center"
+              >
+                Ζητήστε Παρουσίαση
+              </a>
             </div>
             
             {/* Trust indicators */}

@@ -32,13 +32,23 @@ const CallToAction = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <Button className="bg-white text-blue-600 hover:bg-gray-100 rounded-full px-8 py-6 text-lg font-medium shadow-lg hover:shadow-xl transition-all duration-300">
+              <a 
+                href="https://form.typeform.com/to/oZoW62gB" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="bg-white text-blue-600 hover:bg-gray-100 rounded-full px-8 py-6 text-lg font-medium shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center"
+              >
                 Δωρεάν Δοκιμή 30 Ημερών
                 <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-              <Button className="bg-white text-blue-600 hover:bg-gray-100 rounded-full px-8 py-6 text-lg font-medium shadow-lg hover:shadow-xl transition-all duration-300">
+              </a>
+              <a 
+                href="https://form.typeform.com/to/oZoW62gB" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="bg-white text-blue-600 hover:bg-gray-100 rounded-full px-8 py-6 text-lg font-medium shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center"
+              >
                 Ζητήστε Παρουσίαση
-              </Button>
+              </a>
             </div>
             
             <p className="text-white/80 mt-6 text-sm">
