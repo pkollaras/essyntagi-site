@@ -55,36 +55,17 @@ const CallToAction = () => {
             <Card className="w-full shadow-lg border-blue-100 bg-white h-auto">
               <CardHeader className="text-center">
                 <CardTitle className="text-2xl font-bold text-blue-600">Είσοδος στο Σύστημα</CardTitle>
-                <CardDescription>Συνδεθείτε για να αποκτήσετε πρόσβαση</CardDescription>
+                <CardDescription>Συνδεθείτε στην πλατφόρμα για να αποκτήσετε πρόσβαση σε όλες τις υπηρεσίες του esyntagi.gr</CardDescription>
               </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="space-y-2">
-                  <label htmlFor="username" className="text-sm font-medium text-left block">
-                    Όνομα Χρήστη
-                  </label>
-                  <input
-                    id="username"
-                    type="text"
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    placeholder="Εισάγετε το όνομα χρήστη"
-                  />
-                </div>
-                <div className="space-y-2">
-                  <label htmlFor="password" className="text-sm font-medium text-left block">
-                    Κωδικός Πρόσβασης
-                  </label>
-                  <input
-                    id="password"
-                    type="password"
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    placeholder="Εισάγετε τον κωδικό σας"
-                  />
-                </div>
+              <CardContent className="space-y-4 text-center py-6">
+                <p className="text-gray-600">Η πρόσβαση στο σύστημα γίνεται μέσω της πλατφόρμας μας</p>
               </CardContent>
-              <CardFooter>
-                <Button className="w-full bg-blue-600 hover:bg-blue-700">
-                  <LogIn className="mr-2 h-4 w-4" /> Σύνδεση
-                </Button>
+              <CardFooter className="flex justify-center">
+                <a href="https://app.esyntagi.gr" target="_blank" rel="noopener noreferrer" className="w-full">
+                  <Button className="w-full bg-blue-600 hover:bg-blue-700 text-lg py-6">
+                    <LogIn className="mr-2 h-5 w-5" /> Σύνδεση
+                  </Button>
+                </a>
               </CardFooter>
             </Card>
           </div>
