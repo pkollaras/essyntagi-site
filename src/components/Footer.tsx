@@ -1,83 +1,100 @@
 
-import { FacebookIcon, TwitterIcon, InstagramIcon, LinkedinIcon } from 'lucide-react';
+import { FacebookIcon, LinkedinIcon } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-  
+
+  // Menu items based on page sections
+  const footerMenu = [
+    // Removed "Αρχική" item
+    { label: 'Χαρακτηριστικά', link: '#features' },
+    { label: 'Cloud ERP', link: '#cloud' },
+    { label: 'Τιμολόγηση', link: '#invoicing' },
+    { label: 'Οφέλη', link: '#benefits' },
+    { label: 'Επικοινωνία', link: '#cta' },
+  ];
+
+  // Custom TikTok icon since it's not available in lucide-react
+  const TikTokIcon = () => <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-5 w-5">
+      <path d="M10.7 3.3C10.4 3 10.2 2.6 10.1 2.2C10 1.7 10 1.2 10 0.8H7.6V10.7C7.6 11 7.5 11.3 7.4 11.6C7.3 11.8 7.1 12 6.9 12.2C6.7 12.4 6.5 12.5 6.2 12.6C6 12.7 5.7 12.7 5.4 12.7C4.9 12.7 4.3 12.5 3.9 12.1C3.5 11.7 3.3 11.2 3.3 10.7C3.3 10.2 3.5 9.7 3.9 9.3C4.3 8.9 4.9 8.7 5.4 8.7C5.6 8.7 5.7 8.7 5.9 8.8V6.3C5.7 6.3 5.6 6.3 5.4 6.3C4.6 6.3 3.8 6.5 3.1 6.9C2.4 7.3 1.9 7.9 1.5 8.6C1.2 9.3 1 10.1 1 10.9C1 11.7 1.2 12.5 1.5 13.2C1.9 13.9 2.4 14.5 3.1 14.9C3.8 15.3 4.6 15.5 5.4 15.5C6.2 15.5 7 15.3 7.7 14.9C8.4 14.5 8.9 13.9 9.3 13.2C9.7 12.5 9.9 11.7 9.9 10.9V6.8C10.3 7.1 10.7 7.3 11.1 7.5C11.6 7.7 12.1 7.8 12.7 7.8V5.4C12.4 5.4 12.1 5.3 11.8 5.2C11.5 5 11.2 4.8 11 4.6C10.8 4.3 10.7 3.8 10.7 3.3Z" fill="currentColor" />
+    </svg>;
+
   return (
     <footer className="bg-gray-50 pt-16 pb-8">
-      <div className="container mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 pb-12">
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8 pb-12">
           {/* Company info */}
-          <div className="lg:col-span-2">
+          <div className="sm:col-span-2 lg:col-span-4">
             <div className="flex items-center mb-4">
-              <span className="text-2xl font-bold text-essyntagi-800 mr-1">Essyntagi</span>
-              <div className="h-2 w-2 rounded-full bg-essyntagi-500"></div>
+              <img alt="Eprescription Logo" className="h-16 sm:h-20 w-auto bg-transparent" src="/lovable-uploads/efb75c91-e718-4d58-85c8-7e0d4d1f9e69.png" />
             </div>
-            <p className="text-gray-600 mb-4 max-w-md">
-              Essyntagi is an innovative cloud-based ERP solution designed specifically for healthcare professionals to manage prescriptions, patients, and billing efficiently.
-            </p>
-            <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-essyntagi-600 transition" aria-label="Facebook">
+            <p className="text-gray-600 mb-4 max-w-xl text-sm sm:text-base">Το esyntagi.gr αποτελεί μια ολοκληρωμένη και εύχρηστη πλατφόρμα για την εκτέλεση συνταγών, προσφέροντας στους φαρμακοποιούς έναν αποτελεσματικό τρόπο διαχείρισης της διαδικασίας επιπλέον παρέχει την δυνατότητα εκδώσεις παραστατικών B2C, B2B και B2G μέσω παρόχου. Παρέχει άμεση πρόσβαση σε πληροφορίες για φάρμακα των κατηγοριών ΣΥΦΑ, ΜΗΣΥΦΑ και Παραφάρμακα, διευκολύνοντας την καθημερινή σας εργασία.</p>
+            <div className="flex space-x-4 mb-8 sm:mb-0">
+              <a href="https://www.facebook.com/advisablecom/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-essyntagi-600 transition" aria-label="Facebook">
                 <FacebookIcon className="h-5 w-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-essyntagi-600 transition" aria-label="Twitter">
-                <TwitterIcon className="h-5 w-5" />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-essyntagi-600 transition" aria-label="Instagram">
-                <InstagramIcon className="h-5 w-5" />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-essyntagi-600 transition" aria-label="LinkedIn">
+              <a href="https://www.linkedin.com/company/9413222/admin/dashboard/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-essyntagi-600 transition" aria-label="LinkedIn">
                 <LinkedinIcon className="h-5 w-5" />
+              </a>
+              <a href="https://www.tiktok.com/@advisable.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-essyntagi-600 transition" aria-label="TikTok">
+                <TikTokIcon />
               </a>
             </div>
           </div>
           
-          {/* Links */}
-          <div>
-            <h3 className="text-sm font-semibold text-gray-900 uppercase tracking-wider mb-4">Product</h3>
-            <ul className="space-y-3">
-              <li><a href="#" className="text-gray-600 hover:text-essyntagi-600 transition">Features</a></li>
-              <li><a href="#" className="text-gray-600 hover:text-essyntagi-600 transition">Pricing</a></li>
-              <li><a href="#" className="text-gray-600 hover:text-essyntagi-600 transition">Case Studies</a></li>
-              <li><a href="#" className="text-gray-600 hover:text-essyntagi-600 transition">Reviews</a></li>
-              <li><a href="#" className="text-gray-600 hover:text-essyntagi-600 transition">Updates</a></li>
-            </ul>
+          {/* Empty div with 2 columns - hidden on mobile */}
+          <div className="hidden lg:block lg:col-span-2"></div>
+          
+          {/* Footer menu */}
+          <div className="sm:col-span-1 lg:col-span-3">
+            <h3 className="text-lg font-semibold text-gray-800 mb-4">Πλοήγηση</h3>
+            <nav>
+              <ul className="flex flex-col space-y-3">
+                {footerMenu.map((item, index) => (
+                  <li key={index}>
+                    <a 
+                      href={item.link} 
+                      className="text-gray-600 hover:text-blue-600 transition-colors duration-300 text-sm sm:text-base"
+                    >
+                      {item.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </nav>
           </div>
           
-          <div>
-            <h3 className="text-sm font-semibold text-gray-900 uppercase tracking-wider mb-4">Company</h3>
-            <ul className="space-y-3">
-              <li><a href="#" className="text-gray-600 hover:text-essyntagi-600 transition">About</a></li>
-              <li><a href="#" className="text-gray-600 hover:text-essyntagi-600 transition">Careers</a></li>
-              <li><a href="#" className="text-gray-600 hover:text-essyntagi-600 transition">Blog</a></li>
-              <li><a href="#" className="text-gray-600 hover:text-essyntagi-600 transition">Privacy</a></li>
-              <li><a href="#" className="text-gray-600 hover:text-essyntagi-600 transition">Terms</a></li>
-            </ul>
-          </div>
-          
-          <div>
-            <h3 className="text-sm font-semibold text-gray-900 uppercase tracking-wider mb-4">Support</h3>
-            <ul className="space-y-3">
-              <li><a href="#" className="text-gray-600 hover:text-essyntagi-600 transition">Help Center</a></li>
-              <li><a href="#" className="text-gray-600 hover:text-essyntagi-600 transition">Contact Us</a></li>
-              <li><a href="#" className="text-gray-600 hover:text-essyntagi-600 transition">Community</a></li>
-              <li><a href="#" className="text-gray-600 hover:text-essyntagi-600 transition">Status</a></li>
-              <li><a href="#" className="text-gray-600 hover:text-essyntagi-600 transition">Training</a></li>
-            </ul>
+          {/* Legal Menu */}
+          <div className="sm:col-span-1 lg:col-span-3">
+            <h3 className="text-lg font-semibold text-gray-800 mb-4">Νομικά</h3>
+            <nav>
+              <ul className="flex flex-col space-y-3">
+                <li>
+                  <a 
+                    href="/terms" 
+                    className="text-gray-600 hover:text-blue-600 transition-colors duration-300 text-sm sm:text-base"
+                  >
+                    Terms of Use
+                  </a>
+                </li>
+                <li>
+                  <a 
+                    href="/privacy" 
+                    className="text-gray-600 hover:text-blue-600 transition-colors duration-300 text-sm sm:text-base"
+                  >
+                    Privacy Policy
+                  </a>
+                </li>
+              </ul>
+            </nav>
           </div>
         </div>
         
         <div className="border-t border-gray-200 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-500 text-sm">
-              &copy; {currentYear} Essyntagi. All rights reserved.
+              &copy; {currentYear} Advisable.com
             </p>
-            <div className="flex space-x-6 mt-4 md:mt-0">
-              <a href="#" className="text-sm text-gray-500 hover:text-essyntagi-600 transition">Privacy Policy</a>
-              <a href="#" className="text-sm text-gray-500 hover:text-essyntagi-600 transition">Terms of Service</a>
-              <a href="#" className="text-sm text-gray-500 hover:text-essyntagi-600 transition">Cookies</a>
-            </div>
           </div>
         </div>
       </div>
