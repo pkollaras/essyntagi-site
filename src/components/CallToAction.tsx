@@ -17,10 +17,11 @@ const CallToAction = () => {
           }`}
         >
           {/* Decorative elements */}
-          <div className="absolute top-0 left-0 w-full h-full opacity-10">
-            <div className="absolute top-10 right-10 h-40 w-40 rounded-full bg-white"></div>
-            <div className="absolute bottom-40 left-10 h-24 w-24 rounded-full bg-white"></div>
-            <div className="absolute bottom-10 right-40 h-16 w-16 rounded-full bg-white"></div>
+          <div className="absolute top-0 left-0 w-full h-full opacity-20 bg-pattern-dots">
+            <div className="absolute top-10 right-10 h-40 w-40 rounded-full bg-white/40 blur-md"></div>
+            <div className="absolute bottom-40 left-10 h-24 w-24 rounded-full bg-white/30 blur-sm"></div>
+            <div className="absolute bottom-10 right-40 h-16 w-16 rounded-full bg-white/50"></div>
+            <div className="absolute top-40 left-40 h-20 w-20 rounded-full bg-white/20 blur-sm"></div>
           </div>
           
           <div className="relative z-10 text-center max-w-3xl mx-auto">
