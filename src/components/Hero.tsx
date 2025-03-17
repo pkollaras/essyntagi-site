@@ -4,13 +4,18 @@ import { Button } from '@/components/ui/button';
 import { useInView } from '@/utils/animations';
 import { Card, CardContent } from '@/components/ui/card';
 import { toast } from "sonner";
+import { useSmoothCounter } from '@/utils/animations';
 
 const Hero = () => {
   const heroRef = useRef<HTMLDivElement>(null);
   const [prescriptionCount, setPrescriptionCount] = useState<string>("...");
+  const [actualCount, setActualCount] = useState<number>(0);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
   const [isLiveUpdating, setIsLiveUpdating] = useState<boolean>(false); // Changed to false initially
+  
+  // Use the smooth counter to animate the value
+  const animatedCount = useSmoothCounter(actualCount, 1500, 0);
   
   const isInView = useInView(heroRef, {
     threshold: 0.1
@@ -33,6 +38,7 @@ const Hero = () => {
         
         const data = await response.json();
         if (data.success && data.data) {
+          setActualCount(parseInt(data.data, 10)); // Store actual number
           setPrescriptionCount(data.data.toString());
           console.log('Updated prescription count:', data.data);
         } else {
@@ -41,6 +47,7 @@ const Hero = () => {
         setError(null);
       } catch (error) {
         console.error('Error fetching prescription count:', error);
+        setActualCount(30); // Fallback to static number if fetch fails
         setPrescriptionCount("30"); // Fallback to static number if fetch fails
         setError("Αδυναμία σύνδεσης με το server");
         setIsLiveUpdating(false);
@@ -75,6 +82,7 @@ const Hero = () => {
         
         const data = await response.json();
         if (data.success && data.data) {
+          setActualCount(parseInt(data.data, 10)); // Update with new count
           setPrescriptionCount(data.data.toString());
           toast.success("Επιτυχής ανανέωση δεδομένων");
         } else {
@@ -83,6 +91,7 @@ const Hero = () => {
         setError(null);
       } catch (error) {
         console.error('Error fetching prescription count:', error);
+        setActualCount(30); // Fallback to static number
         setPrescriptionCount("30"); 
         setError("Αδυναμία σύνδεσης με το server");
         toast.error("Αδυναμία σύνδεσης με το server. Χρησιμοποιείται στατική τιμή.");
@@ -156,7 +165,7 @@ const Hero = () => {
                       <span>"{prescriptionCount}" Συνταγές Εκτελέστηκαν Σήμερα</span>
                     ) : (
                       <span className="inline-flex items-center">
-                        <span className="mr-1">"{prescriptionCount}"</span>
+                        <span className="mr-1">"{animatedCount}"</span>
                         <span> Συνταγές Εκτελέστηκαν Σήμερα</span>
                         <button 
                           onClick={handleManualRefresh}
