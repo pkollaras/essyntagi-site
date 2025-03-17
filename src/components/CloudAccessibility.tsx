@@ -23,17 +23,17 @@ const CloudAccessibility = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-          {/* Left column - Image with multiple devices */}
+          {/* Left column - Image with cloud infrastructure */}
           <div className={`relative ${isInView ? 'animate-fade-in delay-200' : 'opacity-0'}`}>
             <div className="relative z-10 rounded-xl overflow-hidden shadow-xl">
               <img 
-                src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158" 
-                alt="Πρόσβαση στο Esyntagi από το φαρμακείο - Γυναίκα φαρμακοποιός χρησιμοποιεί το σύστημα" 
+                src="/public/lovable-uploads/cbc37dff-14fd-4886-88b4-78d64baaa1c1.png" 
+                alt="Cloud υποδομή Esyntagi - Πρόσβαση από πολλαπλές συσκευές στο cloud σύστημα" 
                 className="w-full h-auto rounded-xl object-cover" 
               />
               
-              {/* Floating devices overlay */}
-              <div className="absolute inset-0 bg-gradient-to-tr from-blue-900/20 to-transparent rounded-xl"></div>
+              {/* Gradient overlay */}
+              <div className="absolute inset-0 bg-gradient-to-tr from-blue-900/10 to-transparent rounded-xl"></div>
               
               {/* Device indicators */}
               <div className="absolute top-4 left-4 glass py-2 px-3 rounded-lg shadow-lg">
