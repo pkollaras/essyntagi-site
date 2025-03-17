@@ -27,7 +27,7 @@ const CloudAccessibility = () => {
           <div className={`relative ${isInView ? 'animate-fade-in delay-200' : 'opacity-0'}`}>
             <div className="relative z-10 rounded-xl overflow-hidden shadow-xl">
               <img 
-                src="/lovable-uploads/4586f307-5f77-4183-b909-5b8698160b3c.png" 
+                src="/lovable-uploads/65d5f1c4-d175-47fe-aa21-da50298f5401.png" 
                 alt="Cloud υποδομή Esyntagi - Πρόσβαση από πολλαπλές συσκευές στο cloud σύστημα" 
                 className="w-full h-auto rounded-xl object-cover" 
               />
