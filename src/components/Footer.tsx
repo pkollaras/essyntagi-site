@@ -1,9 +1,7 @@
-
 import { FacebookIcon, LinkedinIcon, LogIn } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { HoverCard, HoverCardContent, HoverCardTrigger } from '@/components/ui/hover-card';
-
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
@@ -43,17 +41,14 @@ const Footer = () => {
                 </CardTitle>
               </CardHeader>
               <CardContent className="pt-6 text-center">
-                <p className="text-gray-600 mb-4">Συνδεθείτε στην πλατφόρμα για να αποκτήσετε πρόσβαση σε όλες τις υπηρεσίες του esyntagi.gr</p>
+                <p className="text-gray-600 mb-4">
+              </p>
               </CardContent>
               <CardFooter className="flex justify-center">
                 <HoverCard>
                   <HoverCardTrigger asChild>
                     <a href="https://app.esyntagi.gr" target="_blank" rel="noopener noreferrer">
-                      <Button 
-                        variant="default" 
-                        size="lg" 
-                        className="w-full bg-gradient-to-r from-essyntagi-600 to-essyntagi-500 hover:from-essyntagi-700 hover:to-essyntagi-600 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
-                      >
+                      <Button variant="default" size="lg" className="w-full bg-gradient-to-r from-essyntagi-600 to-essyntagi-500 hover:from-essyntagi-700 hover:to-essyntagi-600 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
                         <span>Είσοδος</span>
                         <LogIn className="h-4 w-4 ml-2" />
                       </Button>
@@ -78,5 +73,4 @@ const Footer = () => {
       </div>
     </footer>;
 };
-
 export default Footer;
