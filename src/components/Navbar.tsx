@@ -36,8 +36,11 @@ const Navbar = () => {
         <nav className="flex items-center justify-between">
           {/* Logo */}
           <a href="#" className="flex items-center">
-            <span className="text-2xl font-bold text-essyntagi-800 mr-1">Essyntagi</span>
-            <div className="h-2 w-2 rounded-full bg-essyntagi-500 animate-pulse-slow"></div>
+            <img 
+              src="/lovable-uploads/75ae7818-724d-4497-a3f7-9179f03de6a6.png" 
+              alt="Eprescription Logo" 
+              className="h-10 mr-2"
+            />
           </a>
 
           {/* Desktop Navigation */}

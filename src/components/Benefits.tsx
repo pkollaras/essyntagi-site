@@ -1,13 +1,25 @@
+
 import { useRef } from 'react';
 import { useInView } from '@/utils/animations';
 import { Check } from 'lucide-react';
+
 const Benefits = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(sectionRef, {
     threshold: 0.1
   });
-  const benefits = ['Ταχύτατη εκτέλεση ηλεκτρονικών συνταγών μέσω άμεσης σύνδεσης με την ΗΔΙΚΑ', 'Ευέλικτη δημιουργία καλαθιού με Συνταγογραφούμενα, Μη Συνταγογραφούμενα και Παραφαρμακευτικά', 'Πλήρες σύστημα τιμολόγησης (Λιανική, B2B, B2G) προς ασφαλιστικά ταμεία', 'Διαχείριση συνεργαζόμενων ασφαλιστικών ταμείων και αυτόματη υποβολή', 'Πρόσβαση σε αρχικοποιημένη βάση με πάνω από 10.000 προϊόντα παραφαρμάκου', 'Αναλυτικό ιστορικό ασθενών και τετράδειο παραγγελίας για επαναπαραγγελίες'];
-  return <section id="benefits" ref={sectionRef} className="py-20 bg-gradient-to-b from-white to-gray-50">
+  
+  const benefits = [
+    'Ταχύτατη εκτέλεση ηλεκτρονικών συνταγών μέσω άμεσης σύνδεσης με την ΗΔΙΚΑ',
+    'Ευέλικτη δημιουργία καλαθιού με Συνταγογραφούμενα, Μη Συνταγογραφούμενα και Παραφαρμακευτικά',
+    'Πλήρες σύστημα τιμολόγησης (Λιανική, B2B, B2G) προς ασφαλιστικά ταμεία',
+    'Διαχείριση συνεργαζόμενων ασφαλιστικών ταμείων και αυτόματη υποβολή',
+    'Πρόσβαση σε αρχικοποιημένη βάση με πάνω από 10.000 προϊόντα παραφαρμάκου',
+    'Αναλυτικό ιστορικό ασθενών και τετράδειο παραγγελίας για επαναπαραγγελίες'
+  ];
+
+  return (
+    <section id="benefits" ref={sectionRef} className="py-20 bg-gradient-to-b from-white to-gray-50">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left column - Image */}
@@ -26,7 +38,7 @@ const Benefits = () => {
                   <span className="text-3xl font-bold text-esyntagi-600">75%</span>
                   <span className="text-green-500 text-sm mb-1">↑</span>
                 </div>
-                <p className="text-sm text-gray-600 mt-1">Ταχύτερη εκτέλεση συνταγών με το σύστημα Esyntagi</p>
+                <p className="text-sm text-gray-600 mt-1">Ταχύτερη εκτέλεση συνταγών με το σύστημα Eprescription</p>
               </div>
               
               {/* Products card */}
@@ -45,7 +57,7 @@ const Benefits = () => {
           {/* Right column - Text */}
           <div className={`space-y-6 order-1 lg:order-2 ${isInView ? 'animate-fade-in' : 'opacity-0'}`}>
             <div className="inline-block glass px-3 py-1 rounded-full text-sm font-medium text-esyntagi-700 mb-2">
-              Γιατί να Επιλέξετε το Esyntagi
+              Γιατί να Επιλέξετε το Eprescription
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
               Ολοκληρωμένο σύστημα για φαρμακεία με έμφαση στην εκτέλεση συνταγών
@@ -57,16 +69,20 @@ const Benefits = () => {
             
             {/* Benefits list */}
             <div className="mt-8 space-y-4">
-              {benefits.map((benefit, index) => <div key={index} className="flex items-start gap-3">
+              {benefits.map((benefit, index) => (
+                <div key={index} className="flex items-start gap-3">
                   <div className="flex-shrink-0 mt-1 rounded-full bg-esyntagi-100 p-1">
                     <Check className="h-4 w-4 text-esyntagi-600" />
                   </div>
                   <p className="text-gray-700">{benefit}</p>
-                </div>)}
+                </div>
+              ))}
             </div>
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default Benefits;

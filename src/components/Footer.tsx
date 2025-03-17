@@ -11,11 +11,14 @@ const Footer = () => {
           {/* Company info */}
           <div className="lg:col-span-2">
             <div className="flex items-center mb-4">
-              <span className="text-2xl font-bold text-essyntagi-800 mr-1">Essyntagi</span>
-              <div className="h-2 w-2 rounded-full bg-essyntagi-500"></div>
+              <img 
+                src="/lovable-uploads/75ae7818-724d-4497-a3f7-9179f03de6a6.png" 
+                alt="Eprescription Logo" 
+                className="h-8 mr-2"
+              />
             </div>
             <p className="text-gray-600 mb-4 max-w-md">
-              Το Essyntagi είναι μια καινοτόμος λύση ERP βασισμένη στο cloud, σχεδιασμένη ειδικά για επαγγελματίες υγείας για την αποτελεσματική διαχείριση συνταγών, ασθενών και τιμολόγησης.
+              Το Eprescription είναι μια καινοτόμος λύση ERP βασισμένη στο cloud, σχεδιασμένη ειδικά για επαγγελματίες υγείας για την αποτελεσματική διαχείριση συνταγών, ασθενών και τιμολόγησης.
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-gray-400 hover:text-essyntagi-600 transition" aria-label="Facebook">
@@ -71,7 +74,7 @@ const Footer = () => {
         <div className="border-t border-gray-200 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-500 text-sm">
-              &copy; {currentYear} Essyntagi. Με επιφύλαξη παντός δικαιώματος.
+              &copy; {currentYear} Eprescription. Με επιφύλαξη παντός δικαιώματος.
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <a href="#" className="text-sm text-gray-500 hover:text-essyntagi-600 transition">Πολιτική Απορρήτου</a>
