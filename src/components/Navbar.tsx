@@ -1,8 +1,6 @@
-
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
-
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -19,21 +17,15 @@ const Navbar = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
-
   return <header className={cn('fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-4 px-6 md:px-10', isScrolled ? 'glass shadow-subtle py-3' : 'bg-transparent')}>
       <div className="container mx-auto">
         <nav className="flex items-center justify-between">
           {/* Logo */}
           <a href="#" className="flex items-center">
-            <img 
-              alt="Eprescription Logo" 
-              src="/lovable-uploads/6fa57b87-b7e1-4c5d-a5ea-1f51b6dfce62.png" 
-              className="h-10 w-auto bg-transparent" 
-            />
+            <img alt="Eprescription Logo" className="h-10 w-auto bg-transparent" src="/lovable-uploads/cc531653-f938-4549-a811-886f5ff300a6.png" />
           </a>
 
           {/* Desktop Navigation */}
@@ -80,5 +72,4 @@ const Navbar = () => {
       </div>
     </header>;
 };
-
 export default Navbar;
