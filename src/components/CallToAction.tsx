@@ -2,7 +2,7 @@
 import { useRef } from 'react';
 import { useInView } from '@/utils/animations';
 import { Button } from '@/components/ui/button';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, FileText, ShoppingCart, CreditCard, Package, User, Database } from 'lucide-react';
 
 const CallToAction = () => {
   const ctaRef = useRef<HTMLDivElement>(null);
@@ -30,6 +30,34 @@ const CallToAction = () => {
             <p className="text-xl text-white/90 mb-8">
               Συνδεθείτε με εκατοντάδες φαρμακοποιούς που ήδη χρησιμοποιούν το Esyntagi για την εκτέλεση συνταγών, τη δημιουργία καλαθιού και την τιμολόγηση ασφαλιστικών ταμείων.
             </p>
+            
+            {/* Key features highlight */}
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-8">
+              <div className="flex flex-col items-center gap-2 bg-white/10 p-3 rounded-lg">
+                <FileText className="h-6 w-6 text-white" />
+                <span className="text-white text-sm">Εκτέλεση Συνταγών</span>
+              </div>
+              <div className="flex flex-col items-center gap-2 bg-white/10 p-3 rounded-lg">
+                <ShoppingCart className="h-6 w-6 text-white" />
+                <span className="text-white text-sm">Καλάθι Πολλαπλών Ειδών</span>
+              </div>
+              <div className="flex flex-col items-center gap-2 bg-white/10 p-3 rounded-lg">
+                <CreditCard className="h-6 w-6 text-white" />
+                <span className="text-white text-sm">Τιμολόγηση Ταμείων</span>
+              </div>
+              <div className="flex flex-col items-center gap-2 bg-white/10 p-3 rounded-lg">
+                <Package className="h-6 w-6 text-white" />
+                <span className="text-white text-sm">10.000+ Προϊόντα</span>
+              </div>
+              <div className="flex flex-col items-center gap-2 bg-white/10 p-3 rounded-lg">
+                <User className="h-6 w-6 text-white" />
+                <span className="text-white text-sm">Ιστορικό Ασθενών</span>
+              </div>
+              <div className="flex flex-col items-center gap-2 bg-white/10 p-3 rounded-lg">
+                <Database className="h-6 w-6 text-white" />
+                <span className="text-white text-sm">Τετράδειο Παραγγελίας</span>
+              </div>
+            </div>
             
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <Button className="bg-white text-esyntagi-600 hover:bg-gray-100 rounded-full px-8 py-6 text-lg font-medium shadow-lg hover:shadow-xl transition-all duration-300">
