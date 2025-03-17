@@ -1,17 +1,13 @@
-
 import { useRef } from 'react';
 import { useInView } from '@/utils/animations';
 import { Laptop, Smartphone, Tablet, Globe } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
-
 const CloudAccessibility = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(sectionRef, {
     threshold: 0.1
   });
-
-  return (
-    <section ref={sectionRef} className="py-20 bg-gradient-to-b from-white to-gray-50">
+  return <section ref={sectionRef} className="py-20 bg-gradient-to-b from-white to-gray-50">
       <div className="container mx-auto px-6">
         <div className={`text-center max-w-3xl mx-auto mb-16 ${isInView ? 'animate-fade-in' : 'opacity-0'}`}>
           <div className="inline-block glass px-3 py-1 rounded-full text-sm font-medium text-esyntagi-700 mb-3">
@@ -27,11 +23,7 @@ const CloudAccessibility = () => {
           {/* Left column - Image */}
           <div className={`relative ${isInView ? 'animate-fade-in delay-200' : 'opacity-0'}`}>
             <div className="relative z-10 rounded-xl overflow-hidden shadow-xl">
-              <img 
-                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
-                alt="Cloud access to Esyntagi from multiple devices" 
-                className="w-full h-auto rounded-xl object-cover" 
-              />
+              <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Cloud access to Esyntagi from multiple devices" className="w-full h-auto rounded-xl object-cover" />
               
               {/* Floating devices overlay */}
               <div className="absolute inset-0 bg-gradient-to-tr from-blue-900/20 to-transparent rounded-xl"></div>
@@ -119,17 +111,14 @@ const CloudAccessibility = () => {
                 </div>
                 <div>
                   <h4 className="font-medium text-gray-900 mb-1">Δεν απαιτείται εγκατάσταση</h4>
-                  <p className="text-gray-700">
-                    Το Esyntagi λειτουργεί πλήρως στο cloud. Δεν χρειάζεται να εγκαταστήσετε λογισμικό ή να ανησυχείτε για ενημερώσεις. Όλα τα δεδομένα είναι διαθέσιμα 24/7 και προστατεύονται με κρυπτογράφηση.
-                  </p>
+                  <p className="text-gray-700">Το Esyntagi λειτουργεί πλήρως στο cloud. Δεν χρειάζεται να εγκαταστήσετε λογισμικό ή να ανησυχείτε για ενημερώσεις. 
+Όλα τα δεδομένα είναι διαθέσιμα 24/7.</p>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default CloudAccessibility;
