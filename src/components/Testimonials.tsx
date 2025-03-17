@@ -6,7 +6,7 @@ import { ChevronLeft, ChevronRight, Star } from 'lucide-react';
 const testimonials = [
   {
     id: 1,
-    content: "Το Esyntagi έχει μεταμορφώσει εντελώς τη ροή εργασίας του φαρμακείου μου. Η εκτέλεση συνταγών γίνεται ταχύτερα, με λιγότερα λάθη και οι πελάτες μου εξυπηρετούνται πιο γρήγορα από ποτέ.",
+    content: "Το Essyntagi έχει μεταμορφώσει εντελώς τη ροή εργασίας του φαρμακείου μου. Η εκτέλεση συνταγών γίνεται ταχύτερα, με λιγότερα λάθη και οι πελάτες μου εξυπηρετούνται πιο γρήγορα από ποτέ.",
     author: "Μαρία Παπαδοπούλου",
     position: "Φαρμακοποιός, Αθήνα",
     avatar: "https://randomuser.me/api/portraits/women/32.jpg",
@@ -50,20 +50,20 @@ const Testimonials = () => {
       className="py-20 relative overflow-hidden"
     >
       {/* Background elements */}
-      <div className="absolute -z-10 top-0 right-0 h-96 w-96 bg-esyntagi-50 rounded-full blur-3xl opacity-60"></div>
+      <div className="absolute -z-10 top-0 right-0 h-96 w-96 bg-essyntagi-50 rounded-full blur-3xl opacity-60"></div>
       <div className="absolute -z-10 bottom-0 left-0 h-72 w-72 bg-blue-50 rounded-full blur-3xl opacity-70"></div>
       
       <div className="container mx-auto px-6">
         {/* Section header */}
         <div className={`text-center max-w-3xl mx-auto mb-16 ${isInView ? 'animate-fade-in' : 'opacity-0'}`}>
-          <div className="inline-block glass px-3 py-1 rounded-full text-sm font-medium text-esyntagi-700 mb-3">
+          <div className="inline-block glass px-3 py-1 rounded-full text-sm font-medium text-essyntagi-700 mb-3">
             Φαρμακοποιοί Μιλούν
           </div>
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
             Εμπιστοσύνη από επαγγελματίες φαρμακοποιούς
           </h2>
           <p className="text-xl text-gray-600">
-            Δείτε τι λένε οι φαρμακοποιοί που χρησιμοποιούν το Esyntagi καθημερινά.
+            Δείτε τι λένε οι φαρμακοποιοί που χρησιμοποιούν το Essyntagi καθημερινά.
           </p>
         </div>
         
@@ -71,7 +71,7 @@ const Testimonials = () => {
         <div className={`max-w-4xl mx-auto relative ${isInView ? 'animate-scale-in' : 'opacity-0'}`}>
           <div className="glass-card rounded-2xl p-8 md:p-10">
             {/* Quotation mark */}
-            <div className="absolute top-6 left-8 text-5xl text-esyntagi-200 font-serif">"</div>
+            <div className="absolute top-6 left-8 text-5xl text-essyntagi-200 font-serif">"</div>
             
             {/* Testimonial content */}
             <div className="pt-6">
@@ -105,14 +105,14 @@ const Testimonials = () => {
           <div className="flex justify-end gap-3 mt-6">
             <button 
               onClick={goToPrevious} 
-              className="p-2 rounded-full bg-white border border-gray-200 text-gray-700 hover:bg-esyntagi-50 transition-colors shadow-sm"
+              className="p-2 rounded-full bg-white border border-gray-200 text-gray-700 hover:bg-essyntagi-50 transition-colors shadow-sm"
               aria-label="Προηγούμενη μαρτυρία"
             >
               <ChevronLeft className="h-5 w-5" />
             </button>
             <button 
               onClick={goToNext} 
-              className="p-2 rounded-full bg-white border border-gray-200 text-gray-700 hover:bg-esyntagi-50 transition-colors shadow-sm"
+              className="p-2 rounded-full bg-white border border-gray-200 text-gray-700 hover:bg-essyntagi-50 transition-colors shadow-sm"
               aria-label="Επόμενη μαρτυρία"
             >
               <ChevronRight className="h-5 w-5" />
@@ -126,7 +126,7 @@ const Testimonials = () => {
                 key={index}
                 onClick={() => setActiveIndex(index)}
                 className={`h-2 rounded-full transition-all ${
-                  activeIndex === index ? 'w-6 bg-esyntagi-500' : 'w-2 bg-gray-300'
+                  activeIndex === index ? 'w-6 bg-essyntagi-500' : 'w-2 bg-gray-300'
                 }`}
                 aria-label={`Μετάβαση στη μαρτυρία ${index + 1}`}
               />

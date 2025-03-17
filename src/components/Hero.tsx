@@ -2,7 +2,6 @@
 import { useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { useInView } from '@/utils/animations';
-import { FileText, ShoppingCart, CreditCard } from 'lucide-react';
 
 const Hero = () => {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -30,31 +29,8 @@ const Hero = () => {
               Μεταμορφώστε τo <span className="text-esyntagi-600">φαρμακείο</span> σας με το Esyntagi
             </h1>
             <p className="text-xl text-gray-600 max-w-lg">
-              Εξελίξτε την εκτέλεση συνταγών, τη δημιουργία καλαθιού με πολλαπλά είδη και την τιμολόγηση προς ασφαλιστικά ταμεία μέσω του εξειδικευμένου συστήματος για φαρμακοποιούς.
+              Εξελίξτε την εκτέλεση συνταγών, τη δημιουργία καλαθιού με πολλαπλά είδη και την τιμολόγηση μέσω του εξειδικευμένου συστήματος για φαρμακοποιούς.
             </p>
-            
-            {/* Key features */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-4">
-              <div className="flex items-start gap-2">
-                <div className="rounded-full bg-esyntagi-50 p-1.5 mt-1">
-                  <FileText className="h-4 w-4 text-esyntagi-600" />
-                </div>
-                <span className="text-gray-700">Ταχύτατη εκτέλεση ηλεκτρονικών συνταγών</span>
-              </div>
-              <div className="flex items-start gap-2">
-                <div className="rounded-full bg-esyntagi-50 p-1.5 mt-1">
-                  <ShoppingCart className="h-4 w-4 text-esyntagi-600" />
-                </div>
-                <span className="text-gray-700">Καλάθι με πολλαπλά είδη</span>
-              </div>
-              <div className="flex items-start gap-2">
-                <div className="rounded-full bg-esyntagi-50 p-1.5 mt-1">
-                  <CreditCard className="h-4 w-4 text-esyntagi-600" />
-                </div>
-                <span className="text-gray-700">Τιμολόγηση προς ασφαλιστικά ταμεία</span>
-              </div>
-            </div>
-            
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <Button className="bg-esyntagi-600 hover:bg-esyntagi-700 text-white rounded-full px-8 py-6 text-lg shadow-lg hover:shadow-xl transition-all duration-300">
                 Ξεκινήστε Δωρεάν
@@ -98,7 +74,7 @@ const Hero = () => {
               <div className="glass absolute -bottom-6 -right-6 p-4 rounded-lg shadow-lg animate-float" style={{ animationDelay: '1s' }}>
                 <div className="flex items-center gap-3">
                   <div className="bg-esyntagi-500 h-3 w-3 rounded-full"></div>
-                  <p className="text-sm font-medium">10.000+ Προϊόντα Παραφαρμάκου</p>
+                  <p className="text-sm font-medium">Πλήρης Διαχείριση Προϊόντων</p>
                 </div>
               </div>
             </div>
