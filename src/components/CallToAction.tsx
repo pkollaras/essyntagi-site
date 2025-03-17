@@ -1,3 +1,4 @@
+
 import { useRef } from 'react';
 import { useInView } from '@/utils/animations';
 import { Button } from '@/components/ui/button';
@@ -7,7 +8,7 @@ const CallToAction = () => {
   const isInView = useInView(ctaRef, {
     threshold: 0.1
   });
-  return <section ref={ctaRef} className="py-20">
+  return <section id="cta" ref={ctaRef} className="py-20">
       <div className="container mx-auto px-6">
         <div className={`bg-blue-600 rounded-3xl p-8 md:p-12 lg:p-16 relative overflow-hidden ${isInView ? 'animate-scale-in' : 'opacity-0'}`}>
           {/* Decorative elements */}

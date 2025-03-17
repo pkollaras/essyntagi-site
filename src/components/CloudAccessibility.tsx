@@ -1,3 +1,4 @@
+
 import { useRef } from 'react';
 import { useInView } from '@/utils/animations';
 import { Laptop, Smartphone, Tablet, Globe } from 'lucide-react';
@@ -7,7 +8,7 @@ const CloudAccessibility = () => {
   const isInView = useInView(sectionRef, {
     threshold: 0.1
   });
-  return <section ref={sectionRef} className="py-20 bg-gradient-to-b from-white to-gray-50">
+  return <section id="cloud" ref={sectionRef} className="py-20 bg-gradient-to-b from-white to-gray-50">
       <div className="container mx-auto px-6">
         <div className={`text-center max-w-3xl mx-auto mb-16 ${isInView ? 'animate-fade-in' : 'opacity-0'}`}>
           <div className="inline-block glass px-3 py-1 rounded-full text-sm font-medium text-esyntagi-700 mb-3">
