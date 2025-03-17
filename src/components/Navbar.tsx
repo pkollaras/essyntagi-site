@@ -63,7 +63,7 @@ const Navbar = () => {
             
             <Button 
               onClick={() => scrollToSection('cta')}
-              className="bg-esyntagi-600 hover:bg-esyntagi-700 text-white rounded-full px-6"
+              className="bg-blue-600 hover:bg-blue-700 text-white rounded-full px-6"
             >
               Ξεκινήστε
             </Button>
@@ -102,7 +102,7 @@ const Navbar = () => {
             
             <Button 
               onClick={() => scrollToSection('cta')}
-              className="w-full mt-3 bg-esyntagi-600 hover:bg-esyntagi-700 text-white rounded-full"
+              className="w-full mt-3 bg-blue-600 hover:bg-blue-700 text-white rounded-full"
             >
               Ξεκινήστε
             </Button>
