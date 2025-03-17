@@ -57,9 +57,6 @@ const CallToAction = () => {
                 <CardTitle className="text-2xl font-bold text-blue-600">Είσοδος στο Σύστημα</CardTitle>
                 <CardDescription>Συνδεθείτε στην πλατφόρμα για να αποκτήσετε πρόσβαση σε όλες τις υπηρεσίες του esyntagi.gr</CardDescription>
               </CardHeader>
-              <CardContent className="space-y-4 text-center py-6">
-                {/* Text removed as requested */}
-              </CardContent>
               <CardFooter className="flex justify-center">
                 <a href="https://app.esyntagi.gr" target="_blank" rel="noopener noreferrer" className="w-full">
                   <Button className="w-full bg-blue-600 hover:bg-blue-700 text-lg py-6">
