@@ -58,7 +58,7 @@ const CallToAction = () => {
                 <CardDescription>Συνδεθείτε στην πλατφόρμα για να αποκτήσετε πρόσβαση σε όλες τις υπηρεσίες του esyntagi.gr</CardDescription>
               </CardHeader>
               <CardContent className="space-y-4 text-center py-6">
-                <p className="text-gray-600">Η πρόσβαση στο σύστημα γίνεται μέσω της πλατφόρμας μας</p>
+                {/* Text removed as requested */}
               </CardContent>
               <CardFooter className="flex justify-center">
                 <a href="https://app.esyntagi.gr" target="_blank" rel="noopener noreferrer" className="w-full">
