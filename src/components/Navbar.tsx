@@ -25,7 +25,7 @@ const Navbar = () => {
         <nav className="flex items-center justify-between">
           {/* Logo */}
           <a href="#" className="flex items-center">
-            <img alt="Eprescription Logo" src="/lovable-uploads/cc531653-f938-4549-a811-886f5ff300a6.png" className="h-5 w-auto bg-transparent" />
+            <img alt="Eprescription Logo" src="/lovable-uploads/cc531653-f938-4549-a811-886f5ff300a6.png" className="h-20 w-auto bg-transparent" />
           </a>
 
           {/* Desktop Navigation */}
