@@ -1,5 +1,6 @@
 
-import { FacebookIcon, TwitterIcon, InstagramIcon, LinkedinIcon } from 'lucide-react';
+import { FacebookIcon, TwitterIcon, InstagramIcon, LinkedinIcon, LogIn } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -33,7 +34,17 @@ const Footer = () => {
             </div>
           </div>
           
-          {/* Removed the right column with legal links */}
+          {/* Login Section */}
+          <div className="flex flex-col items-start justify-center md:items-end">
+            <h3 className="text-lg font-semibold text-gray-900 mb-4">Είσοδος στο Σύστημα</h3>
+            <p className="text-gray-600 mb-4 md:text-right">Συνδεθείτε στην πλατφόρμα για να αποκτήσετε πρόσβαση σε όλες τις υπηρεσίες του esyntagi.gr</p>
+            <a href="https://app.esyntagi.gr" target="_blank" rel="noopener noreferrer">
+              <Button variant="default" size="lg" className="flex items-center gap-2">
+                <span>Είσοδος</span>
+                <LogIn className="h-4 w-4" />
+              </Button>
+            </a>
+          </div>
         </div>
         
         <div className="border-t border-gray-200 pt-8">
