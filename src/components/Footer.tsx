@@ -37,15 +37,15 @@ const Footer = () => {
           <div className="flex justify-center md:justify-end">
             <Card className="w-full max-w-sm shadow-lg border-essyntagi-200 overflow-hidden bg-white/90 backdrop-blur-sm transition-all duration-300 hover:shadow-xl animate-scale-in">
               <CardHeader className="pb-3 bg-gradient-to-r from-essyntagi-600 to-essyntagi-500">
-                <CardTitle className="text-white flex justify-between items-center">
+                <CardTitle className="text-white flex justify-center items-center">
                   <span>Είσοδος στο Σύστημα</span>
-                  <LogIn className="h-5 w-5" />
+                  <LogIn className="h-5 w-5 ml-2" />
                 </CardTitle>
               </CardHeader>
-              <CardContent className="pt-6">
+              <CardContent className="pt-6 text-center">
                 <p className="text-gray-600 mb-4">Συνδεθείτε στην πλατφόρμα για να αποκτήσετε πρόσβαση σε όλες τις υπηρεσίες του esyntagi.gr</p>
               </CardContent>
-              <CardFooter className="flex justify-end">
+              <CardFooter className="flex justify-center">
                 <HoverCard>
                   <HoverCardTrigger asChild>
                     <a href="https://app.esyntagi.gr" target="_blank" rel="noopener noreferrer">
@@ -55,11 +55,11 @@ const Footer = () => {
                         className="w-full bg-gradient-to-r from-essyntagi-600 to-essyntagi-500 hover:from-essyntagi-700 hover:to-essyntagi-600 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
                       >
                         <span>Είσοδος</span>
-                        <LogIn className="h-4 w-4" />
+                        <LogIn className="h-4 w-4 ml-2" />
                       </Button>
                     </a>
                   </HoverCardTrigger>
-                  <HoverCardContent className="p-2">
+                  <HoverCardContent className="p-2 text-center">
                     Μετάβαση στην πλατφόρμα
                   </HoverCardContent>
                 </HoverCard>
