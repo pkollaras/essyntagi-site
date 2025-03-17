@@ -26,7 +26,7 @@ const Footer = () => {
             <div className="flex items-center mb-4">
               <img alt="Eprescription Logo" className="h-20 w-auto bg-transparent" src="/lovable-uploads/efb75c91-e718-4d58-85c8-7e0d4d1f9e69.png" />
             </div>
-            <p className="text-gray-600 mb-4 max-w-md">Το esyntagi.gr αποτελεί μια ολοκληρωμένη και εύχρηστη πλατφόρμα για την εκτέλεση συνταγών, προσφέροντας στους φαρμακοποιούς έναν αποτελεσματικό τρόπο διαχείρισης της διαδικασίας επιπλέον παρέχει την δυνατότητα εκδώσεις παραστατικών B2C, B2B και B2G μέσω παρόχου. Παρέχει άμεση πρόσβαση σε πληροφορίες για φάρμακα των κατηγοριών ΣΥΦΑ, ΜΗΣΥΦΑ και Παραφάρμακα, διευκολύνοντας την καθημερινή σας εργασία.</p>
+            <p className="text-gray-600 mb-4 max-w-xl">Το esyntagi.gr αποτελεί μια ολοκληρωμένη και εύχρηστη πλατφόρμα για την εκτέλεση συνταγών, προσφέροντας στους φαρμακοποιούς έναν αποτελεσματικό τρόπο διαχείρισης της διαδικασίας επιπλέον παρέχει την δυνατότητα εκδώσεις παραστατικών B2C, B2B και B2G μέσω παρόχου. Παρέχει άμεση πρόσβαση σε πληροφορίες για φάρμακα των κατηγοριών ΣΥΦΑ, ΜΗΣΥΦΑ και Παραφάρμακα, διευκολύνοντας την καθημερινή σας εργασία.</p>
             <div className="flex space-x-4">
               <a href="https://www.facebook.com/advisablecom/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-essyntagi-600 transition" aria-label="Facebook">
                 <FacebookIcon className="h-5 w-5" />
