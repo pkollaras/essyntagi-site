@@ -39,7 +39,7 @@ const Footer = () => {
         <div className="border-t border-gray-200 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-500 text-sm">
-              &copy; {currentYear} Eprescription. Με επιφύλαξη παντός δικαιώματος.
+              &copy; 2025 Advisable.com
             </p>
           </div>
         </div>
