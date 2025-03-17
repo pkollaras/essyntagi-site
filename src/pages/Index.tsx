@@ -7,7 +7,6 @@ import ProductCategories from '@/components/ProductCategories';
 import InvoicingSystem from '@/components/InvoicingSystem';
 import CloudAccessibility from '@/components/CloudAccessibility';
 import Benefits from '@/components/Benefits';
-import Testimonials from '@/components/Testimonials';
 import CallToAction from '@/components/CallToAction';
 import Footer from '@/components/Footer';
 
@@ -27,7 +26,6 @@ const Index = () => {
         <CloudAccessibility />
         <InvoicingSystem />
         <Benefits />
-        <Testimonials />
         <CallToAction />
       </main>
       <Footer />
