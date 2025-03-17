@@ -69,10 +69,69 @@ const Footer = () => {
         </div>
         
         <div className="border-t border-gray-200 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-500 text-sm">
-              &copy; {currentYear} Advisable.com
-            </p>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            {/* Copyright column */}
+            <div>
+              <p className="text-gray-500 text-sm">
+                &copy; {currentYear} Advisable.com
+              </p>
+            </div>
+            
+            {/* Page content - First column */}
+            <div>
+              <h4 className="font-medium text-gray-800 mb-3">Λειτουργίες</h4>
+              <ul className="space-y-2">
+                <li>
+                  <a href="#features" className="text-gray-500 hover:text-essyntagi-600 text-sm">
+                    Χαρακτηριστικά
+                  </a>
+                </li>
+                <li>
+                  <a href="#product-categories" className="text-gray-500 hover:text-essyntagi-600 text-sm">
+                    Κατηγορίες Προϊόντων
+                  </a>
+                </li>
+                <li>
+                  <a href="#benefits" className="text-gray-500 hover:text-essyntagi-600 text-sm">
+                    Πλεονεκτήματα
+                  </a>
+                </li>
+              </ul>
+            </div>
+            
+            {/* Page content - Second column */}
+            <div>
+              <h4 className="font-medium text-gray-800 mb-3">Συστήματα</h4>
+              <ul className="space-y-2">
+                <li>
+                  <a href="#cloud" className="text-gray-500 hover:text-essyntagi-600 text-sm">
+                    Cloud ERP
+                  </a>
+                </li>
+                <li>
+                  <a href="#invoicing" className="text-gray-500 hover:text-essyntagi-600 text-sm">
+                    Σύστημα Τιμολόγησης
+                  </a>
+                </li>
+              </ul>
+            </div>
+            
+            {/* Page content - Third column */}
+            <div>
+              <h4 className="font-medium text-gray-800 mb-3">Επικοινωνία</h4>
+              <ul className="space-y-2">
+                <li>
+                  <a href="#cta" className="text-gray-500 hover:text-essyntagi-600 text-sm">
+                    Δωρεάν Δοκιμή
+                  </a>
+                </li>
+                <li>
+                  <a href="mailto:info@esyntagi.gr" className="text-gray-500 hover:text-essyntagi-600 text-sm">
+                    info@esyntagi.gr
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
