@@ -31,7 +31,7 @@ const Hero = () => {
         }
         
         const data = await response.json();
-        setPrescriptionCount(data.count?.toString() || "32");
+        setPrescriptionCount(data.data?.toString() || "32");
         setError(null);
       } catch (error) {
         console.error('Error fetching prescription count:', error);
