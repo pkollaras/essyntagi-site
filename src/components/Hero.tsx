@@ -10,7 +10,7 @@ const Hero = () => {
   const [prescriptionCount, setPrescriptionCount] = useState<string>("...");
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
-  const [isLiveUpdating, setIsLiveUpdating] = useState<boolean>(true);
+  const [isLiveUpdating, setIsLiveUpdating] = useState<boolean>(false); // Changed to false initially
   
   const isInView = useInView(heroRef, {
     threshold: 0.1
@@ -50,29 +50,15 @@ const Hero = () => {
       }
     };
 
-    // Initial fetch
+    // Initial fetch - only once
     fetchPrescriptionCount();
     
-    // Set up periodic fetching every 10 seconds if in view
-    let intervalId: number | undefined;
+    // No interval setup for auto-refresh
     
-    if (isInView && isLiveUpdating) {
-      intervalId = window.setInterval(() => {
-        console.log('Fetching updated prescription count...');
-        fetchPrescriptionCount();
-      }, 10000); // 10 seconds interval
-    }
-    
-    return () => {
-      if (intervalId) {
-        clearInterval(intervalId);
-      }
-    };
-  }, [isInView, isLiveUpdating]);
+  }, [isInView]); // Only depends on isInView now
 
   // Function to manually refresh the count
   const handleManualRefresh = () => {
-    setIsLiveUpdating(true);
     const fetchPrescriptionCount = async () => {
       try {
         setIsLoading(true);
@@ -99,7 +85,6 @@ const Hero = () => {
         console.error('Error fetching prescription count:', error);
         setPrescriptionCount("30"); 
         setError("Αδυναμία σύνδεσης με το server");
-        setIsLiveUpdating(false);
         toast.error("Αδυναμία σύνδεσης με το server. Χρησιμοποιείται στατική τιμή.");
       } finally {
         setIsLoading(false);
@@ -172,9 +157,6 @@ const Hero = () => {
                     ) : (
                       <span className="inline-flex items-center">
                         <span className="mr-1">"{prescriptionCount}"</span>
-                        {isLiveUpdating && (
-                          <span className="ml-1 text-xs text-gray-500">(ανανεώνεται κάθε 10'')</span>
-                        )}
                         <span> Συνταγές Εκτελέστηκαν Σήμερα</span>
                         <button 
                           onClick={handleManualRefresh}
