@@ -94,6 +94,36 @@
   }
 }
 
+/* Responsive containers and layouts */
+.container {
+  @apply px-4 sm:px-6 lg:px-8 mx-auto;
+  max-width: 100%;
+}
+
+@screen sm {
+  .container {
+    max-width: 640px;
+  }
+}
+
+@screen md {
+  .container {
+    max-width: 768px;
+  }
+}
+
+@screen lg {
+  .container {
+    max-width: 1024px;
+  }
+}
+
+@screen xl {
+  .container {
+    max-width: 1280px;
+  }
+}
+
 /* Glass morphism */
 .glass {
   @apply bg-white/70 backdrop-blur-lg border border-white/20 shadow-glass;
@@ -131,6 +161,30 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Responsive typography */
+@screen xs {
+  html {
+    font-size: 14px;
+  }
+}
+
+@screen sm {
+  html {
+    font-size: 15px;
+  }
+}
+
+@screen md {
+  html {
+    font-size: 16px;
+  }
+}
+
+/* Section spacing for mobile responsiveness */
+.section-spacing {
+  @apply py-12 md:py-16 lg:py-20;
+}
+
 /* Custom styles for scrollbar */
 ::-webkit-scrollbar {
   @apply w-1.5;
@@ -146,4 +200,24 @@ html {
 
 ::-webkit-scrollbar-thumb:hover {
   @apply bg-gray-400;
+}
+
+/* Mobile responsiveness helpers */
+.mobile-container {
+  @apply px-4 sm:px-6;
+}
+
+/* Responsive images */
+.responsive-img {
+  @apply max-w-full h-auto;
+}
+
+/* Responsive grid layouts */
+.responsive-grid {
+  @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8;
+}
+
+/* Responsive padding for sections */
+.section-padding {
+  @apply px-4 py-8 sm:px-6 sm:py-12 md:px-12 md:py-16 lg:px-24 lg:py-20;
 }
