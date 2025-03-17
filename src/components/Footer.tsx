@@ -1,5 +1,9 @@
-import { FacebookIcon, TwitterIcon, InstagramIcon, LinkedinIcon, LogIn } from 'lucide-react';
+
+import { FacebookIcon, LinkedinIcon, LogIn } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
+import { HoverCard, HoverCardContent, HoverCardTrigger } from '@/components/ui/hover-card';
+
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
@@ -29,27 +33,50 @@ const Footer = () => {
             </div>
           </div>
           
-          {/* Login Section */}
-          <div className="flex flex-col items-start justify-center md:items-end">
-            <h3 className="text-lg font-semibold text-gray-900 mb-4">Είσοδος στο Σύστημα</h3>
-            <p className="text-gray-600 mb-4 md:text-right">esyntagi.gr</p>
-            <a href="https://app.esyntagi.gr" target="_blank" rel="noopener noreferrer">
-              <Button variant="default" size="lg" className="flex items-center gap-2 bg-gradient-to-r from-essyntagi-600 to-essyntagi-500 hover:from-essyntagi-700 hover:to-essyntagi-600 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
-                <span>Είσοδος</span>
-                <LogIn className="h-4 w-4" />
-              </Button>
-            </a>
+          {/* Login Section - transformed into a card */}
+          <div className="flex justify-center md:justify-end">
+            <Card className="w-full max-w-sm shadow-lg border-essyntagi-200 overflow-hidden bg-white/90 backdrop-blur-sm transition-all duration-300 hover:shadow-xl animate-scale-in">
+              <CardHeader className="pb-3 bg-gradient-to-r from-essyntagi-600 to-essyntagi-500">
+                <CardTitle className="text-white flex justify-between items-center">
+                  <span>Είσοδος στο Σύστημα</span>
+                  <LogIn className="h-5 w-5" />
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="pt-6">
+                <p className="text-gray-600 mb-4">Συνδεθείτε στην πλατφόρμα για να αποκτήσετε πρόσβαση σε όλες τις υπηρεσίες του esyntagi.gr</p>
+              </CardContent>
+              <CardFooter className="flex justify-end">
+                <HoverCard>
+                  <HoverCardTrigger asChild>
+                    <a href="https://app.esyntagi.gr" target="_blank" rel="noopener noreferrer">
+                      <Button 
+                        variant="default" 
+                        size="lg" 
+                        className="w-full bg-gradient-to-r from-essyntagi-600 to-essyntagi-500 hover:from-essyntagi-700 hover:to-essyntagi-600 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
+                      >
+                        <span>Είσοδος</span>
+                        <LogIn className="h-4 w-4" />
+                      </Button>
+                    </a>
+                  </HoverCardTrigger>
+                  <HoverCardContent className="p-2">
+                    Μετάβαση στην πλατφόρμα
+                  </HoverCardContent>
+                </HoverCard>
+              </CardFooter>
+            </Card>
           </div>
         </div>
         
         <div className="border-t border-gray-200 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-500 text-sm">
-              &copy; 2025 Advisable.com
+              &copy; {currentYear} Advisable.com
             </p>
           </div>
         </div>
       </div>
     </footer>;
 };
+
 export default Footer;
