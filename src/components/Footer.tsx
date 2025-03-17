@@ -20,7 +20,7 @@ const Footer = () => {
     </svg>;
   return <footer className="bg-gray-50 pt-16 pb-8">
       <div className="container mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pb-12">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 pb-12">
           {/* Company info */}
           <div>
             <div className="flex items-center mb-4">
@@ -39,6 +39,9 @@ const Footer = () => {
               </a>
             </div>
           </div>
+          
+          {/* Empty div added to the left of the menu */}
+          <div></div>
           
           {/* Footer menu */}
           <div className="pl-8">
