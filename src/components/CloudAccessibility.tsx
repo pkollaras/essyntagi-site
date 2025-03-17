@@ -1,3 +1,4 @@
+
 import { useRef } from 'react';
 import { useInView } from '@/utils/animations';
 import { Laptop, Smartphone, Tablet, Globe } from 'lucide-react';
@@ -26,15 +27,13 @@ const CloudAccessibility = () => {
           <div className={`relative ${isInView ? 'animate-fade-in delay-200' : 'opacity-0'}`}>
             <div className="relative z-10 rounded-xl overflow-hidden shadow-xl">
               <img 
-                src="/public/lovable-uploads/cbc37dff-14fd-4886-88b4-78d64baaa1c1.png" 
+                src="/public/lovable-uploads/65d5f1c4-d175-47fe-aa21-da50298f5401.png" 
                 alt="Cloud υποδομή Esyntagi - Πρόσβαση από πολλαπλές συσκευές στο cloud σύστημα" 
                 className="w-full h-auto rounded-xl object-cover" 
               />
               
               {/* Gradient overlay */}
               <div className="absolute inset-0 bg-gradient-to-tr from-blue-900/10 to-transparent rounded-xl"></div>
-              
-              {/* Device indicators - All device indicators were removed */}
               
               {/* Login URL highlight */}
               <div className="glass absolute bottom-6 left-1/2 -translate-x-1/2 py-2 px-6 rounded-full shadow-lg">
