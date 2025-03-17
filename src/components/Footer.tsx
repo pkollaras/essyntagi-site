@@ -44,7 +44,7 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold text-gray-800 mb-4">Πλοήγηση</h3>
             <nav>
-              <ul className="grid grid-cols-2 gap-3">
+              <ul className="flex flex-col space-y-3">
                 {footerMenu.map((item, index) => (
                   <li key={index}>
                     <a 
