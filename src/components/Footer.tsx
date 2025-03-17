@@ -1,5 +1,8 @@
 
-import { FacebookIcon, LinkedinIcon } from 'lucide-react';
+import { FacebookIcon, LinkedinIcon, LogIn } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
+import { HoverCard, HoverCardContent, HoverCardTrigger } from '@/components/ui/hover-card';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -11,97 +14,124 @@ const Footer = () => {
   return <footer className="bg-gray-50 pt-16 pb-8">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pb-12">
-          {/* Company info and quick links */}
-          <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
-            {/* Company info */}
-            <div className="lg:col-span-1">
-              <div className="flex items-center mb-4">
-                <img alt="Eprescription Logo" className="h-20 w-auto bg-transparent" src="/lovable-uploads/efb75c91-e718-4d58-85c8-7e0d4d1f9e69.png" />
-              </div>
-              <div className="flex space-x-4 mb-4">
-                <a href="https://www.facebook.com/advisablecom/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-essyntagi-600 transition" aria-label="Facebook">
-                  <FacebookIcon className="h-5 w-5" />
-                </a>
-                <a href="https://www.linkedin.com/company/9413222/admin/dashboard/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-essyntagi-600 transition" aria-label="LinkedIn">
-                  <LinkedinIcon className="h-5 w-5" />
-                </a>
-                <a href="https://www.tiktok.com/@advisable.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-essyntagi-600 transition" aria-label="TikTok">
-                  <TikTokIcon />
-                </a>
-              </div>
+          {/* Company info */}
+          <div>
+            <div className="flex items-center mb-4">
+              <img alt="Eprescription Logo" className="h-20 w-auto bg-transparent" src="/lovable-uploads/efb75c91-e718-4d58-85c8-7e0d4d1f9e69.png" />
             </div>
-            
-            {/* Main description and navigation links side by side */}
-            <div className="lg:col-span-3 grid grid-cols-1 lg:grid-cols-4 gap-8">
-              {/* Main text description */}
-              <div className="lg:col-span-1">
-                <p className="text-gray-600 mb-4">Το esyntagi.gr αποτελεί μια ολοκληρωμένη και εύχρηστη πλατφόρμα για την εκτέλεση συνταγών, προσφέροντας στους φαρμακοποιούς έναν αποτελεσματικό τρόπο διαχείρισης της διαδικασίας επιπλέον παρέχει την δυνατότητα εκδώσεις παραστατικών B2C, B2B και B2G μέσω παρόχου. Παρέχει άμεση πρόσβαση σε πληροφορίες για φάρμακα των κατηγοριών ΣΥΦΑ, ΜΗΣΥΦΑ και Παραφάρμακα, διευκολύνοντας την καθημερινή σας εργασία.</p>
-              </div>
-              
-              {/* Page content - First column (Λειτουργίες) */}
-              <div className="lg:col-span-1">
-                <h4 className="font-medium text-gray-800 mb-3">Λειτουργίες</h4>
-                <ul className="space-y-2">
-                  <li>
-                    <a href="#features" className="text-gray-500 hover:text-essyntagi-600 text-sm">
-                      Χαρακτηριστικά
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#product-categories" className="text-gray-500 hover:text-essyntagi-600 text-sm">
-                      Κατηγορίες Προϊόντων
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#benefits" className="text-gray-500 hover:text-essyntagi-600 text-sm">
-                      Πλεονεκτήματα
-                    </a>
-                  </li>
-                </ul>
-              </div>
-              
-              {/* Page content - Second column (Συστήματα) */}
-              <div className="lg:col-span-1">
-                <h4 className="font-medium text-gray-800 mb-3">Συστήματα</h4>
-                <ul className="space-y-2">
-                  <li>
-                    <a href="#cloud" className="text-gray-500 hover:text-essyntagi-600 text-sm">
-                      Cloud ERP
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#invoicing" className="text-gray-500 hover:text-essyntagi-600 text-sm">
-                      Σύστημα Τιμολόγησης
-                    </a>
-                  </li>
-                </ul>
-              </div>
-              
-              {/* Page content - Third column (Επικοινωνία) */}
-              <div className="lg:col-span-1">
-                <h4 className="font-medium text-gray-800 mb-3">Επικοινωνία</h4>
-                <ul className="space-y-2">
-                  <li>
-                    <a href="#cta" className="text-gray-500 hover:text-essyntagi-600 text-sm">
-                      Δωρεάν Δοκιμή
-                    </a>
-                  </li>
-                  <li>
-                    <a href="mailto:info@esyntagi.gr" className="text-gray-500 hover:text-essyntagi-600 text-sm">
-                      info@esyntagi.gr
-                    </a>
-                  </li>
-                </ul>
-              </div>
+            <p className="text-gray-600 mb-4 max-w-md">Το esyntagi.gr αποτελεί μια ολοκληρωμένη και εύχρηστη πλατφόρμα για την εκτέλεση συνταγών, προσφέροντας στους φαρμακοποιούς έναν αποτελεσματικό τρόπο διαχείρισης της διαδικασίας επιπλέον παρέχει την δυνατότητα εκδώσεις παραστατικών B2C, B2B και B2G μέσω παρόχου. Παρέχει άμεση πρόσβαση σε πληροφορίες για φάρμακα των κατηγοριών ΣΥΦΑ, ΜΗΣΥΦΑ και Παραφάρμακα, διευκολύνοντας την καθημερινή σας εργασία.</p>
+            <div className="flex space-x-4">
+              <a href="https://www.facebook.com/advisablecom/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-essyntagi-600 transition" aria-label="Facebook">
+                <FacebookIcon className="h-5 w-5" />
+              </a>
+              <a href="https://www.linkedin.com/company/9413222/admin/dashboard/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-essyntagi-600 transition" aria-label="LinkedIn">
+                <LinkedinIcon className="h-5 w-5" />
+              </a>
+              <a href="https://www.tiktok.com/@advisable.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-essyntagi-600 transition" aria-label="TikTok">
+                <TikTokIcon />
+              </a>
             </div>
+          </div>
+          
+          {/* Login Section - transformed into a card */}
+          <div className="flex justify-center md:justify-end">
+            <Card className="w-full max-w-sm shadow-lg border-essyntagi-200 overflow-hidden bg-white/90 backdrop-blur-sm transition-all duration-300 hover:shadow-xl animate-scale-in">
+              <CardHeader className="pb-3 bg-gradient-to-r from-essyntagi-600 to-essyntagi-500">
+                <CardTitle className="text-white flex justify-center items-center">
+                  <span>Είσοδος στο Σύστημα</span>
+                  <LogIn className="h-5 w-5 ml-2" />
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="pt-6 text-center">
+                <p className="text-gray-600 mb-4">Συνδεθείτε στην πλατφόρμα για να αποκτήσετε πρόσβαση σε όλες τις υπηρεσίες του esyntagi.gr</p>
+              </CardContent>
+              <CardFooter className="flex justify-center">
+                <HoverCard>
+                  <HoverCardTrigger asChild>
+                    <a href="https://app.esyntagi.gr" target="_blank" rel="noopener noreferrer">
+                      <Button 
+                        variant="default" 
+                        size="lg" 
+                        className="w-full bg-gradient-to-r from-essyntagi-600 to-essyntagi-500 hover:from-essyntagi-700 hover:to-essyntagi-600 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
+                      >
+                        <span>Είσοδος</span>
+                        <LogIn className="h-4 w-4 ml-2" />
+                      </Button>
+                    </a>
+                  </HoverCardTrigger>
+                  <HoverCardContent className="p-2 text-center">
+                    Μετάβαση στην πλατφόρμα
+                  </HoverCardContent>
+                </HoverCard>
+              </CardFooter>
+            </Card>
           </div>
         </div>
         
         <div className="border-t border-gray-200 pt-8">
-          <div className="text-center">
-            <p className="text-gray-500 text-sm">
-              &copy; {currentYear} Advisable.com
-            </p>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            {/* Copyright column */}
+            <div>
+              <p className="text-gray-500 text-sm">
+                &copy; {currentYear} Advisable.com
+              </p>
+            </div>
+            
+            {/* Page content - First column */}
+            <div>
+              <h4 className="font-medium text-gray-800 mb-3">Λειτουργίες</h4>
+              <ul className="space-y-2">
+                <li>
+                  <a href="#features" className="text-gray-500 hover:text-essyntagi-600 text-sm">
+                    Χαρακτηριστικά
+                  </a>
+                </li>
+                <li>
+                  <a href="#product-categories" className="text-gray-500 hover:text-essyntagi-600 text-sm">
+                    Κατηγορίες Προϊόντων
+                  </a>
+                </li>
+                <li>
+                  <a href="#benefits" className="text-gray-500 hover:text-essyntagi-600 text-sm">
+                    Πλεονεκτήματα
+                  </a>
+                </li>
+              </ul>
+            </div>
+            
+            {/* Page content - Second column */}
+            <div>
+              <h4 className="font-medium text-gray-800 mb-3">Συστήματα</h4>
+              <ul className="space-y-2">
+                <li>
+                  <a href="#cloud" className="text-gray-500 hover:text-essyntagi-600 text-sm">
+                    Cloud ERP
+                  </a>
+                </li>
+                <li>
+                  <a href="#invoicing" className="text-gray-500 hover:text-essyntagi-600 text-sm">
+                    Σύστημα Τιμολόγησης
+                  </a>
+                </li>
+              </ul>
+            </div>
+            
+            {/* Page content - Third column */}
+            <div>
+              <h4 className="font-medium text-gray-800 mb-3">Επικοινωνία</h4>
+              <ul className="space-y-2">
+                <li>
+                  <a href="#cta" className="text-gray-500 hover:text-essyntagi-600 text-sm">
+                    Δωρεάν Δοκιμή
+                  </a>
+                </li>
+                <li>
+                  <a href="mailto:info@esyntagi.gr" className="text-gray-500 hover:text-essyntagi-600 text-sm">
+                    info@esyntagi.gr
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
