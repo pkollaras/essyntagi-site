@@ -13,6 +13,7 @@ const Hero = () => {
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
   const [isLiveUpdating, setIsLiveUpdating] = useState<boolean>(false); // Changed to false initially
+  const [resetCounter, setResetCounter] = useState<number>(0); // Key to reset counter animation
   
   // Use the smooth counter to animate the value
   const animatedCount = useSmoothCounter(actualCount, 1500, 0);
@@ -69,6 +70,10 @@ const Hero = () => {
     const fetchPrescriptionCount = async () => {
       try {
         setIsLoading(true);
+        // Reset the counter to 0 to trigger animation from start
+        setActualCount(0);
+        setResetCounter(prev => prev + 1);
+        
         const response = await fetch('https://api-stg.esyntagi.gr/count', {
           method: 'POST', 
           headers: {
@@ -82,19 +87,24 @@ const Hero = () => {
         
         const data = await response.json();
         if (data.success && data.data) {
-          setActualCount(parseInt(data.data, 10)); // Update with new count
-          setPrescriptionCount(data.data.toString());
-          toast.success("Επιτυχής ανανέωση δεδομένων");
+          // Slight delay to ensure animation starts from 0
+          setTimeout(() => {
+            setActualCount(parseInt(data.data, 10)); // Update with new count
+            setPrescriptionCount(data.data.toString());
+            toast.success("Επιτυχής ανανέωση δεδομένων");
+          }, 100);
         } else {
           throw new Error('Invalid data format');
         }
         setError(null);
       } catch (error) {
         console.error('Error fetching prescription count:', error);
-        setActualCount(30); // Fallback to static number
-        setPrescriptionCount("30"); 
-        setError("Αδυναμία σύνδεσης με το server");
-        toast.error("Αδυναμία σύνδεσης με το server. Χρησιμοποιείται στατική τιμή.");
+        setTimeout(() => {
+          setActualCount(30); // Fallback to static number
+          setPrescriptionCount("30"); 
+          setError("Αδυναμία σύνδεσης με το server");
+          toast.error("Αδυναμία σύνδεσης με το server. Χρησιμοποιείται στατική τιμή.");
+        }, 100);
       } finally {
         setIsLoading(false);
       }
