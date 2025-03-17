@@ -1,13 +1,16 @@
+
 import { useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { useInView } from '@/utils/animations';
 import { useIsMobile } from '@/hooks/use-mobile';
+
 const Hero = () => {
   const heroRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(heroRef, {
     threshold: 0.1
   });
   const isMobile = useIsMobile();
+  
   return <section ref={heroRef} className="relative min-h-screen flex items-center pt-16 sm:pt-24 overflow-hidden">
       {/* Background elements */}
       <div className="absolute inset-0 -z-10">
@@ -29,9 +32,6 @@ const Hero = () => {
             <div className="flex flex-col sm:flex-row gap-4 pt-4 py-0">
               <a href="https://form.typeform.com/to/oZoW62gB" target="_blank" rel="noopener noreferrer" className="bg-blue-500 hover:bg-blue-600 text-white rounded-full px-6 sm:px-8 py-4 sm:py-6 text-sm sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center">
                 Ξεκινήστε Δωρεάν
-              </a>
-              <a href="https://calendly.com/d/cnzm-3d9-xbj/esyntagi" target="_blank" rel="noopener noreferrer" className="border-esyntagi-200 text-esyntagi-700 hover:bg-esyntagi-50 rounded-full px-6 sm:px-8 py-4 sm:py-6 text-sm sm:text-lg border flex items-center justify-center">
-                Ζητήστε Παρουσίαση
               </a>
             </div>
             
@@ -83,4 +83,5 @@ const Hero = () => {
       </div>
     </section>;
 };
+
 export default Hero;
