@@ -35,7 +35,7 @@ const Hero = () => {
                 Ξεκινήστε Δωρεάν
               </a>
               <a 
-                href="https://form.typeform.com/to/oZoW62gB" 
+                href="https://calendly.com/event_types/user/me" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="border-esyntagi-200 text-esyntagi-700 hover:bg-esyntagi-50 rounded-full px-8 py-6 text-lg border flex items-center justify-center"

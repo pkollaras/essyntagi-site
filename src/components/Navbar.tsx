@@ -112,12 +112,12 @@ const Navbar = () => {
             </a>
             
             <a 
-              href="https://app.esyntagi.gr" 
+              href="https://calendly.com/event_types/user/me" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="flex items-center justify-center py-2 text-esyntagi-600 hover:text-esyntagi-700 font-medium"
             >
-              <span>Login</span>
+              <span>Ζητήστε Παρουσίαση</span>
               <LogIn className="h-4 w-4 ml-1" />
             </a>
           </div>

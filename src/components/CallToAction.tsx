@@ -42,7 +42,7 @@ const CallToAction = () => {
                 <ArrowRight className="ml-2 h-5 w-5" />
               </a>
               <a 
-                href="https://form.typeform.com/to/oZoW62gB" 
+                href="https://calendly.com/event_types/user/me" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="bg-white text-blue-600 hover:bg-gray-100 rounded-full px-8 py-6 text-lg font-medium shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center"
