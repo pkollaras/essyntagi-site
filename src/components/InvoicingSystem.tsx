@@ -1,18 +1,12 @@
-
 import { useRef } from 'react';
 import { useInView } from '@/utils/animations';
 import { Receipt, Building, Building2, Calculator } from 'lucide-react';
-
 const InvoicingSystem = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
-  const isInView = useInView(sectionRef, { threshold: 0.1 });
-
-  return (
-    <section 
-      id="invoicing" 
-      ref={sectionRef} 
-      className="py-20"
-    >
+  const isInView = useInView(sectionRef, {
+    threshold: 0.1
+  });
+  return <section id="invoicing" ref={sectionRef} className="py-20">
       <div className="container mx-auto px-6">
         <div className={`text-center max-w-3xl mx-auto mb-16 ${isInView ? 'animate-fade-in' : 'opacity-0'}`}>
           <div className="inline-block glass px-3 py-1 rounded-full text-sm font-medium text-esyntagi-700 mb-3">
@@ -27,12 +21,9 @@ const InvoicingSystem = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div 
-            className={`glass-card rounded-xl p-6 transition-all duration-300 ${
-              isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-            }`} 
-            style={{ transitionDelay: '0ms' }}
-          >
+          <div className={`glass-card rounded-xl p-6 transition-all duration-300 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{
+          transitionDelay: '0ms'
+        }}>
             <div className="rounded-full bg-esyntagi-50 p-3 w-fit mb-4">
               <Receipt className="h-6 w-6 text-esyntagi-600" />
             </div>
@@ -41,19 +32,16 @@ const InvoicingSystem = () => {
               Αυτόματη έκδοση αποδείξεων και τιμολογίων λιανικής με σύνδεση στο myDATA και συμβατότητα με όλες τις ταμειακές μηχανές.
             </p>
             <ul className="list-disc pl-5 space-y-2 text-gray-700">
-              <li>Σύνδεση με όλες τις ταμειακές μηχανές</li>
+              <li>Σύνδεση με πάροχο ηλεκτρονικής τιμολόγησης.</li>
               <li>Αυτόματος υπολογισμός ΦΠΑ</li>
               <li>Εφαρμογή εκπτώσεων και προσφορών</li>
               <li>Πλήρης συμμόρφωση με myDATA</li>
             </ul>
           </div>
 
-          <div 
-            className={`glass-card rounded-xl p-6 transition-all duration-300 ${
-              isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-            }`} 
-            style={{ transitionDelay: '150ms' }}
-          >
+          <div className={`glass-card rounded-xl p-6 transition-all duration-300 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{
+          transitionDelay: '150ms'
+        }}>
             <div className="rounded-full bg-esyntagi-50 p-3 w-fit mb-4">
               <Building className="h-6 w-6 text-esyntagi-600" />
             </div>
@@ -69,12 +57,9 @@ const InvoicingSystem = () => {
             </ul>
           </div>
 
-          <div 
-            className={`glass-card rounded-xl p-6 transition-all duration-300 ${
-              isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-            }`} 
-            style={{ transitionDelay: '300ms' }}
-          >
+          <div className={`glass-card rounded-xl p-6 transition-all duration-300 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{
+          transitionDelay: '300ms'
+        }}>
             <div className="rounded-full bg-esyntagi-50 p-3 w-fit mb-4">
               <Building2 className="h-6 w-6 text-esyntagi-600" />
             </div>
@@ -91,8 +76,6 @@ const InvoicingSystem = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default InvoicingSystem;
