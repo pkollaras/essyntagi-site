@@ -1,11 +1,41 @@
-import { useRef } from 'react';
+
+import { useRef, useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { useInView } from '@/utils/animations';
+
 const Hero = () => {
   const heroRef = useRef<HTMLDivElement>(null);
+  const [prescriptionCount, setPrescriptionCount] = useState<string>("...");
+  
   const isInView = useInView(heroRef, {
     threshold: 0.1
   });
+
+  useEffect(() => {
+    const fetchPrescriptionCount = async () => {
+      try {
+        const response = await fetch('http://api-stg.esyntagi.gr/count', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        });
+        
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        
+        const data = await response.text();
+        setPrescriptionCount(data);
+      } catch (error) {
+        console.error('Error fetching prescription count:', error);
+        setPrescriptionCount("32"); // Fallback to static number if fetch fails
+      }
+    };
+
+    fetchPrescriptionCount();
+  }, []);
+
   return <section ref={heroRef} className="relative min-h-screen flex items-center pt-16 overflow-hidden">
       {/* Background elements */}
       <div className="absolute inset-0 -z-10">
@@ -61,7 +91,7 @@ const Hero = () => {
               <div className="glass absolute -top-6 -left-6 p-4 rounded-lg shadow-lg animate-float">
                 <div className="flex items-center gap-3">
                   <div className="bg-green-500 h-3 w-3 rounded-full"></div>
-                  <p className="text-sm font-medium">&quot;32&quot; Συνταγές Εκτελέστηκαν Σήμερα</p>
+                  <p className="text-sm font-medium">&quot;{prescriptionCount}&quot; Συνταγές Εκτελέστηκαν Σήμερα</p>
                 </div>
               </div>
               
@@ -79,4 +109,5 @@ const Hero = () => {
       </div>
     </section>;
 };
+
 export default Hero;
