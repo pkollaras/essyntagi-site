@@ -7,7 +7,7 @@ const Footer = () => {
           {/* Company info */}
           <div className="lg:col-span-2">
             <div className="flex items-center mb-4">
-              <img src="/lovable-uploads/75ae7818-724d-4497-a3f7-9179f03de6a6.png" alt="Eprescription Logo" className="h-20 w-auto bg-transparent" />
+              <img alt="Eprescription Logo" className="h-20 w-auto bg-transparent" src="/lovable-uploads/efb75c91-e718-4d58-85c8-7e0d4d1f9e69.png" />
             </div>
             <p className="text-gray-600 mb-4 max-w-md">
               Το Eprescription είναι μια καινοτόμος λύση ERP βασισμένη στο cloud, σχεδιασμένη ειδικά για επαγγελματίες υγείας για την αποτελεσματική διαχείριση συνταγών, ασθενών και τιμολόγησης.
