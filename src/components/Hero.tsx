@@ -2,10 +2,13 @@
 import { useRef, useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { useInView } from '@/utils/animations';
+import { Card, CardContent } from '@/components/ui/card';
 
 const Hero = () => {
   const heroRef = useRef<HTMLDivElement>(null);
   const [prescriptionCount, setPrescriptionCount] = useState<string>("...");
+  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [error, setError] = useState<string | null>(null);
   const [isLiveUpdating, setIsLiveUpdating] = useState<boolean>(true);
   
   const isInView = useInView(heroRef, {
@@ -15,6 +18,7 @@ const Hero = () => {
   useEffect(() => {
     const fetchPrescriptionCount = async () => {
       try {
+        setIsLoading(true);
         const response = await fetch('http://api-stg.esyntagi.gr/count', {
           method: 'POST',
           headers: {
@@ -26,12 +30,16 @@ const Hero = () => {
           throw new Error('Network response was not ok');
         }
         
-        const data = await response.text();
-        setPrescriptionCount(data);
+        const data = await response.json();
+        setPrescriptionCount(data.count?.toString() || "32");
+        setError(null);
       } catch (error) {
         console.error('Error fetching prescription count:', error);
         setPrescriptionCount("32"); // Fallback to static number if fetch fails
+        setError("Αδυναμία σύνδεσης με το server");
         setIsLiveUpdating(false);
+      } finally {
+        setIsLoading(false);
       }
     };
 
@@ -110,18 +118,22 @@ const Hero = () => {
                 <div className="flex items-center gap-3">
                   <div className="bg-green-500 h-3 w-3 rounded-full"></div>
                   <p className="text-sm font-medium">
-                    {isLiveUpdating ? (
-                      <span className="inline-flex items-center">
-                        <span className="mr-1">&quot;{prescriptionCount}&quot;</span>
-                        <span className="relative flex h-2 w-2">
-                          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                          <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
-                        </span>
-                      </span>
+                    {isLoading ? (
+                      <span>Φόρτωση...</span>
+                    ) : error ? (
+                      <span>"{prescriptionCount}" Συνταγές Εκτελέστηκαν Σήμερα</span>
                     ) : (
-                      <span>&quot;{prescriptionCount}&quot;</span>
+                      <span className="inline-flex items-center">
+                        <span className="mr-1">"{prescriptionCount}"</span>
+                        {isLiveUpdating && (
+                          <span className="relative flex h-2 w-2 ml-1">
+                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                            <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                          </span>
+                        )}
+                        <span> Συνταγές Εκτελέστηκαν Σήμερα</span>
+                      </span>
                     )}
-                    <span> Συνταγές Εκτελέστηκαν Σήμερα</span>
                   </p>
                 </div>
               </div>
