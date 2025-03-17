@@ -1,17 +1,12 @@
-
 import { useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { useInView } from '@/utils/animations';
-
 const Hero = () => {
   const heroRef = useRef<HTMLDivElement>(null);
-  const isInView = useInView(heroRef, { threshold: 0.1 });
-  
-  return (
-    <section 
-      ref={heroRef}
-      className="relative min-h-screen flex items-center pt-16 overflow-hidden"
-    >
+  const isInView = useInView(heroRef, {
+    threshold: 0.1
+  });
+  return <section ref={heroRef} className="relative min-h-screen flex items-center pt-16 overflow-hidden">
       {/* Background elements */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-40 right-0 h-72 w-72 bg-esyntagi-100 rounded-full blur-3xl opacity-60"></div>
@@ -35,19 +30,22 @@ const Hero = () => {
               <Button className="bg-blue-500 hover:bg-blue-600 text-white rounded-full px-8 py-6 text-lg shadow-lg hover:shadow-xl transition-all duration-300">
                 Ξεκινήστε Δωρεάν
               </Button>
-              <Button variant="outline" className="border-esyntagi-200 text-esyntagi-700 hover:bg-esyntagi-50 rounded-full px-8 py-6 text-lg">
-                Ζητήστε Επίδειξη
-              </Button>
+              <Button variant="outline" className="border-esyntagi-200 text-esyntagi-700 hover:bg-esyntagi-50 rounded-full px-8 py-6 text-lg">Ζητήστε  Παρουσίαση</Button>
             </div>
             
             {/* Trust indicators */}
             <div className="pt-8">
-              <p className="text-sm text-gray-500 mb-3">ΕΜΠΙΣΤΕΥΟΝΤΑΙ ΦΑΡΜΑΚΟΠΟΙΟΙ ΣΕ ΟΛΗ ΤΗΝ ΕΛΛΑΔΑ</p>
+              <p className="text-sm text-gray-500 mb-3">
+            </p>
               <div className="flex flex-wrap gap-8 items-center">
-                <div className="text-gray-400 font-medium">Πανελλήνιος Φαρμακευτικός Σύλλογος</div>
-                <div className="text-gray-400 font-medium">ΗΔΙΚΑ</div>
-                <div className="text-gray-400 font-medium">ΕΟΠΥΥ</div>
-                <div className="text-gray-400 font-medium">Ασφαλιστικά Ταμεία</div>
+                <div className="text-gray-400 font-medium">
+              </div>
+                <div className="text-gray-400 font-medium">
+              </div>
+                <div className="text-gray-400 font-medium">
+              </div>
+                <div className="text-gray-400 font-medium">
+              </div>
               </div>
             </div>
           </div>
@@ -56,11 +54,7 @@ const Hero = () => {
           <div className={`relative ${isInView ? 'animate-slide-up' : 'opacity-0'}`}>
             <div className="relative z-10">
               <div className="glass-card rounded-2xl p-1 shadow-xl">
-                <img 
-                  src="https://images.unsplash.com/photo-1576091160550-2173dba999ef" 
-                  alt="Φαρμακοποιός που χρησιμοποιεί το Esyntagi" 
-                  className="w-full h-auto rounded-xl object-cover"
-                />
+                <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef" alt="Φαρμακοποιός που χρησιμοποιεί το Esyntagi" className="w-full h-auto rounded-xl object-cover" />
               </div>
               
               {/* Floating elements */}
@@ -71,7 +65,9 @@ const Hero = () => {
                 </div>
               </div>
               
-              <div className="glass absolute -bottom-6 -right-6 p-4 rounded-lg shadow-lg animate-float" style={{ animationDelay: '1s' }}>
+              <div className="glass absolute -bottom-6 -right-6 p-4 rounded-lg shadow-lg animate-float" style={{
+              animationDelay: '1s'
+            }}>
                 <div className="flex items-center gap-3">
                   <div className="bg-esyntagi-500 h-3 w-3 rounded-full"></div>
                   <p className="text-sm font-medium">Πλήρης Διαχείριση Προϊόντων</p>
@@ -81,8 +77,6 @@ const Hero = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Hero;
