@@ -35,13 +35,7 @@ const CloudAccessibility = () => {
               {/* Gradient overlay */}
               <div className="absolute inset-0 bg-gradient-to-tr from-blue-900/10 to-transparent rounded-xl"></div>
               
-              {/* Device indicators */}
-              <div className="absolute top-4 left-4 glass py-2 px-3 rounded-lg shadow-lg">
-                <div className="flex items-center gap-2">
-                  <Laptop className="h-4 w-4 text-esyntagi-600" />
-                  <p className="text-xs font-medium">Desktop</p>
-                </div>
-              </div>
+              {/* Device indicators - The desktop indicator div was removed */}
               
               <div className="absolute top-4 right-4 glass py-2 px-3 rounded-lg shadow-lg">
                 <div className="flex items-center gap-2">
