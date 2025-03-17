@@ -1,3 +1,4 @@
+
 import { useRef } from 'react';
 import { useInView } from '@/utils/animations';
 import { Button } from '@/components/ui/button';
@@ -55,7 +56,7 @@ const CallToAction = () => {
             <Card className="w-full shadow-lg border-blue-100 bg-white h-auto">
               <CardHeader className="text-center">
                 <CardTitle className="text-2xl font-bold text-blue-600">Είσοδος στο Σύστημα</CardTitle>
-                <CardDescription>Συνδεθείτε για να αποκτήσετε πρόσβαση</CardDescription>
+                <CardDescription>Συνδεθείτε στην πλατφόρμα για να αποκτήσετε πρόσβαση σε όλες τις υπηρεσίες του esyntagi.gr</CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
                 <Input
