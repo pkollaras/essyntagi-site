@@ -1,10 +1,15 @@
+
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { LogIn, Menu, X } from 'lucide-react';
+import { useLocation, useNavigate } from 'react-router-dom';
+
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   // Handle scroll effect
   useEffect(() => {
@@ -18,16 +23,24 @@ const Navbar = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
+
   const scrollToSection = (sectionId: string) => {
-    const section = document.getElementById(sectionId);
-    if (section) {
-      section.scrollIntoView({
-        behavior: 'smooth'
-      });
-      setIsMobileMenuOpen(false);
+    // Check if we're on the home page
+    if (location.pathname === '/') {
+      const section = document.getElementById(sectionId);
+      if (section) {
+        section.scrollIntoView({
+          behavior: 'smooth'
+        });
+        setIsMobileMenuOpen(false);
+      }
+    } else {
+      // If we're on a different page, navigate to home and then scroll
+      navigate('/', { state: { scrollTo: sectionId } });
     }
   };
 
@@ -45,11 +58,12 @@ const Navbar = () => {
     id: 'benefits',
     label: 'Οφέλη'
   }];
+
   return <header className={cn('fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-4 px-6 md:px-10', isScrolled ? 'glass shadow-subtle py-3' : 'bg-transparent')}>
       <div className="container mx-auto">
         <nav className="flex items-center justify-between">
           {/* Logo */}
-          <a href="#" className="flex items-center">
+          <a onClick={() => navigate('/')} className="flex items-center cursor-pointer">
             <img alt="Eprescription Logo" src="/lovable-uploads/020e11ea-4772-415c-9c76-da8f956f25e4.png" className="h-20 w-auto bg-transparent" />
           </a>
 
@@ -97,4 +111,5 @@ const Navbar = () => {
       </div>
     </header>;
 };
+
 export default Navbar;
