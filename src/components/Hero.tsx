@@ -1,3 +1,4 @@
+
 import { useRef, useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { useInView } from '@/utils/animations';
@@ -150,7 +151,7 @@ const Hero = () => {
               
               <div className="glass absolute -top-6 -left-6 p-4 rounded-lg shadow-lg animate-float">
                 <div className="flex items-center gap-3">
-                  <div className="bg-green-500 h-3 w-3 rounded-full"></div>
+                  <div className="bg-green-500 h-3 w-3 rounded-full animate-pulse-slow shadow-[0_0_8px_rgba(34,197,94,0.8)] ring-2 ring-green-300 ring-opacity-50"></div>
                   <p className="text-sm font-medium">
                     {isLoading ? <span>Φόρτωση...</span> : error ? <span>{prescriptionCount} Συνταγές Εκτελέστηκαν Σήμερα</span> : <span className="inline-flex items-center">
                         <span className="mr-1 mx-[2px] text-base font-extrabold text-left">
