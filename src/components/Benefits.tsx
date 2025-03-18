@@ -1,8 +1,12 @@
+
 import { useRef } from 'react';
 import { useInView } from '@/utils/animations';
 import { Check } from 'lucide-react';
+import { useIsMobile } from '@/hooks/use-mobile';
+
 const Benefits = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
+  const isMobile = useIsMobile();
   const isInView = useInView(sectionRef, {
     threshold: 0.1
   });
@@ -17,19 +21,7 @@ const Benefits = () => {
                 <img alt="Σύγχρονο φαρμακείο" className="w-full h-auto rounded-xl object-cover" src="/lovable-uploads/39cc71df-2f2b-4926-a281-11a83159755a.png" />
               </div>
               
-              {/* Stats card */}
-              <div className="glass absolute top-12 -right-5 p-5 rounded-xl shadow-lg max-w-[220px] animate-float" style={{
-              animationDelay: '0.5s'
-            }}>
-                <h4 className="text-lg font-semibold text-gray-800">Ταχύτητα Εκτέλεσης</h4>
-                <div className="flex items-end gap-1 mt-1">
-                  <span className="text-3xl font-bold text-esyntagi-600">75%</span>
-                  <span className="text-green-500 text-sm mb-1">↑</span>
-                </div>
-                <p className="text-sm text-gray-600 mt-1">Ταχύτερη εκτέλεση συνταγών μέσω διασύνδεσης με ΗΔΙΚΑ</p>
-              </div>
-              
-              {/* Products card */}
+              {/* Products card - This is now always at the bottom */}
               <div className="glass absolute -bottom-6 -left-6 p-5 rounded-xl shadow-lg max-w-[220px] animate-float" style={{
               animationDelay: '1s'
             }}>
@@ -38,6 +30,18 @@ const Benefits = () => {
                   <span className="text-3xl font-bold text-esyntagi-600">10.000+</span>
                 </div>
                 <p className="text-sm text-gray-600 mt-1">Προϊόντα παραφαρμάκου στην αρχικοποιημένη βάση</p>
+              </div>
+              
+              {/* Stats card - Moved below the Products card on mobile */}
+              <div className={`glass ${isMobile ? 'absolute -bottom-48 -right-5' : 'absolute top-12 -right-5'} p-5 rounded-xl shadow-lg max-w-[220px] animate-float`} style={{
+              animationDelay: '0.5s'
+            }}>
+                <h4 className="text-lg font-semibold text-gray-800">Ταχύτητα Εκτέλεσης</h4>
+                <div className="flex items-end gap-1 mt-1">
+                  <span className="text-3xl font-bold text-esyntagi-600">75%</span>
+                  <span className="text-green-500 text-sm mb-1">↑</span>
+                </div>
+                <p className="text-sm text-gray-600 mt-1">Ταχύτερη εκτέλεση συνταγών μέσω διασύνδεσης με ΗΔΙΚΑ</p>
               </div>
             </div>
           </div>
