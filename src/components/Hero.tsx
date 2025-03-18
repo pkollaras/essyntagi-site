@@ -1,11 +1,9 @@
-
 import { useRef, useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { useInView } from '@/utils/animations';
 import { Card, CardContent } from '@/components/ui/card';
 import { toast } from "sonner";
 import { useSmoothCounter } from '@/utils/animations';
-
 const Hero = () => {
   const heroRef = useRef<HTMLDivElement>(null);
   const [prescriptionCount, setPrescriptionCount] = useState<string>("...");
@@ -14,14 +12,12 @@ const Hero = () => {
   const [error, setError] = useState<string | null>(null);
   const [isLiveUpdating, setIsLiveUpdating] = useState<boolean>(false); // Changed to false initially
   const [resetCounter, setResetCounter] = useState<number>(0); // Key to reset counter animation
-  
+
   // Use the smooth counter to animate the value
   const animatedCount = useSmoothCounter(actualCount, 1500, 0);
-  
   const isInView = useInView(heroRef, {
     threshold: 0.1
   });
-
   useEffect(() => {
     const fetchPrescriptionCount = async () => {
       try {
@@ -32,11 +28,9 @@ const Hero = () => {
             'Content-Type': 'application/json'
           }
         });
-        
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
-        
         const data = await response.json();
         if (data.success && data.data) {
           setActualCount(parseInt(data.data, 10)); // Store actual number
@@ -60,9 +54,8 @@ const Hero = () => {
 
     // Initial fetch - only once
     fetchPrescriptionCount();
-    
+
     // No interval setup for auto-refresh
-    
   }, [isInView]); // Only depends on isInView now
 
   // Function to manually refresh the count
@@ -73,18 +66,15 @@ const Hero = () => {
         // Reset the counter to 0 to trigger animation from start
         setActualCount(0);
         setResetCounter(prev => prev + 1);
-        
         const response = await fetch('https://api-stg.esyntagi.gr/count', {
-          method: 'POST', 
+          method: 'POST',
           headers: {
             'Content-Type': 'application/json'
           }
         });
-        
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
-        
         const data = await response.json();
         if (data.success && data.data) {
           // Slight delay to ensure animation starts from 0
@@ -101,7 +91,7 @@ const Hero = () => {
         console.error('Error fetching prescription count:', error);
         setTimeout(() => {
           setActualCount(30); // Fallback to static number
-          setPrescriptionCount("30"); 
+          setPrescriptionCount("30");
           setError("Αδυναμία σύνδεσης με το server");
           toast.error("Αδυναμία σύνδεσης με το server. Χρησιμοποιείται στατική τιμή.");
         }, 100);
@@ -109,10 +99,8 @@ const Hero = () => {
         setIsLoading(false);
       }
     };
-    
     fetchPrescriptionCount();
   };
-
   return <section ref={heroRef} className="relative min-h-screen flex items-center pt-16 overflow-hidden">
       {/* Background elements */}
       <div className="absolute inset-0 -z-10">
@@ -169,24 +157,15 @@ const Hero = () => {
                 <div className="flex items-center gap-3">
                   <div className="bg-green-500 h-3 w-3 rounded-full"></div>
                   <p className="text-sm font-medium">
-                    {isLoading ? (
-                      <span>Φόρτωση...</span>
-                    ) : error ? (
-                      <span>"{prescriptionCount}" Συνταγές Εκτελέστηκαν Σήμερα</span>
-                    ) : (
-                      <span className="inline-flex items-center">
+                    {isLoading ? <span>Φόρτωση...</span> : error ? <span>"{prescriptionCount}" Συνταγές Εκτελέστηκαν Σήμερα</span> : <span className="inline-flex items-center">
                         {/* Separate number and text to enable animating only the number */}
-                        <span className="mr-1">
+                        <span className="mr-1 mx-[2px] text-base font-extrabold text-left">
                           "<span key={resetCounter} className="inline-block">
                             {animatedCount}
                           </span>"
                         </span>
                         <span> Συνταγές Εκτελέστηκαν Σήμερα</span>
-                        <button 
-                          onClick={handleManualRefresh}
-                          className="ml-2 p-1 text-gray-500 hover:text-blue-500"
-                          title="Ανανέωση τώρα"
-                        >
+                        <button onClick={handleManualRefresh} className="ml-2 p-1 text-gray-500 hover:text-blue-500" title="Ανανέωση τώρα">
                           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                             <path d="M21 2v6h-6"></path>
                             <path d="M3 12a9 9 0 0 1 15-6.7L21 8"></path>
@@ -194,8 +173,7 @@ const Hero = () => {
                             <path d="M21 12a9 9 0 0 1-15 6.7L3 16"></path>
                           </svg>
                         </button>
-                      </span>
-                    )}
+                      </span>}
                   </p>
                 </div>
               </div>
@@ -214,5 +192,4 @@ const Hero = () => {
       </div>
     </section>;
 };
-
 export default Hero;
