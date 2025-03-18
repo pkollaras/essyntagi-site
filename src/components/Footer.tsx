@@ -1,18 +1,26 @@
-
 import { FacebookIcon, LinkedinIcon } from 'lucide-react';
-
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   // Menu items based on page sections
   const footerMenu = [
-    // Removed "Αρχική" item
-    { label: 'Χαρακτηριστικά', link: '#features' },
-    { label: 'Cloud ERP', link: '#cloud' },
-    { label: 'Τιμολόγηση', link: '#invoicing' },
-    { label: 'Οφέλη', link: '#benefits' },
-    { label: 'Επικοινωνία', link: '#cta' },
-  ];
+  // Removed "Αρχική" item
+  {
+    label: 'Χαρακτηριστικά',
+    link: '#features'
+  }, {
+    label: 'Cloud ERP',
+    link: '#cloud'
+  }, {
+    label: 'Τιμολόγηση',
+    link: '#invoicing'
+  }, {
+    label: 'Οφέλη',
+    link: '#benefits'
+  }, {
+    label: 'Επικοινωνία',
+    link: '#cta'
+  }];
 
   // Custom TikTok icon since it's not available in lucide-react
   const TikTokIcon = () => <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-5 w-5">
@@ -24,7 +32,7 @@ const Footer = () => {
           {/* Company info */}
           <div className="md:col-span-4">
             <div className="flex items-center mb-4">
-              <img alt="Eprescription Logo" className="h-20 w-auto bg-transparent" src="/lovable-uploads/efb75c91-e718-4d58-85c8-7e0d4d1f9e69.png" />
+              <img alt="Eprescription Logo" className="h-20 w-auto bg-transparent" src="/lovable-uploads/1fb19abe-7979-4ca0-93ed-7b9ff493abe0.png" />
             </div>
             <p className="text-gray-600 mb-4 max-w-xl">Το esyntagi.gr αποτελεί μια ολοκληρωμένη και εύχρηστη πλατφόρμα για την εκτέλεση συνταγών, προσφέροντας στους φαρμακοποιούς έναν αποτελεσματικό τρόπο διαχείρισης της διαδικασίας επιπλέον παρέχει την δυνατότητα εκδώσεις παραστατικών B2C, B2B και B2G μέσω παρόχου. Παρέχει άμεση πρόσβαση σε πληροφορίες για φάρμακα των κατηγοριών ΣΥΦΑ, ΜΗΣΥΦΑ και Παραφάρμακα, διευκολύνοντας την καθημερινή σας εργασία.</p>
             <div className="flex space-x-4">
@@ -48,16 +56,11 @@ const Footer = () => {
             <h3 className="text-lg font-semibold text-gray-800 mb-4">Πλοήγηση</h3>
             <nav>
               <ul className="flex flex-col space-y-3">
-                {footerMenu.map((item, index) => (
-                  <li key={index}>
-                    <a 
-                      href={item.link} 
-                      className="text-gray-600 hover:text-blue-600 transition-colors duration-300"
-                    >
+                {footerMenu.map((item, index) => <li key={index}>
+                    <a href={item.link} className="text-gray-600 hover:text-blue-600 transition-colors duration-300">
                       {item.label}
                     </a>
-                  </li>
-                ))}
+                  </li>)}
               </ul>
             </nav>
           </div>
@@ -68,18 +71,12 @@ const Footer = () => {
             <nav>
               <ul className="flex flex-col space-y-3">
                 <li>
-                  <a 
-                    href="/terms" 
-                    className="text-gray-600 hover:text-blue-600 transition-colors duration-300"
-                  >
+                  <a href="/terms" className="text-gray-600 hover:text-blue-600 transition-colors duration-300">
                     Terms of Use
                   </a>
                 </li>
                 <li>
-                  <a 
-                    href="/privacy" 
-                    className="text-gray-600 hover:text-blue-600 transition-colors duration-300"
-                  >
+                  <a href="/privacy" className="text-gray-600 hover:text-blue-600 transition-colors duration-300">
                     Privacy Policy
                   </a>
                 </li>
@@ -98,5 +95,4 @@ const Footer = () => {
       </div>
     </footer>;
 };
-
 export default Footer;
