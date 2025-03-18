@@ -1,13 +1,11 @@
-
 import { useRef, useState, useEffect } from 'react';
 import { useInView } from '@/utils/animations';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { FileText, Package, ShoppingBag, Calculator, ChevronLeft, ChevronRight } from 'lucide-react';
+import { FileText, Package, ShoppingBag } from 'lucide-react';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { useIsMobile } from '@/hooks/use-mobile';
-import { Carousel, CarouselApi, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
+import { Carousel, CarouselApi, CarouselContent, CarouselItem } from '@/components/ui/carousel';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { Button } from '@/components/ui/button';
 
 const ProductCategories = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -21,36 +19,45 @@ const ProductCategories = () => {
   // Map carousel slides to tab values
   const tabValues = ["prescription", "otc", "parapharmacy"];
   
-  // This effect sets up the carousel API and event listeners
+  // This effect synchronizes the carousel with the active tab
   useEffect(() => {
     if (!api) return;
     
+    // Update tab when carousel slides
     const handleCarouselSelect = () => {
       const currentSlide = api.selectedScrollSnap();
       setActiveTab(tabValues[currentSlide]);
     };
     
-    // Listen for select events
+    // Set up the carousel event listeners
     api.on("select", handleCarouselSelect);
+    api.on("settle", handleCarouselSelect);
     
-    // Initial sync
+    // Initial synchronization
     handleCarouselSelect();
     
-    // Cleanup
+    // Clean up listeners on unmount
     return () => {
       api.off("select", handleCarouselSelect);
+      api.off("settle", handleCarouselSelect);
     };
   }, [api, tabValues]);
   
-  // This effect syncs tab changes to carousel position
+  // This effect synchronizes the active tab with the carousel
   useEffect(() => {
     if (!api) return;
     
-    const slideIndex = tabValues.indexOf(activeTab);
-    if (slideIndex !== -1) {
-      api.scrollTo(slideIndex);
+    // When tab changes, update carousel position
+    const tabIndex = tabValues.indexOf(activeTab);
+    if (tabIndex !== -1) {
+      api.scrollTo(tabIndex);
     }
   }, [activeTab, api, tabValues]);
+  
+  // Handler for tab change
+  const handleTabChange = (value: string) => {
+    setActiveTab(value);
+  };
   
   return (
     <section id="categories" ref={sectionRef} className="py-20 bg-gray-50">
@@ -69,7 +76,7 @@ const ProductCategories = () => {
 
         <div className={isInView ? 'animate-slide-up' : 'opacity-0'}>
           {isMobile ? (
-            <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full max-w-4xl mx-auto">
+            <Tabs value={activeTab} onValueChange={handleTabChange} className="w-full max-w-4xl mx-auto">
               <div className="relative mb-6">
                 <ScrollArea className="w-full overflow-x-auto pb-4" orientation="horizontal">
                   <div className="inline-flex w-auto min-w-full px-2 py-2">
@@ -99,10 +106,18 @@ const ProductCategories = () => {
                 <div className="absolute top-1/2 -translate-y-1/2 right-0 z-10 pointer-events-none bg-gradient-to-l from-gray-50 to-transparent w-12 h-full"></div>
               </div>
 
-              <Carousel setApi={setApi} className="w-full" opts={{ loop: false, align: "start" }}>
+              <Carousel 
+                setApi={setApi} 
+                className="w-full" 
+                opts={{
+                  align: "start",
+                  dragFree: true,
+                  containScroll: "trimSnaps"
+                }}
+              >
                 <CarouselContent>
-                  <CarouselItem>
-                    <div className="glass-card rounded-xl shadow-md overflow-hidden p-6">
+                  <CarouselItem className="h-full">
+                    <div className="glass-card rounded-xl shadow-md overflow-hidden p-6 h-full">
                       <h3 className="text-xl font-semibold mb-4 text-esyntagi-700 flex items-center gap-2">
                         <FileText className="h-5 w-5" />
                         Συνταγογραφούμενα Φάρμακα
@@ -125,8 +140,8 @@ const ProductCategories = () => {
                     </div>
                   </CarouselItem>
                   
-                  <CarouselItem>
-                    <div className="glass-card rounded-xl shadow-md overflow-hidden p-6">
+                  <CarouselItem className="h-full">
+                    <div className="glass-card rounded-xl shadow-md overflow-hidden p-6 h-full">
                       <h3 className="text-xl font-semibold mb-4 text-esyntagi-700 flex items-center gap-2">
                         <Package className="h-5 w-5" />
                         Μη Συνταγογραφούμενα Φάρμακα (ΜΗ.ΣΥ.ΦΑ.)
@@ -149,8 +164,8 @@ const ProductCategories = () => {
                     </div>
                   </CarouselItem>
                   
-                  <CarouselItem>
-                    <div className="glass-card rounded-xl shadow-md overflow-hidden p-6">
+                  <CarouselItem className="h-full">
+                    <div className="glass-card rounded-xl shadow-md overflow-hidden p-6 h-full">
                       <h3 className="text-xl font-semibold mb-4 text-esyntagi-700 flex items-center gap-2">
                         <ShoppingBag className="h-5 w-5" />
                         Παραφαρμακευτικά Προϊόντα
@@ -211,7 +226,7 @@ const ProductCategories = () => {
                       <button 
                         key={value}
                         className={`w-3 h-3 rounded-full transition-colors duration-300 ${activeTab === value ? 'bg-primary' : 'bg-gray-300'}`}
-                        onClick={() => setActiveTab(value)}
+                        onClick={() => handleTabChange(value)}
                         aria-label={`Go to ${value} tab`}
                       />
                     ))}
@@ -220,7 +235,6 @@ const ProductCategories = () => {
               </Carousel>
             </Tabs>
           ) : (
-            // Desktop tabs implementation
             <Tabs defaultValue="prescription" className="w-full max-w-4xl mx-auto">
               <TabsList className="grid grid-cols-3 mb-8">
                 <TabsTrigger value="prescription" className="flex items-center gap-2">
