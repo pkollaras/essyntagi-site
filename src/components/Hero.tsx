@@ -1,11 +1,9 @@
-
 import { useRef, useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { useInView } from '@/utils/animations';
 import { Card, CardContent } from '@/components/ui/card';
 import { toast } from "sonner";
 import { useSmoothCounter } from '@/utils/animations';
-
 const Hero = () => {
   const heroRef = useRef<HTMLDivElement>(null);
   const [prescriptionCount, setPrescriptionCount] = useState<string>("...");
@@ -14,12 +12,10 @@ const Hero = () => {
   const [error, setError] = useState<string | null>(null);
   const [isLiveUpdating, setIsLiveUpdating] = useState<boolean>(false);
   const [resetCounter, setResetCounter] = useState<number>(0);
-
   const animatedCount = useSmoothCounter(actualCount, 1500, 0);
   const isInView = useInView(heroRef, {
     threshold: 0.1
   });
-
   useEffect(() => {
     const fetchPrescriptionCount = async () => {
       try {
@@ -53,14 +49,11 @@ const Hero = () => {
         setIsLoading(false);
       }
     };
-
     fetchPrescriptionCount();
-
     return () => {
       setIsLiveUpdating(false);
     };
   }, [isInView]);
-
   const handleManualRefresh = () => {
     const fetchPrescriptionCount = async () => {
       try {
@@ -101,7 +94,6 @@ const Hero = () => {
     };
     fetchPrescriptionCount();
   };
-
   return <section ref={heroRef} className="relative min-h-screen flex items-center pt-16 overflow-hidden">
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-40 right-0 h-72 w-72 bg-esyntagi-100 rounded-full blur-3xl opacity-60"></div>
@@ -113,7 +105,7 @@ const Hero = () => {
           <div className={`space-y-6 ${isInView ? 'animate-fade-in' : 'opacity-0'}`}>
             <div className="inline-block glass px-3 py-1 rounded-full text-sm font-medium text-esyntagi-700 mb-2">Tο νέο Cloud ERP για φαρμακεία</div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-gray-900">
-              Ήρθε η νέα εποχή στο <span className="text-esyntagi-600">Φαρμακείο.</span>
+              Ήρθε η νέα εποχή στο <span className="text-esyntagi-600">Φαρμακείο!</span>
             </h1>
             <p className="text-xl text-gray-600 max-w-lg">
               Εξελίξτε την εκτέλεση συνταγών, τη δημιουργία καλαθιού με πολλαπλά είδη και την τιμολόγηση μέσω του εξειδικευμένου συστήματος για φαρμακοποιούς.
@@ -187,5 +179,4 @@ const Hero = () => {
       </div>
     </section>;
 };
-
 export default Hero;
