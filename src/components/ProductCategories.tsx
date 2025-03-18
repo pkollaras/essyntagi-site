@@ -1,11 +1,11 @@
 
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { useInView } from '@/utils/animations';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { FileText, Package, ShoppingBag, Calculator, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { useIsMobile } from '@/hooks/use-mobile';
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
+import { Carousel, CarouselApi, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { Button } from '@/components/ui/button';
 
@@ -16,6 +16,41 @@ const ProductCategories = () => {
     threshold: 0.1
   });
   const [activeTab, setActiveTab] = useState("prescription");
+  const [api, setApi] = useState<CarouselApi>();
+  
+  // Map carousel slides to tab values
+  const tabValues = ["prescription", "otc", "parapharmacy"];
+  
+  // This effect sets up the carousel API and event listeners
+  useEffect(() => {
+    if (!api) return;
+    
+    const handleCarouselSelect = () => {
+      const currentSlide = api.selectedScrollSnap();
+      setActiveTab(tabValues[currentSlide]);
+    };
+    
+    // Listen for select events
+    api.on("select", handleCarouselSelect);
+    
+    // Initial sync
+    handleCarouselSelect();
+    
+    // Cleanup
+    return () => {
+      api.off("select", handleCarouselSelect);
+    };
+  }, [api, tabValues]);
+  
+  // This effect syncs tab changes to carousel position
+  useEffect(() => {
+    if (!api) return;
+    
+    const slideIndex = tabValues.indexOf(activeTab);
+    if (slideIndex !== -1) {
+      api.scrollTo(slideIndex);
+    }
+  }, [activeTab, api, tabValues]);
   
   return (
     <section id="categories" ref={sectionRef} className="py-20 bg-gray-50">
@@ -40,30 +75,22 @@ const ProductCategories = () => {
                   <div className="inline-flex w-auto min-w-full px-2 py-2">
                     <div className="flex space-x-2 items-center">
                       <TabsList className="h-auto p-1 bg-white/80 backdrop-blur border border-gray-100 shadow-sm rounded-full">
-                        <TabsTrigger 
-                          value="prescription" 
-                          className="text-sm py-2 px-4 rounded-full flex items-center gap-2 whitespace-nowrap transition-all duration-200"
-                          onClick={() => setActiveTab("prescription")}
-                        >
-                          <FileText className="h-4 w-4" />
-                          <span>Συνταγογραφούμενα</span>
-                        </TabsTrigger>
-                        <TabsTrigger 
-                          value="otc" 
-                          className="text-sm py-2 px-4 rounded-full flex items-center gap-2 whitespace-nowrap transition-all duration-200"
-                          onClick={() => setActiveTab("otc")}
-                        >
-                          <Package className="h-4 w-4" />
-                          <span>Μη Συνταγογραφούμενα</span>
-                        </TabsTrigger>
-                        <TabsTrigger 
-                          value="parapharmacy" 
-                          className="text-sm py-2 px-4 rounded-full flex items-center gap-2 whitespace-nowrap transition-all duration-200"
-                          onClick={() => setActiveTab("parapharmacy")}
-                        >
-                          <ShoppingBag className="h-4 w-4" />
-                          <span>Παραφαρμακευτικά</span>
-                        </TabsTrigger>
+                        {tabValues.map((value, index) => (
+                          <TabsTrigger 
+                            key={value}
+                            value={value} 
+                            className="text-sm py-2 px-4 rounded-full flex items-center gap-2 whitespace-nowrap transition-all duration-200"
+                          >
+                            {value === "prescription" && <FileText className="h-4 w-4" />}
+                            {value === "otc" && <Package className="h-4 w-4" />}
+                            {value === "parapharmacy" && <ShoppingBag className="h-4 w-4" />}
+                            <span>
+                              {value === "prescription" && "Συνταγογραφούμενα"}
+                              {value === "otc" && "Μη Συνταγογραφούμενα"}
+                              {value === "parapharmacy" && "Παραφαρμακευτικά"}
+                            </span>
+                          </TabsTrigger>
+                        ))}
                       </TabsList>
                     </div>
                   </div>
@@ -72,110 +99,125 @@ const ProductCategories = () => {
                 <div className="absolute top-1/2 -translate-y-1/2 right-0 z-10 pointer-events-none bg-gradient-to-l from-gray-50 to-transparent w-12 h-full"></div>
               </div>
 
-              <div className="glass-card rounded-xl shadow-md overflow-hidden">
-                <TabsContent value="prescription" className="p-6">
-                  <h3 className="text-xl font-semibold mb-4 text-esyntagi-700 flex items-center gap-2">
-                    <FileText className="h-5 w-5" />
-                    Συνταγογραφούμενα Φάρμακα
-                  </h3>
-                  <div className="space-y-4">
-                    <p className="text-gray-700">
-                      Πλήρης διαχείριση συνταγογραφούμενων φαρμάκων με άμεση σύνδεση στο σύστημα ΗΔΙΚΑ για γρήγορη και ακριβή εκτέλεση συνταγών.
-                    </p>
-                    <div className="mt-6">
-                      <div className="font-semibold mb-2 text-gray-800">Χαρακτηριστικά:</div>
-                      <ul className="list-disc pl-5 space-y-2 text-gray-700">
-                        <li>Άμεση εκτέλεση ηλεκτρονικών συνταγών</li>
-                        <li>Αυτόματος έλεγχος αλληλεπιδράσεων και δοσολογίας</li>
-                        <li>Αυτόματη τιμολόγηση προς ασφαλιστικά ταμεία</li>
-                        <li>Ιστορικό συνταγογραφήσεων ανά ασθενή</li>
-                        <li>Εκτύπωση ετικετών με οδηγίες χρήσης</li>
-                      </ul>
-                    </div>
-                  </div>
-                </TabsContent>
-
-                <TabsContent value="otc" className="p-6">
-                  <h3 className="text-xl font-semibold mb-4 text-esyntagi-700 flex items-center gap-2">
-                    <Package className="h-5 w-5" />
-                    Μη Συνταγογραφούμενα Φάρμακα (ΜΗ.ΣΥ.ΦΑ.)
-                  </h3>
-                  <div className="space-y-4">
-                    <p className="text-gray-700">
-                      Διαχειριστείτε εύκολα τα Μη Συνταγογραφούμενα Φάρμακα με πρόσβαση σε ενημερωμένη βάση δεδομένων και εύκολη προσθήκη στο καλάθι αγορών.
-                    </p>
-                    <div className="mt-6">
-                      <div className="font-semibold mb-2 text-gray-800">Χαρακτηριστικά:</div>
-                      <ul className="list-disc pl-5 space-y-2 text-gray-700">
-                        <li>Πλήρης βάση δεδομένων ΜΗ.ΣΥ.ΦΑ.</li>
-                        <li>Γρήγορη αναζήτηση με πολλαπλά κριτήρια</li>
-                        <li>Παρακολούθηση αποθέματος και ημερομηνιών λήξης</li>
-                        <li>Διαχείριση τιμολογιακής πολιτικής</li>
-                        <li>Στατιστικά πωλήσεων και τάσεων</li>
-                      </ul>
-                    </div>
-                  </div>
-                </TabsContent>
-
-                <TabsContent value="parapharmacy" className="p-6">
-                  <h3 className="text-xl font-semibold mb-4 text-esyntagi-700 flex items-center gap-2">
-                    <ShoppingBag className="h-5 w-5" />
-                    Παραφαρμακευτικά Προϊόντα
-                  </h3>
-                  <div className="space-y-4">
-                    <p className="text-gray-700">
-                      Επωφεληθείτε από την αρχικοποιημένη βάση με πάνω από 10.000 προϊόντα παραφαρμάκου, εύκολη διαχείριση και προσθήκη στο καλάθι αγορών.
-                    </p>
-                    <div className="mt-6">
-                      <div className="font-semibold mb-2 text-gray-800">Δείγμα Βάσης Προϊόντων:</div>
-                      <div className="overflow-x-auto mt-2">
-                        <Table>
-                          <TableHeader>
-                            <TableRow>
-                              <TableHead>Κατηγορία</TableHead>
-                              <TableHead>Προϊόντα</TableHead>
-                              <TableHead>Εταιρίες</TableHead>
-                            </TableRow>
-                          </TableHeader>
-                          <TableBody>
-                            <TableRow>
-                              <TableCell>Δερμοκαλλυντικά</TableCell>
-                              <TableCell>3.500+</TableCell>
-                              <TableCell>85+</TableCell>
-                            </TableRow>
-                            <TableRow>
-                              <TableCell>Συμπληρώματα Διατροφής</TableCell>
-                              <TableCell>2.800+</TableCell>
-                              <TableCell>65+</TableCell>
-                            </TableRow>
-                            <TableRow>
-                              <TableCell>Βρεφικά Είδη</TableCell>
-                              <TableCell>1.200+</TableCell>
-                              <TableCell>40+</TableCell>
-                            </TableRow>
-                            <TableRow>
-                              <TableCell>Ορθοπεδικά</TableCell>
-                              <TableCell>950+</TableCell>
-                              <TableCell>25+</TableCell>
-                            </TableRow>
-                            <TableRow>
-                              <TableCell>Άλλες Κατηγορίες</TableCell>
-                              <TableCell>1.550+</TableCell>
-                              <TableCell>45+</TableCell>
-                            </TableRow>
-                          </TableBody>
-                        </Table>
+              <Carousel setApi={setApi} className="w-full" opts={{ loop: false, align: "start" }}>
+                <CarouselContent>
+                  <CarouselItem>
+                    <div className="glass-card rounded-xl shadow-md overflow-hidden p-6">
+                      <h3 className="text-xl font-semibold mb-4 text-esyntagi-700 flex items-center gap-2">
+                        <FileText className="h-5 w-5" />
+                        Συνταγογραφούμενα Φάρμακα
+                      </h3>
+                      <div className="space-y-4">
+                        <p className="text-gray-700">
+                          Πλήρης διαχείριση συνταγογραφούμενων φαρμάκων με άμεση σύνδεση στο σύστημα ΗΔΙΚΑ για γρήγορη και ακριβή εκτέλεση συνταγών.
+                        </p>
+                        <div className="mt-6">
+                          <div className="font-semibold mb-2 text-gray-800">Χαρακτηριστικά:</div>
+                          <ul className="list-disc pl-5 space-y-2 text-gray-700">
+                            <li>Άμεση εκτέλεση ηλεκτρονικών συνταγών</li>
+                            <li>Αυτόματος έλεγχος αλληλεπιδράσεων και δοσολογίας</li>
+                            <li>Αυτόματη τιμολόγηση προς ασφαλιστικά ταμεία</li>
+                            <li>Ιστορικό συνταγογραφήσεων ανά ασθενή</li>
+                            <li>Εκτύπωση ετικετών με οδηγίες χρήσης</li>
+                          </ul>
+                        </div>
                       </div>
                     </div>
+                  </CarouselItem>
+                  
+                  <CarouselItem>
+                    <div className="glass-card rounded-xl shadow-md overflow-hidden p-6">
+                      <h3 className="text-xl font-semibold mb-4 text-esyntagi-700 flex items-center gap-2">
+                        <Package className="h-5 w-5" />
+                        Μη Συνταγογραφούμενα Φάρμακα (ΜΗ.ΣΥ.ΦΑ.)
+                      </h3>
+                      <div className="space-y-4">
+                        <p className="text-gray-700">
+                          Διαχειριστείτε εύκολα τα Μη Συνταγογραφούμενα Φάρμακα με πρόσβαση σε ενημερωμένη βάση δεδομένων και εύκολη προσθήκη στο καλάθι αγορών.
+                        </p>
+                        <div className="mt-6">
+                          <div className="font-semibold mb-2 text-gray-800">Χαρακτηριστικά:</div>
+                          <ul className="list-disc pl-5 space-y-2 text-gray-700">
+                            <li>Πλήρης βάση δεδομένων ΜΗ.ΣΥ.ΦΑ.</li>
+                            <li>Γρήγορη αναζήτηση με πολλαπλά κριτήρια</li>
+                            <li>Παρακολούθηση αποθέματος και ημερομηνιών λήξης</li>
+                            <li>Διαχείριση τιμολογιακής πολιτικής</li>
+                            <li>Στατιστικά πωλήσεων και τάσεων</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </CarouselItem>
+                  
+                  <CarouselItem>
+                    <div className="glass-card rounded-xl shadow-md overflow-hidden p-6">
+                      <h3 className="text-xl font-semibold mb-4 text-esyntagi-700 flex items-center gap-2">
+                        <ShoppingBag className="h-5 w-5" />
+                        Παραφαρμακευτικά Προϊόντα
+                      </h3>
+                      <div className="space-y-4">
+                        <p className="text-gray-700">
+                          Επωφεληθείτε από την αρχικοποιημένη βάση με πάνω από 10.000 προϊόντα παραφαρμάκου, εύκολη διαχείριση και προσθήκη στο καλάθι αγορών.
+                        </p>
+                        <div className="mt-6">
+                          <div className="font-semibold mb-2 text-gray-800">Δείγμα Βάσης Προϊόντων:</div>
+                          <div className="overflow-x-auto mt-2">
+                            <Table>
+                              <TableHeader>
+                                <TableRow>
+                                  <TableHead>Κατηγορία</TableHead>
+                                  <TableHead>Προϊόντα</TableHead>
+                                  <TableHead>Εταιρίες</TableHead>
+                                </TableRow>
+                              </TableHeader>
+                              <TableBody>
+                                <TableRow>
+                                  <TableCell>Δερμοκαλλυντικά</TableCell>
+                                  <TableCell>3.500+</TableCell>
+                                  <TableCell>85+</TableCell>
+                                </TableRow>
+                                <TableRow>
+                                  <TableCell>Συμπληρώματα Διατροφής</TableCell>
+                                  <TableCell>2.800+</TableCell>
+                                  <TableCell>65+</TableCell>
+                                </TableRow>
+                                <TableRow>
+                                  <TableCell>Βρεφικά Είδη</TableCell>
+                                  <TableCell>1.200+</TableCell>
+                                  <TableCell>40+</TableCell>
+                                </TableRow>
+                                <TableRow>
+                                  <TableCell>Ορθοπεδικά</TableCell>
+                                  <TableCell>950+</TableCell>
+                                  <TableCell>25+</TableCell>
+                                </TableRow>
+                                <TableRow>
+                                  <TableCell>Άλλες Κατηγορίες</TableCell>
+                                  <TableCell>1.550+</TableCell>
+                                  <TableCell>45+</TableCell>
+                                </TableRow>
+                              </TableBody>
+                            </Table>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </CarouselItem>
+                </CarouselContent>
+                
+                <div className="mt-4 flex justify-center">
+                  <div className="flex space-x-3">
+                    {tabValues.map((value, index) => (
+                      <button 
+                        key={value}
+                        className={`w-3 h-3 rounded-full transition-colors duration-300 ${activeTab === value ? 'bg-primary' : 'bg-gray-300'}`}
+                        onClick={() => setActiveTab(value)}
+                        aria-label={`Go to ${value} tab`}
+                      />
+                    ))}
                   </div>
-                </TabsContent>
-              </div>
-              
-              <div className="flex justify-center mt-4 space-x-2">
-                <div className="w-3 h-3 rounded-full bg-primary opacity-70"></div>
-                <div className={`w-3 h-3 rounded-full ${activeTab === "otc" ? "bg-primary" : "bg-gray-300"} opacity-70`}></div>
-                <div className={`w-3 h-3 rounded-full ${activeTab === "parapharmacy" ? "bg-primary" : "bg-gray-300"} opacity-70`}></div>
-              </div>
+                </div>
+              </Carousel>
             </Tabs>
           ) : (
             // Desktop tabs implementation
