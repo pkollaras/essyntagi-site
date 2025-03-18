@@ -4,20 +4,21 @@ import { useInView } from '@/utils/animations';
 import { Card, CardContent } from '@/components/ui/card';
 import { toast } from "sonner";
 import { useSmoothCounter } from '@/utils/animations';
+
 const Hero = () => {
   const heroRef = useRef<HTMLDivElement>(null);
   const [prescriptionCount, setPrescriptionCount] = useState<string>("...");
   const [actualCount, setActualCount] = useState<number>(0);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
-  const [isLiveUpdating, setIsLiveUpdating] = useState<boolean>(false); // Changed to false initially
-  const [resetCounter, setResetCounter] = useState<number>(0); // Key to reset counter animation
+  const [isLiveUpdating, setIsLiveUpdating] = useState<boolean>(false);
+  const [resetCounter, setResetCounter] = useState<number>(0);
 
-  // Use the smooth counter to animate the value
   const animatedCount = useSmoothCounter(actualCount, 1500, 0);
   const isInView = useInView(heroRef, {
     threshold: 0.1
   });
+
   useEffect(() => {
     const fetchPrescriptionCount = async () => {
       try {
@@ -33,7 +34,7 @@ const Hero = () => {
         }
         const data = await response.json();
         if (data.success && data.data) {
-          setActualCount(parseInt(data.data, 10)); // Store actual number
+          setActualCount(parseInt(data.data, 10));
           setPrescriptionCount(data.data.toString());
           console.log('Updated prescription count:', data.data);
         } else {
@@ -42,8 +43,8 @@ const Hero = () => {
         setError(null);
       } catch (error) {
         console.error('Error fetching prescription count:', error);
-        setActualCount(30); // Fallback to static number if fetch fails
-        setPrescriptionCount("30"); // Fallback to static number if fetch fails
+        setActualCount(30);
+        setPrescriptionCount("30");
         setError("Αδυναμία σύνδεσης με το server");
         setIsLiveUpdating(false);
         toast.error("Αδυναμία σύνδεσης με το server. Χρησιμοποιείται στατική τιμή.");
@@ -52,18 +53,17 @@ const Hero = () => {
       }
     };
 
-    // Initial fetch - only once
     fetchPrescriptionCount();
 
-    // No interval setup for auto-refresh
-  }, [isInView]); // Only depends on isInView now
+    return () => {
+      setIsLiveUpdating(false);
+    };
+  }, [isInView]);
 
-  // Function to manually refresh the count
   const handleManualRefresh = () => {
     const fetchPrescriptionCount = async () => {
       try {
         setIsLoading(true);
-        // Reset the counter to 0 to trigger animation from start
         setActualCount(0);
         setResetCounter(prev => prev + 1);
         const response = await fetch('https://api-stg.esyntagi.gr/count', {
@@ -77,9 +77,8 @@ const Hero = () => {
         }
         const data = await response.json();
         if (data.success && data.data) {
-          // Slight delay to ensure animation starts from 0
           setTimeout(() => {
-            setActualCount(parseInt(data.data, 10)); // Update with new count
+            setActualCount(parseInt(data.data, 10));
             setPrescriptionCount(data.data.toString());
             toast.success("Επιτυχής ανανέωση δεδομένων");
           }, 100);
@@ -90,7 +89,7 @@ const Hero = () => {
       } catch (error) {
         console.error('Error fetching prescription count:', error);
         setTimeout(() => {
-          setActualCount(30); // Fallback to static number
+          setActualCount(30);
           setPrescriptionCount("30");
           setError("Αδυναμία σύνδεσης με το server");
           toast.error("Αδυναμία σύνδεσης με το server. Χρησιμοποιείται στατική τιμή.");
@@ -101,8 +100,8 @@ const Hero = () => {
     };
     fetchPrescriptionCount();
   };
+
   return <section ref={heroRef} className="relative min-h-screen flex items-center pt-16 overflow-hidden">
-      {/* Background elements */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-40 right-0 h-72 w-72 bg-esyntagi-100 rounded-full blur-3xl opacity-60"></div>
         <div className="absolute bottom-0 left-1/4 h-96 w-96 bg-blue-50 rounded-full blur-3xl opacity-70"></div>
@@ -110,7 +109,6 @@ const Hero = () => {
       
       <div className="container mx-auto px-6 py-12 md:py-24">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Left column - Text */}
           <div className={`space-y-6 ${isInView ? 'animate-fade-in' : 'opacity-0'}`}>
             <div className="inline-block glass px-3 py-1 rounded-full text-sm font-medium text-esyntagi-700 mb-2">Tο νέο Cloud ERP για φαρμακεία</div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-gray-900">
@@ -128,41 +126,37 @@ const Hero = () => {
               </a>
             </div>
             
-            {/* Trust indicators */}
             <div className="pt-8">
               <p className="text-sm text-gray-500 mb-3">
-            </p>
+              </p>
               <div className="flex flex-wrap gap-8 items-center">
                 <div className="text-gray-400 font-medium">
-              </div>
+                </div>
                 <div className="text-gray-400 font-medium">
-              </div>
+                </div>
                 <div className="text-gray-400 font-medium">
-              </div>
+                </div>
                 <div className="text-gray-400 font-medium">
-              </div>
+                </div>
               </div>
             </div>
           </div>
           
-          {/* Right column - Image */}
           <div className={`relative ${isInView ? 'animate-slide-up' : 'opacity-0'}`}>
             <div className="relative z-10">
               <div className="glass-card rounded-2xl p-1 shadow-xl">
                 <img alt="Φαρμακοποιός που χρησιμοποιεί το Esyntagi" className="w-full h-auto rounded-xl object-cover" src="/lovable-uploads/de17b158-9a2b-4df7-8adf-b6d7b22071d5.png" />
               </div>
               
-              {/* Floating elements */}
               <div className="glass absolute -top-6 -left-6 p-4 rounded-lg shadow-lg animate-float">
                 <div className="flex items-center gap-3">
                   <div className="bg-green-500 h-3 w-3 rounded-full"></div>
                   <p className="text-sm font-medium">
-                    {isLoading ? <span>Φόρτωση...</span> : error ? <span>"{prescriptionCount}" Συνταγές Εκτελέστηκαν Σήμερα</span> : <span className="inline-flex items-center">
-                        {/* Separate number and text to enable animating only the number */}
+                    {isLoading ? <span>Φόρτωση...</span> : error ? <span>{prescriptionCount} Συνταγές Εκτελέστηκαν Σήμερα</span> : <span className="inline-flex items-center">
                         <span className="mr-1 mx-[2px] text-base font-extrabold text-left">
-                          "<span key={resetCounter} className="inline-block">
+                          <span key={resetCounter} className="inline-block">
                             {animatedCount}
-                          </span>"
+                          </span>
                         </span>
                         <span> Συνταγές Εκτελέστηκαν Σήμερα</span>
                         <button onClick={handleManualRefresh} className="ml-2 p-1 text-gray-500 hover:text-blue-500" title="Ανανέωση τώρα">
@@ -192,4 +186,5 @@ const Hero = () => {
       </div>
     </section>;
 };
+
 export default Hero;
